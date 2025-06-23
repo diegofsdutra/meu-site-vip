@@ -1,0 +1,402 @@
+[
+  {
+    "modelo": "POCO C61 / REDMI A3",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "REDMI 6 PRO / MI A2 LITE",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "MOTO G9 / MOTO E7 PLAY / MOTO G9 PLAY",
+    "marca": "MOTOROLA"
+  },
+  {
+    "modelo": "K12 MAX / K12 PRIME",
+    "marca": "LG"
+  },
+  {
+    "modelo": "NOTE 9 PRO / NOTE 9s",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "J3 / J320",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "MI 10T LITE / MI 10",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "NOTE 10 4G / NOTE 10s",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "A52 / A52 5G / A52s 5G",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "MOTO E6 / MOTO E6s",
+    "marca": "MOTOROLA"
+  },
+  {
+    "modelo": "J7 PRIME / J7 PRIME 2",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "TECNO SPARK 20C / TECNO SPARK 20 / obs; são a mesma capa apenas spark 20 cabe no 20c",
+    "marca": "TECNO"
+  },
+  {
+    "modelo": "REALME C51 / REALME NOTE 50 / REALME C53",
+    "marca": "REALME"
+  },
+  {
+    "modelo": "REDMI A1 / REDMI A2",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "NOTE 10 LITE / A81",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "POCO X3 / POCO X3 PRO / POCO X3 NFC",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "K50S / K12 MAX",
+    "marca": "LG"
+  },
+  {
+    "modelo": "MOTO G6 PLAY / MOTO E5",
+    "marca": "MOTOROLA"
+  },
+  {
+    "modelo": "NOTE 10 5G / REDMI 10 PRIME / REDMI 10 / POCO M3 PRO 5G / NOTE 10T 5G",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "K22 / K22+",
+    "marca": "LG"
+  },
+  {
+    "modelo": "J8 2018 / A6+ 2018",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "M21s / M31 / M21",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "M53 / M33",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "REDMI 9A / REDMI 9I",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "SAMSUNG A03s CABE NO SAMSUNG A02S /obs; porem não são compativeis entre si um tem biometria outro não",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "IPHONE 13 / IPHONE 14 / IPHONE 15",
+    "marca": "sem proteção da camera são compativeis"
+  },
+  {
+    "modelo": "NOTE 9 PRO / NOTE 9S",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "A01 CORE / M01 CORE",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "MOTO G10 / MOTO G20 / MOTO G30 / MOTO G50",
+    "marca": "MOTOROLA"
+  },
+  {
+    "modelo": "MOTOROLA MOTO E20 PODE USA CAPINHA DO MOTO E40 mais vice versa não funciona poque e40 tem flesh",
+    "marca": "MOTOROLA"
+  },
+  {
+    "modelo": "NOTE 11 PRO / NOTE 11 5G (sem a proteção das câmeras)",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "A22 4G / M22 / M32",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "NOTE 10 5G / POCO M3 PRO 5G (sem a proteção das câmeras)",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "MOTO G PRO / MOTO G STYLUS 2020",
+    "marca": "MOTOROLA"
+  },
+  {
+    "modelo": "NOTE 11 4G / NOTE 11s",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "REDMI K20 / REDMI K20 PRO / MI 9T / MI 9T PRO",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "A12 / M12 / M62",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "MOTO G52 / MOTO G82",
+    "marca": "MOTOROLA"
+  },
+  {
+    "modelo": "A10s / M01s",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "J2 PRIME / GRAND PRIME",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "A02 / M02",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "Q6 / Q6 PLUS",
+    "marca": "LG"
+  },
+  {
+    "modelo": "REDMI S2 / REDMI Y2",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "K4 2017 / K9",
+    "marca": "LG"
+  },
+  {
+    "modelo": "REDMI 9A / REDMI 9I",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "MI 11I / POCO F3 / NOTE 10 / NOTE 10 PRO",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "J7 / J7 NEO",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "REALME C30 S CABE NO REALME C30 / obs; porem não são compativeis entre si um tem biometria outro não",
+    "marca": "REALME"
+  },
+  {
+    "modelo": "MOTO E32 / MOTO E32s",
+    "marca": "MOTOROLA"
+  },
+  {
+    "modelo": "K41s / K51s",
+    "marca": "LG"
+  },
+  {
+    "modelo": "NOTE 10 LITE / A81",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "REDMI 13C / POCO C65",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "MOTO G52 / MOTO G82",
+    "marca": "MOTOROLA"
+  },
+  {
+    "modelo": "NOTE 10 5G / POCO M3 PRO 5G (sem a proteção das câmeras)",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 13 PRO 4g / CABE NO POCO X6 PRO 4g / e no / POCO M6 PRO 4G",
+    "marca": ""
+  },
+  {
+    "modelo": "IPHONE SE 2020 / IPHONE 7 / IPHONE 8",
+    "marca": "APPLE"
+  },
+  {
+    "modelo": "J4 CORE / J4 PLUS",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "MOTO G41 / MOTO G42",
+    "marca": "MOTOROLA"
+  },
+  {
+    "modelo": "POCO M6 PRO pode se usado a capa do redmi 12 4g apenas isso",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "REDMI 10C / POCO C40",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "A32 5G/ A13 5G",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "K8 2018 / K9",
+    "marca": "LG"
+  },
+  {
+    "modelo": "12 / 12X",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "S10 LITE / A91",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G13 E MOTO G23 / são a mesma capa",
+    "marca": "MOTOROLA"
+  },
+  {
+    "modelo": "IPHONE 12 / IPHONE 12 PRO (sem proteção de câmeras)",
+    "marca": "APPLE"
+  },
+  {
+    "modelo": "NOTE 11s 4g / NOTE 11T 5G",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "XIAOMI POCO C65 / XIAOMI POCO M6 5G / obs são a mesma capa",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "K62 / K62+",
+    "marca": "LG"
+  },
+  {
+    "modelo": "XIAOMI REDMI 14C / POCO C75 / XIAOMI REDMI 14R ( são a mesma capa )",
+    "marca": ""
+  },
+  {
+    "modelo": "NOTE 10 5G / REDMI 10 PRIME / REDMI 10",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "J5 PRIME / ON5 2016",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "REDMI 9 / REDMI 9 POWER",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "MOTO G60 / MOTO G40 FUSION",
+    "marca": "MOTOROLA"
+  },
+  {
+    "modelo": "ONE / ONE VISION / ONE ACTION",
+    "marca": "MOTOROLA"
+  },
+  {
+    "modelo": "A30s / A50 /A50s",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "A11 / M11",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "M62 / F62",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "MOTO E30 / MOTO E40",
+    "marca": "MOTOROLA"
+  },
+  {
+    "modelo": "M23 / M13",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "A80 / A90",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "REALME C21Y E C25Y são a mesma capa / porem e melhor compra Capa REALME C25 normal que atende c21y c25y c25",
+    "marca": "REALME"
+  },
+  {
+    "modelo": "NOTE 10 PRO / NOTE 10 PRO MAX",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "A60 / M40",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "REDMI 10c / REDMI 12c",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "A5 2018 / A8 2018",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "REDMI 9C / REDMI 9 ACTIVE / REDMI 10A / POCO C3 obs são a mesma capa",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "K12 / K12 PLUS / K12 PRO",
+    "marca": "LG"
+  },
+  {
+    "modelo": "A10 / M10",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "MOTO G8 PLAY / ONE MACRO",
+    "marca": "MOTOROLA"
+  },
+  {
+    "modelo": "REDMI NOTE 7 / REDMI NOTE 7 PRO / REDMI NOTE 7s",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "MOTOROLA MOTO E22 MOTO E22i são mesma capa",
+    "marca": ""
+  },
+  {
+    "modelo": "MOTO G PLAY / MOTO G4 PLAY",
+    "marca": "MOTOROLA"
+  },
+  {
+    "modelo": "A30s / A50",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "NOTE 11 PRO / NOTE 11 5G (sem a proteção das câmeras)",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "A13 5G / A30s / A50 / A50s",
+    "marca": "SAMSUNG"
+  },
+  {
+    "modelo": "MOTO G7 / MOTO G7 PLAY",
+    "marca": "MOTOROLA"
+  },
+  {
+    "modelo": "INFINIX HOT 40 / TECNO SPARC 20C são a mesma capa",
+    "marca": ""
+  },
+  {
+    "modelo": "NOTE 11 4G / NOTE 11s",
+    "marca": "XIAOMI"
+  },
+  {
+    "modelo": "A20 / A30 / A50 / A50s",
+    "marca": "SAMSUNG"
+  }
+]

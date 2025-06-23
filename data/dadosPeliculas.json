@@ -1,0 +1,1962 @@
+[
+  {
+    "modelo": "POCO X5 PRO",
+    "compatibilidade": "REDMI NOTE 13 / REDMI NOTE 14 4G / MOTO G04 / SAMSUNG M53 / M52 5G / M51 / M54 5G / M62 / POCO M4 PRO 5G / LG K62"
+  },
+  {
+    "modelo": "LG K11",
+    "compatibilidade": "K11 PLUS / K10 2017"
+  },
+  {
+    "modelo": "REALME NARZO 30 PRO",
+    "compatibilidade": "REALME 7 / REALME 7 5G / REALME 7 PRO / REDMI K30 ULTRA"
+  },
+  {
+    "modelo": "TECNO CAMON 19 NEO",
+    "compatibilidade": "MOTO G15 / XIAOMI REDMI 12 4G / MOTO G60S / MOTO G40 FUSION / MOTO G35"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 13 PRO PLUS",
+    "compatibilidade": "XIAOMI POCO M3 PRO 5G / POCO M5 S / MOTO EDGE 30 / MOTO G13 / MOTO G73 / G32 / SAMSUNG A11"
+  },
+  {
+    "modelo": "MOTOROLA MOTO E5",
+    "compatibilidade": "MOTO G6 PLAY"
+  },
+  {
+    "modelo": "REALME GT MASTER",
+    "compatibilidade": "REALME 9 / REALME 10"
+  },
+  {
+    "modelo": "NOKIA 2.4",
+    "compatibilidade": "SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / M12 / A13 / M13 / A22 5g / MOTO E13 / MOTO E22 / REDMI A2 / REDMI A1 REALME C25 / SAMSUNG A23"
+  },
+  {
+    "modelo": "SAMSUMG S21 FE",
+    "compatibilidade": "S22 PLUS"
+  },
+  {
+    "modelo": "SAMSUNG S21 ULTRA",
+    "compatibilidade": "SAMSUNG S20 ULTRA atenção peliculas curvas"
+  },
+  {
+    "modelo": "SAMSUNG S21 PLUS",
+    "compatibilidade": "OBS; A BIOMETRIA PODE NÃO FUNCIONAR // XIAOMI POCO F6 & F6 PRO / MOTO G13 / MOTO G34"
+  },
+  {
+    "modelo": "SAMSUNG S21 ULTRA",
+    "compatibilidade": "SAMSUNG S20 ULTRA atenção peliculas curvas"
+  },
+  {
+    "modelo": "SAMSUNG S21 ULTRA",
+    "compatibilidade": "SAMSUNG S20 ULTRA atenção peliculas curvas"
+  },
+  {
+    "modelo": "SAMSUNG S22 ULTRA",
+    "compatibilidade": "SAMSUNG S23 ULTRA atenção peliculas curvas"
+  },
+  {
+    "modelo": "SAMSUNG S23 ULTRA",
+    "compatibilidade": "SAMSUNG S22 ULTRA atenção peliculas curvas"
+  },
+  {
+    "modelo": "SAMSUNG S23 PLUS",
+    "compatibilidade": "SAMSUNG S22 PLUS / SAMSUNG A54 / SAMSUNG S24 PLUS / S23 FE"
+  },
+  {
+    "modelo": "SAMSUNG S23 FE",
+    "compatibilidade": "S22 PLUS / SAMSUNG A54 / SAMSU S23 PLUS"
+  },
+  {
+    "modelo": "SAMSUNG S23",
+    "compatibilidade": "SAMSUNG S22"
+  },
+  {
+    "modelo": "SAMSUNG S23 ULTRA",
+    "compatibilidade": "SAMSUNG S22 ULTRA atenção peliculas curvas"
+  },
+  {
+    "modelo": "SAMSUNG S23 PLUS",
+    "compatibilidade": "SAMSUNG S22 PLUS / SAMSUNG A54 / SAMSUNG S24 PLUS / S23 FE"
+  },
+  {
+    "modelo": "SAMSUNG S23 FE",
+    "compatibilidade": "S22 PLUS / SAMSUNG A54 / SAMSU S23 PLUS"
+  },
+  {
+    "modelo": "SAMSUNG S23",
+    "compatibilidade": "SAMSUNG S22"
+  },
+  {
+    "modelo": "SAMSUNG S23 ULTRA",
+    "compatibilidade": "SAMSUNG S22 ULTRA atenção peliculas curvas"
+  },
+  {
+    "modelo": "SAMSUNG S24 FE",
+    "compatibilidade": "SAMSUNG A36 5g / A56 / M35 5g / A35 / A55 /"
+  },
+  {
+    "modelo": "SAMSUNG S24",
+    "compatibilidade": "SAMSUNG S23 / IPHONE 15 PRO"
+  },
+  {
+    "modelo": "ITEL S24",
+    "compatibilidade": "MOTO E13 / MOTO G13 / MOTO G04 / MOTO G24 / MOTO G34 / REDMI NOTE13 PRO / POCO F5 / F5 PRO / POCO F6 / F6 PRO / POCO X6 / X6 PRO"
+  },
+  {
+    "modelo": "SAMSUNG S24 PLUS",
+    "compatibilidade": "SAMSUNG A54 / SAMSUNG S23 PLUS / SAMSUNG S22 PLUS"
+  },
+  {
+    "modelo": "SAMSUNG A02S",
+    "compatibilidade": "SAMSUNG A02 / A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / M12 / A13 / M13 / A22 5g / A23 / MOTO E13 / MOTO E22 / REDMI A2 / REDMI A1"
+  },
+  {
+    "modelo": "SAMSUNG A02",
+    "compatibilidade": "SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / M12 / A13 / M13 / A22 5g / MOTO E13 / MOTO E22 / REDMI A2 / REDMI A1 REALME C25 / SAMSUNG A23"
+  },
+  {
+    "modelo": "SAMSUNG A03 CORE",
+    "compatibilidade": "SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S / A04 / A04E / A12 / M12 / A13 / M13 / A22 5g / A23 / MOTO E13 / MOTO E22 / REDMI A2 / REDMI A1"
+  },
+  {
+    "modelo": "SAMSUNG A03S",
+    "compatibilidade": "SAMSUNG A02 / A02S/ A02 CORE / A03 /A03 / A04 / A04E / A12 / M12 / A13 / M13 / A22 5g / A23 / MOTO E13 / MOTO E22 / REDMI A2 / REDMI A1 / REALME C25 /"
+  },
+  {
+    "modelo": "SAMSUNG A03",
+    "compatibilidade": "A03S / A03 CORE / A12 / A13 / A70 / M12 / G10 / G30"
+  },
+  {
+    "modelo": "SAMSUNG A04E",
+    "compatibilidade": "SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A12 / M12 / A13 / M13 / A22 5g / A23 / MOTO E13 / MOTO E22 / REDMI A2 / REDMI A1"
+  },
+  {
+    "modelo": "SAMSUNG A04S",
+    "compatibilidade": "SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / M12 / A13 / M13 / A22 5g / A23 / MOTO E13 / MOTO E22 / REDMI A2 / REDMI A1"
+  },
+  {
+    "modelo": "SAMSUNG A04",
+    "compatibilidade": "SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04E / A12 / M12 / A13 / M13 / A22 5g / A23 / MOTO E13 / MOTO E22 / REDMI A2 / REDMI A1"
+  },
+  {
+    "modelo": "ITEL A05S",
+    "compatibilidade": "SAMSUNG A23 / A13 / A12 / A13 / A03S / A23 / A04 / 5G / REDMI 9 POWER / REDMI 9T / A20S / POCO M3 / REDMI 9A / REDMI 9C /"
+  },
+  {
+    "modelo": "SAMSUNG A05S AO5S",
+    "compatibilidade": "REDMI 13C / POCO C65 / SAMSUNG A05 / SAMSUNG A05S / SAMSUNG A06 / REALME NOTE 50 / REALME C51 / REDMI A3 / REALME C63 / REALME C61 / REALME NOTE 60X E 60 / REALME C53"
+  },
+  {
+    "modelo": "SAMSUNG A05 AO5",
+    "compatibilidade": "REDMI 13C / POCO C65 / SAMSUNG A05 / SAMSUNG A05S / SAMSUNG A06 / REALME NOTE 50 / REALME C51 / REDMI A3 / REALME C63 / REALME C61 / REALME C53 / REALME NOTE 60X E 60"
+  },
+  {
+    "modelo": "SAMSUNG A06",
+    "compatibilidade": "REDMI 13C POCO C65 / SAMSUNG A05 / SAMSUNG A05S / REALME NOTE 50 / REALME C51 / REDMI A3 / REALME C63 /REALME C61 / REALME C53 / REALME NOTE 60X E 60"
+  },
+  {
+    "modelo": "SAMSUNG A10s",
+    "compatibilidade": "MOTOROLA MOTO G8 Plus G8 Play G7 Plus / LG K40s / SAMSUNG A10 / M10"
+  },
+  {
+    "modelo": "SAMSUNG A10",
+    "compatibilidade": "SAMSUNG G8 Play G8 Plus G7 Plus"
+  },
+  {
+    "modelo": "SAMSUNG A11 A 11",
+    "compatibilidade": "MOTO G32 / G73 / G71S / XIAOMI REDMI NOTE 11 / NOTE 11S / XIAOMI POCO M3 5G / POCO M4 PRO 4G"
+  },
+  {
+    "modelo": "SAMSUNG A12",
+    "compatibilidade": "LG k50 / SAMSUNG / SAMSUNG A20s / SAMSUNG A03S /SAMSUNG A33 / SAMSUNG M22 / A02 A04 / A13"
+  },
+  {
+    "modelo": "SAMSUNG A13 A13",
+    "compatibilidade": "A23 / A12 / A02 / A03 / A04 / A03S / A02S/ M12/"
+  },
+  {
+    "modelo": "SAMSUNG A14",
+    "compatibilidade": "SAMSUNG A05 E A05S / M14 / MOTO G50 / MOTO E20 / E7 PLUS / E7 POWER G9 NPLAY / G20 / G30 / G10 SAMSUNG A22 / SAMSUNG A13 / A02 /A03 /A04"
+  },
+  {
+    "modelo": "SAMSUNG A15",
+    "compatibilidade": "SAMSUNG A24 / M34 / A34 / A25 / S22+ / M15 / s23fe"
+  },
+  {
+    "modelo": "SAMSUNG A16",
+    "compatibilidade": "SAMSUNG A26 / XIAOMI REDMI 9 POWER / REDMI NOTE 9 4g"
+  },
+  {
+    "modelo": "SAMSUNG A20",
+    "compatibilidade": "SAMSUNG A30 / A50 / A30S / M30 / MOTOROLA ONE ZOOM / G8 PLUS / G8 Play / MOTO ONE MACRO / REDMI NOTE 7 / REDMI NOTE 8 / LG K22"
+  },
+  {
+    "modelo": "SAMSUNG A20s",
+    "compatibilidade": "A 12 / A32 / A03 MOTO One Fusion / REALME C25 / REDMI 9 POWER / REDMI 9 / REDMI NOTE 9 / REDMI 9T /"
+  },
+  {
+    "modelo": "SAMSUNG A21",
+    "compatibilidade": "A21s / MOTO G52 / POCO M3 PRO / MOTO G41"
+  },
+  {
+    "modelo": "SAMSUNG A21s",
+    "compatibilidade": "A21 / A71 / A80 / K51S / K61 / REALME C6 PRO / MOTO G52 / POCO M3 PRO / MOTO G41 / MOTO G62"
+  },
+  {
+    "modelo": "SAMSUNG A22 4G",
+    "compatibilidade": "SAMSUNG A31 / A33 / M31 / M32 / A31 / A33"
+  },
+  {
+    "modelo": "SAMSUNG A22 5G",
+    "compatibilidade": "Samsung A02 / A02s / A03 / A03s / A04 / A04e A04S / A12 / A13 / A 23 / A32 5g / M12 / A22 5G / G10 g20 / g30 / g50 / e7 e7power / e7 plus g9 pay /"
+  },
+  {
+    "modelo": "SAMSUNG A23",
+    "compatibilidade": "SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / M12 / A13 / M13 / A22 5g / REDMI A2 / REDMI A1"
+  },
+  {
+    "modelo": "SAMSUNG A24 4G",
+    "compatibilidade": "SAMSUNG / M34 4G / M21S / M31 /"
+  },
+  {
+    "modelo": "SAMSUNG A25",
+    "compatibilidade": "SAMSUNG M34 / A34 / A15 / S22+ M15"
+  },
+  {
+    "modelo": "SAMSUNG A25",
+    "compatibilidade": "SAMSUNG M34 / A34 / A15 / S22+ M15"
+  },
+  {
+    "modelo": "SAMSUNG A30s",
+    "compatibilidade": "SAMSUNG A30 / A50 / A20 / M30 / MOTOROLA ONE ZOOM / G8 PLUS / G8 Play / MOTO ONE MACRO / REDMI NOTE 7 / REDMI NOTE 8 / LG K22"
+  },
+  {
+    "modelo": "SAMSUNG A30",
+    "compatibilidade": "SAMSUNG A20 / A50 / A30S / M30 / MOTOROLA ONE ZOOM / G8 PLUS / G8 Play / MOTO ONE MACRO / REDMI NOTE 7 / REDMI NOTE 8 / LG K22"
+  },
+  {
+    "modelo": "SAMSUNG A31",
+    "compatibilidade": "A33 / A32 / A22 / M31"
+  },
+  {
+    "modelo": "SAMSUNG A32 5G",
+    "compatibilidade": "SAMSUNG A12 / SAMSUNG M12 / SAMSUNG A13 / SAMSUNG A03S / SAMSUNG M22 / A20S / A02 /"
+  },
+  {
+    "modelo": "SAMSUNG A32 4G",
+    "compatibilidade": "SAMSUNG A33 / A32 4G / A22 4G / A31 4G / M31"
+  },
+  {
+    "modelo": "SAMSUNG A33",
+    "compatibilidade": "SAMSUNG M21S / SAMSUNG M31"
+  },
+  {
+    "modelo": "SAMSUNG A34",
+    "compatibilidade": "SAMSUNG M34 / A15 / A25 / S22+ / M15"
+  },
+  {
+    "modelo": "SAMSUNG A35",
+    "compatibilidade": "SAMSUNG A55 / SAMSUNG M35 / SAMSUNG S23 PLUS / IPHONE 15 PRO MAX / IPHONE 14 PRO MAX / 13 PRO MAX / SAMSUNG S22 PLUS"
+  },
+  {
+    "modelo": "SAMSUNG A36 5g",
+    "compatibilidade": "SAMSUNG A56 / SAMSUNG S24 FE / M35 5g / A35 / A55 /"
+  },
+  {
+    "modelo": "OPPO A40",
+    "compatibilidade": "POCO M6 PRO / POCO X5 / MOTO G35 / REALME C55 / REDMI NOTE 9S 9 PRO / REDMI NOTE 12"
+  },
+  {
+    "modelo": "SAMSUNG A40",
+    "compatibilidade": "SAMSUNG A01"
+  },
+  {
+    "modelo": "SAMSUNG A40S",
+    "compatibilidade": "SAMSUNG M21s / A30 / A20 /A50 / A30s / M30 / A33 / A33 5g / M31 / A32 4g / A22 4g / A31 / M32"
+  },
+  {
+    "modelo": "SAMSUNG A50",
+    "compatibilidade": "SAMSUNG A30 / A20 / A30S / M30 / MOTOROLA ONE ZOOM / G8 PLUS / G8 Play / MOTO ONE MACRO / REDMI NOTE 7 / REDMI NOTE 8 / LG K22"
+  },
+  {
+    "modelo": "SAMSUNG A50S",
+    "compatibilidade": "A20 / A30 / A31 / A50 / M31 / K40S"
+  },
+  {
+    "modelo": "SAMSUNG A51",
+    "compatibilidade": "A52 / A52S / A52 5G / S20 FE / NOTE 10 / NOTE 11"
+  },
+  {
+    "modelo": "SAMSUNG A52S 5g",
+    "compatibilidade": "MOTOROLA MOTO G52 / G 82 / G84 / MOTO G72 / MOTOROLA EDGE 30 / SAMSUNG S23 PLUS / MI 11 LIGHT / RFEDMI NOTE 11 / NOTE 11S"
+  },
+  {
+    "modelo": "SAMSUNG A52",
+    "compatibilidade": "A31 REDMI NOTE 10 S / REALME 7 PRO / A11 / A53 / A51 REDIMI NOTE 11 4G"
+  },
+  {
+    "modelo": "SAMSUNG A53 A 53",
+    "compatibilidade": "REDMI NOTE 10 / a52 /RM NOTE 10 4G / RM NOTE 10 S"
+  },
+  {
+    "modelo": "SAMSUNG A54 A 54",
+    "compatibilidade": "SAMSUNG S22+ / S24 SAMSUNG S23 FE"
+  },
+  {
+    "modelo": "SAMSUNG A55",
+    "compatibilidade": "SAMSUNG A35 / SAMSUNG M35 / SAMSUNG S23 PLUS / IPHONE 15 PRO MAX / IPHONE 14 PRO MAX / 13 PRO MAX / SAMSUNG S22 PLUS"
+  },
+  {
+    "modelo": "SAMSUNG A56",
+    "compatibilidade": "SAMSUNG A36 5g / SAMSUNG S24 FE / M35 5g / A35 / A55 /"
+  },
+  {
+    "modelo": "OPPO A56S",
+    "compatibilidade": "SAMSUNG A02 / A02S / A03 / A12 / A13 / A23 / A04 / REALME C33"
+  },
+  {
+    "modelo": "ITEL A60",
+    "compatibilidade": "XIAOMI REDMI 12 4G / MOTO G60S / MOTOROLA EDGE 20 LITE / SAMSUNG A73"
+  },
+  {
+    "modelo": "ITEL A60S",
+    "compatibilidade": "SAMSUNG A02 / A03 /A12/ A13 / A04 / M33 / M23 MOTO E22 / MOTO E13 / XIAOMI POCO M5 / XIAOMI POCO M4 / REALME C11"
+  },
+  {
+    "modelo": "SAMSUNG M02",
+    "compatibilidade": "A12 / A20S / A32 5G / M12 / NOTE 9 4G / K50S"
+  },
+  {
+    "modelo": "SAMSUNG M10S",
+    "compatibilidade": "A10S / A20 / A30S / G8 PLUS / G8 PLAY / NOTE 7 / NOTE 8"
+  },
+  {
+    "modelo": "SAMSUNG M11",
+    "compatibilidade": "A11 / G8 / ONE FUSION PLUS / ONE HYPER / NOTE 9 / K50S / MOTO G32 / G73 / G71S / XIAOMI REDMI NOTE 11 / NOTE 11S / XIAOMI POCO M3 5G / POCO M4 PRO 4G"
+  },
+  {
+    "modelo": "SAMSUNG M12",
+    "compatibilidade": "SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / M12 / A13 / M13 / A22 5g / A23 / MOTO E13 / MOTO E22 / REDMI A2 / REDMI A1"
+  },
+  {
+    "modelo": "SAMSUNG M12",
+    "compatibilidade": "SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / M12 / A13 / M13 / A22 5g / A23 / MOTO E13 / MOTO E22 / REDMI A2 / REDMI A1"
+  },
+  {
+    "modelo": "SAMSUNG M14",
+    "compatibilidade": "SAMSUNG A14 / MOTO G50 / MOTO E20 / E7 PLUS / E7 POWER / G9 NPLAY / G20 / G30 / G10 SAMSUNG A22 / A13 / A02 /A03 /A04"
+  },
+  {
+    "modelo": "SAMSUNG M15",
+    "compatibilidade": "SAMSUNG / M34 / A15 / A25 / S22+"
+  },
+  {
+    "modelo": "SAMSUNG M20",
+    "compatibilidade": "G8 Plus G8 Play G7 Plus K40s / SAMSUNG A10 / M10"
+  },
+  {
+    "modelo": "SAMSUNG M21",
+    "compatibilidade": "M21S / A20 / A30S / G8 PLUS / NOTE 8"
+  },
+  {
+    "modelo": "SAMSUNG M21S",
+    "compatibilidade": "A30S / A20 G8 Plus M10s A12 / M31"
+  },
+  {
+    "modelo": "SAMSUNG M22",
+    "compatibilidade": "A20"
+  },
+  {
+    "modelo": "SAMSUNG M23 M 23",
+    "compatibilidade": "SAMSUNG A23 / A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / M12 / A13 / M13 / A22 5g / MOTO E13 / MOTO E22 / REDMI A2 / REDMI A1 REALME C11"
+  },
+  {
+    "modelo": "SAMSUNG M23 M 23",
+    "compatibilidade": "SAMSUNG A23 / A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / M12 / A13 / M13 / A22 5g / MOTO E13 / MOTO E22 / REDMI A2 / REDMI A1 REALME C11"
+  },
+  {
+    "modelo": "SAMSUNSUNG M30",
+    "compatibilidade": "SAMSUNG M10S / A50S / A30S / A20"
+  },
+  {
+    "modelo": "SAMSUNG M31S",
+    "compatibilidade": "SAMSUNG A51 / A52 / S20FE / NOTE 10"
+  },
+  {
+    "modelo": "SAMSUNG M31",
+    "compatibilidade": "A30S / A20 / G8 Plus M10s /"
+  },
+  {
+    "modelo": "SAMSUNG M32",
+    "compatibilidade": "SAMSUNG A22 4G / A32 4G / A31 / A33 5G"
+  },
+  {
+    "modelo": "SAMSUNG M33",
+    "compatibilidade": "MOTO E22 / SAMSUNG A02 / A03 / A12 / A13 / A04 / A20S / A32 5G / XIAO MI POCO M5 / M4 / M3 / M2 / REALME C11"
+  },
+  {
+    "modelo": "SAMSUNG M34 5G",
+    "compatibilidade": "SAMSUNG A15 / A25 / A34 4G / S22+ M15"
+  },
+  {
+    "modelo": "SAMSUNG M35",
+    "compatibilidade": "SAMSUNG A55 / SAMSUNG S23 PLUS / IPHONE 15 PRO MAX / IPHONE 14 PRO MAX / 13 PRO MAX / SAMSUNG S22 PLUS"
+  },
+  {
+    "modelo": "SAMSUNG M42",
+    "compatibilidade": "SAMSUNG A42"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G81",
+    "compatibilidade": "MOTO G52 / MOTO G32 / G13 / G54 / G24"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G8 POWER LITE",
+    "compatibilidade": "MOTO G9 / G9 PLAY / E7 POWER / E7 PLUS / A70 / K50S / K41S / REDMI 9 / REDMI 9A / REDMI 9C"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G82 G 82",
+    "compatibilidade": "MOTO G52 / G71S / G84 / MOTOROLA EDGE 30 / REDMI NOTE 10 / NOTE 11 NOTE 11S / SAMSUNG A51 / XIAO MI POCO M4 PRO 4G / POCO M5S"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G8 PLAY",
+    "compatibilidade": "MOTO G7 / MOTO ONE MACRO / E6 PLUS / A10 / NOTE 8 / K40S"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G8",
+    "compatibilidade": "REDMI NOTE 13 PRO PLUS / REDMI NOTE 14S / G8 POWER / SAMSUNG A11 / ONE HYPER / NOTE 9 / NOTE 9S / NOTE 10 LITE"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G8 POWER",
+    "compatibilidade": "MOTO G8 / ONE HYPER / A11 / NOTE 9"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G8 PLUS",
+    "compatibilidade": "MOTO G7 / MOTO ONE MACRO / E6 PLUS / A10 / NOTE 8 / G8 / POCO M3 PRO / A53 K40S MOTO G8 PLAY"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G84 G 84",
+    "compatibilidade": "SAMSUNG S20 FE / SAMSUNUNG A52 5G / A52 / XIAOMI -->>NOTE 10 / NOTE 11 / NOTE 12S / NOTE 10S / NOTE 11S / NOTE 11 LITE / XIAOMI POCO M4 PRO 4G / POCO M5S"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G8 POWER LITE",
+    "compatibilidade": "MOTO G9 / G9 PLAY / E7 POWER / E7 PLUS / A70 / K50S / K41S / REDMI 9 / REDMI 9A / REDMI 9C"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G8 POWER",
+    "compatibilidade": "MOTO G8 / ONE HYPER / A11 / NOTE 9"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G8 PLUS",
+    "compatibilidade": "MOTO G7 / MOTO ONE MACRO / E6 PLUS / A10 / NOTE 8 / G8 / POCO M3 PRO / A53 K40S MOTO G8 PLAY"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G8 PLAY",
+    "compatibilidade": "MOTO G7 / MOTO ONE MACRO / E6 PLUS / A10 / NOTE 8 / K40S"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G9 PLUS",
+    "compatibilidade": "MOTOROLA G 40 FUSION"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G9 PLAY",
+    "compatibilidade": "MOTOROLA G10 / G20 / G30 / G50 / E7 / E7 POWER / E7 PLUS / MOTO E22 / MOTO ONE MACRO / MOTO E 13 / MOTO E22 / MOTO E 20 / REALME C25 / REALME C11 / LG K41S / LG K12 PRIME / LG K50S / SAMSUNG A20S / SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / A13 / A23 5G / A23 5G"
+  },
+  {
+    "modelo": "MOTO G9 POWER",
+    "compatibilidade": "MOTO G200"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G9 PLAY",
+    "compatibilidade": "MOTOROLA G10 / G20 / G30 / G50 / E7 / E7 POWER / E7 PLUS / MOTO E22 / MOTO ONE MACRO / MOTO E 13 / MOTO E22 / MOTO E 20 / REALME C25 / REALME C11 / LG K41S / LG K12 PRIME / LG K50S / SAMSUNG A20S / SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / A13 / A23 5G / A23 5G"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G9 PLUS",
+    "compatibilidade": "MOTOROLA G 40 FUSION"
+  },
+  {
+    "modelo": "MOTO G9 POWER",
+    "compatibilidade": "MOTO G200"
+  },
+  {
+    "modelo": "MOTO G9 POWER",
+    "compatibilidade": "MOTO G200"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G20",
+    "compatibilidade": "MOTOROLA G10 / G30 / G50 / E7 / E7 POWER / E7 PLUS / G9 PLAY / MOTO E22 / MOTO ONE MACRO / MOTO E 13 / MOTO E22 / MOTO E 20 / REALME C25 / REALME C11 / LG K41S / LG K12 PRIME / LG K50S / SAMSUNG A20S / SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / A13 / A23 5G / A23 5G"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G30",
+    "compatibilidade": "MOTOROLA G10 / G20 / G50 / E7 / E7 POWER / E7 PLUS / G9 PLAY / MOTO E22 / MOTO ONE MACRO / MOTO E 13 / MOTO E22 / MOTO E 20 / REALME C25 / REALME C11 / LG K41S / LG K12 PRIME / LG K50S / SAMSUNG A20S / SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / A13 / A23 5G / A23 5G"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G31 G 31",
+    "compatibilidade": "MOTOG 41 / MOTO G32 / MOTO G 8 / MOTO G 71 / REDMI NOTE 10 / A52 / A11 / S 20 FE /"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G40 FUSION",
+    "compatibilidade": "MOTO G60 / MOTO G 9 PLUS / MOTO G200"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G50 5G",
+    "compatibilidade": "MOTOROLA G10 / G20 / G30 / E7 / E7 POWER / E7 PLUS / G9 PLAY / MOTO E22 / MOTO ONE MACRO / MOTO E 13 / MOTO E22 / MOTO E 20 / REALME C25 / REALME C11 / LG K41S / LG K12 PRIME / LG K50S / SAMSUNG A20S / SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / A13 / A23 5G / A23 5G"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G51 5G",
+    "compatibilidade": "MOTO G60 / G60S / G 40 FUSION / G9 PLUS / G200"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G52",
+    "compatibilidade": "MOTO G71S / G82 / G84 / MOTOROLA EDGE 30 / SAMSUNG A51 / XIAO MI POCO M4 PRO 4G / POCO M5S"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G71 G 71",
+    "compatibilidade": "A53 / MOTO G41 / A41 / MOTO G52 / G71 / G62 / G53 / G32 / G13 / G22 / G54 REALME 7 PRO"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G71S",
+    "compatibilidade": "MOTO G52 / G82 / G84 / MOTOROLA EDGE 30 / REDMI NOTE 10 / NOTE 11 NOTE 11S / SAMSUNG A51 / XIAO MI POCO M4 PRO 4G / POCO M5S"
+  },
+  {
+    "modelo": "MOTO G72",
+    "compatibilidade": "A73 / M51 / A52 / A71 / A72 / A21S / A21 / MOTO G STYLUS / REDMI NOTE 10 / REDMI NOTE 10S / REDMI NOTE 10 PRO / MI 11 i / XIAOMI MI 11 LITE"
+  },
+  {
+    "modelo": "MOTOROLA MOTO E6S",
+    "compatibilidade": "MOTOROLA MOTO E6 PLUS / E6i / LG K40S"
+  },
+  {
+    "modelo": "MOTOROLA MOTO E7 PLUS",
+    "compatibilidade": "MOTOROLA G10 / G20 / G30 / G50 / E7 / E7 POWER / G9 PLAY / MOTO E22 / MOTO ONE MACRO / MOTO E 13 / MOTO E22 / MOTO E 20 / REALME C25 / REALME C11 / LG K41S / LG K12 PRIME / LG K50S / SAMSUNG A20S / SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / A13 / A23 5G / A23 5G"
+  },
+  {
+    "modelo": "MOTOROLA MOTO E7 POWER",
+    "compatibilidade": "MOTOROLA G10 / G20 / G30 / G50 / E7 / E7 PLUS / G9 PLAY / MOTO E22 / MOTO ONE MACRO / MOTO E 13 / MOTO E22 / MOTO E 20 / REALME C25 / REALME C11 / LG K41S / LG K12 PRIME / LG K50S / SAMSUNG A20S / SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / A13 / A23 5G / A23 5G"
+  },
+  {
+    "modelo": "MOTOROLA MOTO E7",
+    "compatibilidade": "MOTOROLA G10 / G20 / G30 / G50 / E7 POWER / E7 PLUS / G9 PLAY / MOTO E22 / MOTO ONE MACRO / MOTO E 13 / MOTO E22 / MOTO E 20 / REALME C25 / REALME C11 / LG K41S / LG K12 PRIME / LG K50S / SAMSUNG A20S / SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / A13 / A23 5G /"
+  },
+  {
+    "modelo": "MOTOROLA MOTO E7 PLUS",
+    "compatibilidade": "MOTOROLA G10 / G20 / G30 / G50 / E7 / E7 POWER / G9 PLAY / MOTO E22 / MOTO ONE MACRO / MOTO E 13 / MOTO E22 / MOTO E 20 / REALME C25 / REALME C11 / LG K41S / LG K12 PRIME / LG K50S / SAMSUNG A20S / SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / A13 / A23 5G / A23 5G"
+  },
+  {
+    "modelo": "MOTOROLA MOTO E20",
+    "compatibilidade": "SAMSUNG A02S / MOTO G30 / MOTO G10 / MOTO E 7 POWER / ONE FUSION / REALME C25 / REALME C11 / E13 / SAMSUNG A23 / G50 / XIAOMI 9C 9I 9A"
+  },
+  {
+    "modelo": "MOTOROLA MOTO E22 E 22",
+    "compatibilidade": "K41S / ONE FUSION / MOTO G30 / E7 PLUS / A02S / REALME C25 / REALME C11 / SAMSUNG A23 / E 20 / G20 / E13"
+  },
+  {
+    "modelo": "MOTO E22S",
+    "compatibilidade": "SAMSUNG G22 / G23 / A72 / MOTO E 22/ LG K52 / LG K62 / MOTO E32 LG K62"
+  },
+  {
+    "modelo": "MOTOROLA MOTO E30",
+    "compatibilidade": "MOTOROLA MOTO E40 / MOTO G24 / MOTO G04 / SAMSUNG A21 /A21S"
+  },
+  {
+    "modelo": "MOTOROLA MOTO E32 E 32",
+    "compatibilidade": "MOTO G22 / MOTO G62 / MOTO G32 / LG K52 / LG K62 / MI POCO F3 / G22 / E32S"
+  },
+  {
+    "modelo": "MOTOROLA MOTO E32s",
+    "compatibilidade": "MOTO G22 / MOTO G62 / MOTO G32 / LG K52 / LG K62 / MI POCO F3 / G22 / E32"
+  },
+  {
+    "modelo": "MOTOROLA MOTO E13 E 13",
+    "compatibilidade": "MOTO G30 / G10 / G30 / SAMSUNG A23 / E20 / ONE FUSION / G50"
+  },
+  {
+    "modelo": "MOTOROLA EDGE 50 ULTRA",
+    "compatibilidade": "MOTOROLA EDGE 30 ULTRA / MOTOROLA EDGE 50 PRO"
+  },
+  {
+    "modelo": "MOTOROLA EDGE 30 NEO",
+    "compatibilidade": "XIAOMI REDMI 14 / MOTOROLA EDGE 50"
+  },
+  {
+    "modelo": "MOTOROLA EDGE 50 NEO",
+    "compatibilidade": "XIAOMI REDMI 14 / MOTOROLA EDGE 30"
+  },
+  {
+    "modelo": "MOTOROLA EDGE 50 PRO",
+    "compatibilidade": "REALME 12 PRO + atenção peliculas curvas"
+  },
+  {
+    "modelo": "MOTOROLA EDGE 20",
+    "compatibilidade": "A80 / A70 / MOTOROLA EDGE X30 / MOTOROLA EDGE X30 PRO"
+  },
+  {
+    "modelo": "MOTOROLA EDGE 30 PRO",
+    "compatibilidade": "A52 / MOTO G8 / MOTO G52 / A11 / MOTO G41 / XIAOMI 11 LITE / POCO M3 / REALME C6 PRO"
+  },
+  {
+    "modelo": "MOTOROLA EDGE X30",
+    "compatibilidade": "A52 / MOTO G8 / MOTO G52 / A11 / MOTO G41 / G62 / POCO M3 / REALME C6 PRO"
+  },
+  {
+    "modelo": "MOTOROLA MOTOROLA EDGE S",
+    "compatibilidade": "MOTO G100"
+  },
+  {
+    "modelo": "MOTOROLA MOTOROLA EDGE 30",
+    "compatibilidade": "MOTO ROLA MOTO G84 / XIAOMI POCO M4 PRO 4G / POCO M5S / XIAOMI REDMI NOTE 11 / NOTE 11S"
+  },
+  {
+    "modelo": "MOTOROLA EDGE 20 LITE",
+    "compatibilidade": "MOTO G15 / MOTO G35 / MOTO G75 / A80 / A70 / MOTOROLA EDGE X30 / MOTOROLA EDGE X30 PRO / XIAOMI REDMI NOTE 10 PRO / XIAOMI MI 11i"
+  },
+  {
+    "modelo": "MOTOROLA EDGE 20 LITE",
+    "compatibilidade": "MOTO G15 / MOTO G35 / MOTO G75 / A80 / A70 / MOTOROLA EDGE X30 / MOTOROLA EDGE X30 PRO / XIAOMI REDMI NOTE 10 PRO / XIAOMI MI 11i"
+  },
+  {
+    "modelo": "MOTOROLA EDGE 20",
+    "compatibilidade": "A80 / A70 / MOTOROLA EDGE X30 / MOTOROLA EDGE X30 PRO"
+  },
+  {
+    "modelo": "MOTOROLA EDGE 20 LITE",
+    "compatibilidade": "MOTO G15 / MOTO G35 / MOTO G75 / A80 / A70 / MOTOROLA EDGE X30 / MOTOROLA EDGE X30 PRO / XIAOMI REDMI NOTE 10 PRO / XIAOMI MI 11i"
+  },
+  {
+    "modelo": "MOTOROLA EDGE 30 PRO",
+    "compatibilidade": "A52 / MOTO G8 / MOTO G52 / A11 / MOTO G41 / XIAOMI 11 LITE / POCO M3 / REALME C6 PRO"
+  },
+  {
+    "modelo": "MOTOROLA EDGE 30 NEO",
+    "compatibilidade": "XIAOMI REDMI 14 / MOTOROLA EDGE 50"
+  },
+  {
+    "modelo": "MOTOROLA MOTOROLA EDGE 30",
+    "compatibilidade": "MOTO ROLA MOTO G84 / XIAOMI POCO M4 PRO 4G / POCO M5S / XIAOMI REDMI NOTE 11 / NOTE 11S"
+  },
+  {
+    "modelo": "MOTOROLA EDGE 30 PRO",
+    "compatibilidade": "A52 / MOTO G8 / MOTO G52 / A11 / MOTO G41 / XIAOMI 11 LITE / POCO M3 / REALME C6 PRO"
+  },
+  {
+    "modelo": "MOTOROLA EDGE 30 NEO",
+    "compatibilidade": "XIAOMI REDMI 14 / MOTOROLA EDGE 50"
+  },
+  {
+    "modelo": "MOTOROLA MOTOROLA EDGE 30",
+    "compatibilidade": "MOTO ROLA MOTO G84 / XIAOMI POCO M4 PRO 4G / POCO M5S / XIAOMI REDMI NOTE 11 / NOTE 11S"
+  },
+  {
+    "modelo": "MOTOROLA EDGE 30 NEO",
+    "compatibilidade": "XIAOMI REDMI 14 / MOTOROLA EDGE 50"
+  },
+  {
+    "modelo": "MOTOROLA EDGE 30 PRO",
+    "compatibilidade": "A52 / MOTO G8 / MOTO G52 / A11 / MOTO G41 / XIAOMI 11 LITE / POCO M3 / REALME C6 PRO"
+  },
+  {
+    "modelo": "XIAOMI REDMI 10 4G",
+    "compatibilidade": "XIAOMI NOTE 10 / NOTE 10S / NOTE 11 / NOTE 11 S / NOTE 10 LITE /REDMI 10 / XIAOMI POCO M5S"
+  },
+  {
+    "modelo": "XIAOMI REDMI 10 POWER",
+    "compatibilidade": "REDMI 10C / REDMI 12C"
+  },
+  {
+    "modelo": "XIAOMI MI 10 T",
+    "compatibilidade": "A73 / A11 / POCO F3 / MOTO G 71 / MOTO G41 / REALME C6 PRO / MOTO G52 / A21S / A21 / A52"
+  },
+  {
+    "modelo": "XIAOMI REDMI 10",
+    "compatibilidade": "XIAOMI NOTE 10 / NOTE 11 / NOTE 12S /NOTE 10S /11 LIGHT"
+  },
+  {
+    "modelo": "XIAOMI REDMI 10C",
+    "compatibilidade": "REDMI 12C / REDMI 10 POWER / MOTO G 10 / G20 / G30 / MOTO E 7"
+  },
+  {
+    "modelo": "REDMI 10A",
+    "compatibilidade": "REDIMI 9A / 9C / REDMI 10A / SAMSUNG A12 / A02 / POCO C31 / REDMI / A9i / AO3"
+  },
+  {
+    "modelo": "XIAOMI MI 11 LITE",
+    "compatibilidade": "A52 /G52 / A53 / POCO M3 PRO /G8 POWER / G82 /NOTE10S / REALME 7PRO / REDMI NOTE 10 / NOTE 10 PRO"
+  },
+  {
+    "modelo": "XIAOMI MI 11",
+    "compatibilidade": "MI 11 PRO / MI 11 ULTRA"
+  },
+  {
+    "modelo": "XIAOMI MI 11i 11 i",
+    "compatibilidade": "A11 / A52 / S20 FE / XIAOMI 11 LITE / POCO F3 / MOTO ONE HYPER"
+  },
+  {
+    "modelo": "XIAOMI REDMI 11 PRIME",
+    "compatibilidade": "SAMSUNG A02 / A02s / A12 / A03 / A04 / MOTO E22 / A32 5g / POCO M4 / M33 / POCO M5"
+  },
+  {
+    "modelo": "XIAOMI MI 11 LITE",
+    "compatibilidade": "A52 /G52 / A53 / POCO M3 PRO /G8 POWER / G82 /NOTE10S / REALME 7PRO / REDMI NOTE 10 / NOTE 10 PRO"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 9",
+    "compatibilidade": "REDMI NOTE 13 PRO PLUS / REDMI NOTE 14S / MOTO G84 / G72 / POCO M3 PRO 5G / REDMI NOTE 11 / 11S / SAMSUNG A11 / MI 11 LITE"
+  },
+  {
+    "modelo": "XIAMI REDMI NOTE 9 PRO 4G",
+    "compatibilidade": "REDMI NOTE 9s / SAMSUNG M55 5g / M62 / M52 5g / XIAOMI POCO M4 PRO 5g / 13T / 13T PRO / X5 / X5 PRO / NOTE 13 PRO / MOTOROLA MOTO G04"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 9S",
+    "compatibilidade": "REDMI NOTE 9 PRO / SAMSUNG M55 5g / M62 / M52 5g / XIAOMI POCO M4 PRO 5g / 13T / 13T PRO / X5 / X5 PRO / NOTE 13 PRO / MOTOROLA MOTO G04 / REDMI NOTE 14"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 9S",
+    "compatibilidade": "REDMI NOTE 9 PRO / SAMSUNG M55 5g / M62 / M52 5g / XIAOMI POCO M4 PRO 5g / 13T / 13T PRO / X5 / X5 PRO / NOTE 13 PRO / MOTOROLA MOTO G04 / REDMI NOTE 14"
+  },
+  {
+    "modelo": "XIAMI REDMI NOTE 9 PRO 4G",
+    "compatibilidade": "REDMI NOTE 9s / SAMSUNG M55 5g / M62 / M52 5g / XIAOMI POCO M4 PRO 5g / 13T / 13T PRO / X5 / X5 PRO / NOTE 13 PRO / MOTOROLA MOTO G04"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 10 PRO",
+    "compatibilidade": "REALME C6 PRO / G71 / M51 / A21S / A21 / A11 / A52 /MOTO ONE FUSION / XIAOMI MI 11i / REDMI NOTE 10"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 10S",
+    "compatibilidade": "XIAOMI NOTE 10 / NOTE 11 / NOTE 11 S / NOTE 10 LITE / NOTE 10 4G /REDMI 10 / XIAOMI POCO M5S"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 10 5G",
+    "compatibilidade": "NOTE 10T / NOTE 11 SE"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 10",
+    "compatibilidade": "XIAOMI NOTE 10 / NOTE 10S / NOTE 11 / NOTE 11 S / NOTE 10 LITE / NOTE 10 4G /REDMI 10 / XIAOMI POCO M5S"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 10 LITE",
+    "compatibilidade": "XIAOMI NOTE 10 / NOTE 10S / NOTE 11 / NOTE 11 S / NOTE 10 4G /REDMI 10 / XIAOMI POCO M5S"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 10 PRO",
+    "compatibilidade": "REALME C6 PRO / G71 / M51 / A21S / A21 / A11 / A52 /MOTO ONE FUSION / XIAOMI MI 11i / REDMI NOTE 10"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 10S",
+    "compatibilidade": "XIAOMI NOTE 10 / NOTE 11 / NOTE 11 S / NOTE 10 LITE / NOTE 10 4G /REDMI 10 / XIAOMI POCO M5S"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 11 PRO",
+    "compatibilidade": "REDMI NOTE 13 / REDMI NOTE 14 / NOTE 12 PRO / NOTE 10 PRO / G53 / G52 / A71 / A72 / A82 / K52"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 11S 11 S",
+    "compatibilidade": "XIAOMI NOTE 10 / NOTE 10S / NOTE 11 / / NOTE 10 LITE / NOTE 10 4G /REDMI 10 / XIAOMI POCO M5S"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 11 PRO MAX",
+    "compatibilidade": "REALME C6 PRO / G71 / M51 / A21S / A21 / A11 / A52 /MOTO ONE FUSION / XIAOMI MI 11i / REDMI NOTE 10 PRO"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 11 5G",
+    "compatibilidade": "NOTE 11 T 5G / POCO M4 PRO 5G"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 11",
+    "compatibilidade": "XIAOMI NOTE 10 / NOTE 10S / NOTE 11 S / NOTE 10 LITE / NOTE 10 4G /REDMI 10 / XIAOMI POCO M5S"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 11S 11 S",
+    "compatibilidade": "XIAOMI NOTE 10 / NOTE 10S / NOTE 11 / / NOTE 10 LITE / NOTE 10 4G /REDMI 10 / XIAOMI POCO M5S"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 11 PRO MAX",
+    "compatibilidade": "REALME C6 PRO / G71 / M51 / A21S / A21 / A11 / A52 /MOTO ONE FUSION / XIAOMI MI 11i / REDMI NOTE 10 PRO"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 11 PRO",
+    "compatibilidade": "REDMI NOTE 13 / REDMI NOTE 14 / NOTE 12 PRO / NOTE 10 PRO / G53 / G52 / A71 / A72 / A82 / K52"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 12S",
+    "compatibilidade": "XIAOMI NOTE 10 / NOTE 10S / NOTE 11 / NOTE 11 S / NOTE 10 LITE / NOTE 10 4G /REDMI 10 / XIAOMI POCO M5S"
+  },
+  {
+    "modelo": "XIAOMI REDMI 9A",
+    "compatibilidade": "A23 / A12 / A32 / MOTO E 7 PLUS / A23 / A03S / REDMI 9 POWER / REDMI 9T / REALME C11 / REALME C25 / POCO M3 / REDMI 9C / REDMI 9I"
+  },
+  {
+    "modelo": "XIAOMI REDMI 9A",
+    "compatibilidade": "ONE FUSION / A12 / A02 / A03 / A04 / A13 / A22 5G / A23 5G"
+  },
+  {
+    "modelo": "XIAOMI REDMI 9A",
+    "compatibilidade": "9C / 9I / 9I SPORT / K50S / A12 / A20S / A23"
+  },
+  {
+    "modelo": "XIAOMI REDMI 9C",
+    "compatibilidade": "A23 / A12 / A32 GG / A04 / A02 / A03 MOTO E 7 PLUS / A03S / REDMI 9 POWER / REDMI 9T / REALME C11 / REALME C25 / POCO M3 / A20S REDMI 9A / REDMI 9I"
+  },
+  {
+    "modelo": "XIAOMI REDMI 10 POWER",
+    "compatibilidade": "REDMI 10C / REDMI 12C"
+  },
+  {
+    "modelo": "XIAOMI REDMI 10 4G",
+    "compatibilidade": "XIAOMI NOTE 10 / NOTE 10S / NOTE 11 / NOTE 11 S / NOTE 10 LITE /REDMI 10 / XIAOMI POCO M5S"
+  },
+  {
+    "modelo": "XIAOMI REDMI 10C",
+    "compatibilidade": "REDMI 12C / REDMI 10 POWER / MOTO G 10 / G20 / G30 / MOTO E 7"
+  },
+  {
+    "modelo": "REDMI 10A",
+    "compatibilidade": "REDIMI 9A / 9C / REDMI 10A / SAMSUNG A12 / A02 / POCO C31 / REDMI / A9i / AO3"
+  },
+  {
+    "modelo": "XIAOMI REDMI 10",
+    "compatibilidade": "XIAOMI NOTE 10 / NOTE 11 / NOTE 12S /NOTE 10S /11 LIGHT"
+  },
+  {
+    "modelo": "REDMI 10A",
+    "compatibilidade": "REDIMI 9A / 9C / REDMI 10A / SAMSUNG A12 / A02 / POCO C31 / REDMI / A9i / AO3"
+  },
+  {
+    "modelo": "XIAOMI REDMI 10C",
+    "compatibilidade": "REDMI 12C / REDMI 10 POWER / MOTO G 10 / G20 / G30 / MOTO E 7"
+  },
+  {
+    "modelo": "XIAOMI REDMI 12 4G",
+    "compatibilidade": "POCO X5 / REALME C55 / POCO C65 5g"
+  },
+  {
+    "modelo": "XIAOMI REDMI 13C",
+    "compatibilidade": "POCO C65 / SAMSUNG A05 / SAMSUNG A05S / SAMSUNG A06 / REALME NOTE 50 / REALME C51 / REDMI A3 / REALME C63 / REALME C61 / REALME NOTE 60X E 60"
+  },
+  {
+    "modelo": "POCO X3 GT",
+    "compatibilidade": "MOTOROLA MOTO G04 / G 04S / REDMI NOTE 13 / XIAOMI 13 T PRO / POCO M4 5G / POCO X5 PRO / POCO F5 PRO / SAMSUNG M53 / M62 / M52 5G"
+  },
+  {
+    "modelo": "POCO X3 PRO",
+    "compatibilidade": "REDMI NOTE 13 / REDMI NOTE 14 / NOTE 12 / SAMSUNG A 80 / POCO X 5 PRO"
+  },
+  {
+    "modelo": "POCO X3",
+    "compatibilidade": "POCO X4 PRO / NOTE 9S / NOTE 9 PRO / XIAOMI 1OT / POCO M3 PRO / XIAOMI MI 11i"
+  },
+  {
+    "modelo": "POCO X3 PRO",
+    "compatibilidade": "REDMI NOTE 13 / REDMI NOTE 14 / NOTE 12 / SAMSUNG A 80 / POCO X 5 PRO"
+  },
+  {
+    "modelo": "POCO X4 PRO",
+    "compatibilidade": "REDMI NOTE 13 / POCO X3 / NOTE 9S / NOTE 9 PRO"
+  },
+  {
+    "modelo": "POCO X5",
+    "compatibilidade": "REDMI NOTE 12 / REDMI NOTE 13 / REDMI NOTE 14 / MOTO G04 / SAMSUNG M53 / M52 5G / M51 / M54 5G / M62 / POCO M4 PRO 5G / LG K62"
+  },
+  {
+    "modelo": "POCO X5 PRO",
+    "compatibilidade": "REDMI NOTE 13 / REDMI NOTE 14 4G / MOTO G04 / SAMSUNG M53 / M52 5G / M51 / M54 5G / M62 / POCO M4 PRO 5G / LG K62"
+  },
+  {
+    "modelo": "POCO X5 PRO",
+    "compatibilidade": "REDMI NOTE 13 / REDMI NOTE 14 4G / MOTO G04 / SAMSUNG M53 / M52 5G / M51 / M54 5G / M62 / POCO M4 PRO 5G / LG K62"
+  },
+  {
+    "modelo": "POCO X6",
+    "compatibilidade": "REDMI NOTE 13 PRO / REDMI NOTE 14S / REDMI NOTE 13 PRO PLUS / MOTO G34 / MOTO G73 / G32 / G13 / G23"
+  },
+  {
+    "modelo": "POCO X6 PRO 5G",
+    "compatibilidade": "REDMI NOTE 13 PRO / MOTO G34 / MOTO G73 / G32 / G13 / G23"
+  },
+  {
+    "modelo": "POCO X6 PRO",
+    "compatibilidade": "REDMI NOTE 13 PRO / MOTO G34 / MOTO G73 / G32 / G13 / G23"
+  },
+  {
+    "modelo": "POCO X6 PRO 5G",
+    "compatibilidade": "REDMI NOTE 13 PRO / MOTO G34 / MOTO G73 / G32 / G13 / G23"
+  },
+  {
+    "modelo": "POCO X6 PRO",
+    "compatibilidade": "REDMI NOTE 13 PRO / MOTO G34 / MOTO G73 / G32 / G13 / G23"
+  },
+  {
+    "modelo": "XIAOMI POCO F3 PRO",
+    "compatibilidade": "MOTO G62 / A52 / A11 / MOTO G41 / XM POCO M3 PRO 4G / MOTO ONE FUSION G22 F4 / NOTE 11 PRO / A71 / G22"
+  },
+  {
+    "modelo": "POCO F3",
+    "compatibilidade": "XIAOMI REDMI NOTE 13 /REDMI NOTE 14 / MOTOROLA MOTO G04 /04S / SAMSUNG M53 / M62 / M52 5G / M55 / XIAOMI POCO M4 PRO 5G / POCO X5 PRO / POCO F5 PRO"
+  },
+  {
+    "modelo": "POCO F3",
+    "compatibilidade": "MOTO G62 / A52 / A11 / MOTO G41 / XM POCO M3 PRO 4G / MOTO ONE FUSION G22 F4 / NOTE 11 PRO / A71 / G22"
+  },
+  {
+    "modelo": "POCO F4",
+    "compatibilidade": "POCO F3 / POCO F4 GT / POCO X3 NFC / POCO X4 PRO / POCO M3 / POCO M4 PRO 5G / SAMSUNG A72"
+  },
+  {
+    "modelo": "POCO F5 PRO",
+    "compatibilidade": "MOTOROLA MOTO M G13 / G32 / G53 / MI 11 LITE / POCO F5 PRO / XIAOMI REDMI NOTE 13 PRO PLUS / REDMI NOTE 14S /"
+  },
+  {
+    "modelo": "XIAOMI POCO F5",
+    "compatibilidade": "MOTOROLA MOTO M G13 / G32 / G53 / MI 11 LITE / POCO F5 PRO / XIAOMI REDMI NOTE 13 PRO PLUS /"
+  },
+  {
+    "modelo": "POCO F5 PRO",
+    "compatibilidade": "MOTOROLA MOTO M G13 / G32 / G53 / MI 11 LITE / POCO F5 PRO / XIAOMI REDMI NOTE 13 PRO PLUS / REDMI NOTE 14S /"
+  },
+  {
+    "modelo": "XIAOMI POCO F5",
+    "compatibilidade": "MOTOROLA MOTO M G13 / G32 / G53 / MI 11 LITE / POCO F5 PRO / XIAOMI REDMI NOTE 13 PRO PLUS /"
+  },
+  {
+    "modelo": "POCO M3 PRO 5G",
+    "compatibilidade": "MOTOROLA EDGE 30 / MOTO G84 / XIAOMI REDMI NOTE 10 / NOTE 11 / NOTE 11S / XIAOMI POCO M5S / POCO M4 PRO 5G"
+  },
+  {
+    "modelo": "POCO M3",
+    "compatibilidade": "MOTO ONE ZOOM / REDMI 9T / REDMI NOTE 9 4G / REDMI 9 /"
+  },
+  {
+    "modelo": "POCO M3",
+    "compatibilidade": "A20S / NOTE 9 4G"
+  },
+  {
+    "modelo": "POCO M3 PRO",
+    "compatibilidade": "MOTOROLA EDGE 30 / MOTO G84 / XIAOMI REDMI NOTE 10 / NOTE 11 / NOTE 11S / XIAOMI POCO M5S / POCO M4 PRO 5G"
+  },
+  {
+    "modelo": "POCO M4 PRO 4g",
+    "compatibilidade": "REDMI NOTE 13 / REDMI NOTE 14 / REDMI NOTE 14 / SAMSUNG M53 / XIAOMI POCO F5 PRO / MOTO G04"
+  },
+  {
+    "modelo": "POCO M4 PRO 5G",
+    "compatibilidade": "MOTOROLA MOTO G84 / XIAOMI REDMI NOTE 10 / NOTE 11 / NOTE 11S / XIAOMI POCO M5S"
+  },
+  {
+    "modelo": "POCO M5",
+    "compatibilidade": "MOTO E22 / SAMSUNG A02 / A03 / A12 / A13 / A04 / A20S / A32 5G / M4 / M3 / REALME C11"
+  },
+  {
+    "modelo": "POCO M5S",
+    "compatibilidade": "MOTOROLA MOTO G84 / XIAOMI REDMI NOTE 10 / NOTE 11 / NOTE 11S / XIAOMI POCO M4 PRO 5G"
+  },
+  {
+    "modelo": "POCO M5S",
+    "compatibilidade": "MOTOROLA MOTO G84 / XIAOMI REDMI NOTE 10 / NOTE 11 / NOTE 11S / XIAOMI POCO M4 PRO 5G"
+  },
+  {
+    "modelo": "POCO M5S",
+    "compatibilidade": "MOTOROLA MOTO G84 / XIAOMI REDMI NOTE 10 / NOTE 11 / NOTE 11S / XIAOMI POCO M4 PRO 5G"
+  },
+  {
+    "modelo": "POCO C40",
+    "compatibilidade": "REDMI 10C / REDMI 12C / REDMI 11 A /"
+  },
+  {
+    "modelo": "LG K22 OU K22 PLUS",
+    "compatibilidade": "REDMI NOTE 8 /"
+  },
+  {
+    "modelo": "LG K41S",
+    "compatibilidade": "MOTOROLA G10 / G20 / G30 / G50 / E7 / E7 POWER / E7 PLUS / G9 PLAY / MOTO E22 / MOTO ONE MACRO / MOTO E 13 / MOTO E22 / MOTO E 20 / REALME C25 / REALME C11 / LG K12 PRIME / LG K50S / SAMSUNG A20S / SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / A13 / A23 5G / A23 5G"
+  },
+  {
+    "modelo": "LG K42",
+    "compatibilidade": "K52 / K62 / K62 PLUS"
+  },
+  {
+    "modelo": "LG K51",
+    "compatibilidade": "A71 / REALME C6 PRO /"
+  },
+  {
+    "modelo": "LG K51S K 51S",
+    "compatibilidade": "XIAOMI 1OT / XIAOMI MI 11i"
+  },
+  {
+    "modelo": "LG K51S",
+    "compatibilidade": "K61 / A21S / NOTE 9"
+  },
+  {
+    "modelo": "LG K51",
+    "compatibilidade": "A71 / REALME C6 PRO /"
+  },
+  {
+    "modelo": "LG K51S K 51S",
+    "compatibilidade": "XIAOMI 1OT / XIAOMI MI 11i"
+  },
+  {
+    "modelo": "LG K51S",
+    "compatibilidade": "K61 / A21S / NOTE 9"
+  },
+  {
+    "modelo": "LG K61",
+    "compatibilidade": "SAMSUNG A80 / REDMI NOTE 12 / REDMI NOTE 13 / POCO X5 / POCO M4 PRO 5G SAMSUNG M53 / M62 / M52"
+  },
+  {
+    "modelo": "LG K62",
+    "compatibilidade": "A80 / A21S / REALME C6 PRO / A11 / XIAOMI MI 11i / MOTO G 22 / MOTO E32"
+  },
+  {
+    "modelo": "LG K62",
+    "compatibilidade": "K61 / K 42"
+  },
+  {
+    "modelo": "LG K71",
+    "compatibilidade": "REDMI 13C / POCO C65 / SAMSUNG A05 / SAMSUNG A05S / SAMSUNG A06 / REALME NOTE 50 / REALME C51 / REDMI A3 / REALME C63"
+  },
+  {
+    "modelo": "REALME C11 C 11",
+    "compatibilidade": "MOTOROLA G10 / G20 / G30 / G50 / E7 / E7 POWER / E7 PLUS / G9 PLAY / MOTO E22 / MOTO ONE MACRO / MOTO E 13 / MOTO E22 / MOTO E 20 / REALME C25 / LG K41S / LG K12 PRIME / LG K50S / SAMSUNG A20S / SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / A13 / A23 5G / A23 5G"
+  },
+  {
+    "modelo": "NOKIA C20",
+    "compatibilidade": "MOTO G60 / MOTO G100 / G40 FUSION"
+  },
+  {
+    "modelo": "REALME C21Y",
+    "compatibilidade": "SAMSUNG A02 / A03 /A12/ A13 / A04 / M33 / MOTO E22 / XIAOMI POCO M5 / XIAOMI POCO M4 / REALME C11 / REALME C35 /SAMSUNG A32 5G"
+  },
+  {
+    "modelo": "REALME C21Y",
+    "compatibilidade": "SAMSUNG A02 / A03 /A12/ A13 / A04 / M33 / MOTO E22 / XIAOMI POCO M5 / XIAOMI POCO M4 / REALME C11 / REALME C35 /SAMSUNG A32 5G"
+  },
+  {
+    "modelo": "REALME C 25 C25",
+    "compatibilidade": "MOTOROLA G10 / G20 / G30 / G50 / E7 / E7 POWER / E7 PLUS / G9 PLAY / MOTO E22 / MOTO ONE MACRO / MOTO E 13 / MOTO E22 / MOTO E 20 REALME C11 / LG K41S / LG K12 PRIME / LG K50S / SAMSUNG A20S / SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / A13 / A23 5G / A23 5G"
+  },
+  {
+    "modelo": "REALME C30S",
+    "compatibilidade": "SAMSUNG A02 / A03 / A12 / A13 /A04 / REDMI 9A / 9C / MOTO E 20 /E7 /E22 / MOTO G20 / G10 /G30"
+  },
+  {
+    "modelo": "XIAOMI REDMI POCO C31",
+    "compatibilidade": "REDIMI 9A / 9C / REDMI 10A / SAMSUNG A12"
+  },
+  {
+    "modelo": "REALME C33",
+    "compatibilidade": "SAMSUNG A02 / A02S"
+  },
+  {
+    "modelo": "REALME C35",
+    "compatibilidade": "REALME C21Y/ A02 / A02S / A03 / A03S /A32 5G / M12"
+  },
+  {
+    "modelo": "REALME C53",
+    "compatibilidade": "POCO C65 / SAMSUNG A05 / SAMSUNG A05S / SAMSUNG A06 / REALME NOTE 50 / REALME C51 / REDMI A3 / REALME C63 / REALME C61 / REALME NOTE 60X E 60"
+  },
+  {
+    "modelo": "REALME C55",
+    "compatibilidade": "REDMI NOTE 12 / POCO X5 / MOTO G24 / REDMI NOTE 9S NOTE 9 PRO / SAMSUNG M55 / INFINIX SMARTE 8 PRO / INFINIX NOTE 12 PRO"
+  },
+  {
+    "modelo": "REALME C55",
+    "compatibilidade": "REDMI NOTE 12 / POCO X5 / MOTO G24 / REDMI NOTE 9S NOTE 9 PRO / SAMSUNG M55 / INFINIX SMARTE 8 PRO / INFINIX NOTE 12 PRO"
+  },
+  {
+    "modelo": "POCO C61",
+    "compatibilidade": "XIAOMI REDMI 13C / SAMSUNG A05 / SAMSUNG A05S / REALME NOTE 50 /REALME C51 / POCO C65 /"
+  },
+  {
+    "modelo": "REALME C61",
+    "compatibilidade": "POCO C65 / SAMSUNG A05 / SAMSUNG A05S / SAMSUNG A06 / REALME NOTE 50 / REALME C51 / REDMI A3 / REALME C63"
+  },
+  {
+    "modelo": "REALME C67 5G",
+    "compatibilidade": "POCO X5 / REDMI NOTE 13 / REDMI NOTE 14 /"
+  },
+  {
+    "modelo": "REALME C67 4G",
+    "compatibilidade": "REDMI NOTE 12 4G / POCO X5 / NOTE 13"
+  },
+  {
+    "modelo": "POCO C75",
+    "compatibilidade": "XIAOMI REDMI 14C / XIAOMI REDMI A4 / REDMI A5 /XIAOMI REDMI 14R / INFINIX HOT PLAY / ( MOTOG 9 POWER Obs; e preciso deixar a película ajustada para parte de cima da tela por conta da câmera, ate o momento essa e unica pelicula que pode atender o tamanho da tela deste aparelho )"
+  },
+  {
+    "modelo": "REALME NARZO 30 PRO",
+    "compatibilidade": "REALME 7 / REALME 7 5G / REALME 7 PRO / REDMI K30 ULTRA"
+  },
+  {
+    "modelo": "REALMEGT 2 PRO",
+    "compatibilidade": "REDMI NOTE 9T / A21S"
+  },
+  {
+    "modelo": "POCO X3 GT",
+    "compatibilidade": "MOTOROLA MOTO G04 / G 04S / REDMI NOTE 13 / XIAOMI 13 T PRO / POCO M4 5G / POCO X5 PRO / POCO F5 PRO / SAMSUNG M53 / M62 / M52 5G"
+  },
+  {
+    "modelo": "REALME GT MASTER",
+    "compatibilidade": "REALME 9 / REALME 10"
+  },
+  {
+    "modelo": "REALME GT",
+    "compatibilidade": "REALME GT 2 PRO /REDMI NOTE 9T / A21S"
+  },
+  {
+    "modelo": "REALME GT MASTER",
+    "compatibilidade": "REALME 9 / REALME 10"
+  },
+  {
+    "modelo": "REALME 7 PRO",
+    "compatibilidade": "SAMSUNG A11 / MOTO G 41 / REDMI NOTE 10"
+  },
+  {
+    "modelo": "REALME 7i GLOBAL",
+    "compatibilidade": "Samsung A02 / A02s / A03 / A03s / A04 / A04e A04S / A12 / A13 / A 23 / A32 5g / M12 / A22 5G"
+  },
+  {
+    "modelo": "REALME 7 PRO",
+    "compatibilidade": "SAMSUNG A11 / MOTO G 41 / REDMI NOTE 10"
+  },
+  {
+    "modelo": "REALME 7i GLOBAL",
+    "compatibilidade": "Samsung A02 / A02s / A03 / A03s / A04 / A04e A04S / A12 / A13 / A 23 / A32 5g / M12 / A22 5G"
+  },
+  {
+    "modelo": "REALME 8",
+    "compatibilidade": "MOTO G73 / G32 / REDMI NOTE 10S / REDMI NOTE 10 PRO / REDMI NOTE 11S NOTE 12S"
+  },
+  {
+    "modelo": "REALME 9i modelo rmx3491",
+    "compatibilidade": "MOTO G13 / MOTO G73 / MOTO G 32"
+  },
+  {
+    "modelo": "REALME 9i modelo rmx3491",
+    "compatibilidade": "MOTO G13 / MOTO G73 / MOTO G 32"
+  },
+  {
+    "modelo": "REALME 10S",
+    "compatibilidade": "MOTOROLA G10 / G20 / G30 / G50 / E7 / E7 POWER / E7 PLUS / G9 PLAY / MOTO E22"
+  },
+  {
+    "modelo": "REALME 11",
+    "compatibilidade": "MOTO G73 / G32 / REDMI NOTE 10S / REDMI NOTE 10 PRO / REDMI NOTE 11S NOTE 12S"
+  },
+  {
+    "modelo": "REALME 11 PRO +",
+    "compatibilidade": "REALME 12 PRO + MOTOROLA EDGE 30 ULTRA atenção peliculas curvas"
+  },
+  {
+    "modelo": "REALME 11X",
+    "compatibilidade": "REDMI NOTE 13 / REDMI NOTE 14 / REDMI NOTE 12 / POCO X 5 / REDMI NOTE 12 PRO"
+  },
+  {
+    "modelo": "REALME 11X",
+    "compatibilidade": "REDMI NOTE 13 / REDMI NOTE 14 / REDMI NOTE 12 / POCO X 5 / REDMI NOTE 12 PRO"
+  },
+  {
+    "modelo": "REALME 11 PRO +",
+    "compatibilidade": "REALME 12 PRO + MOTOROLA EDGE 30 ULTRA atenção peliculas curvas"
+  },
+  {
+    "modelo": "REALME NOTE 50",
+    "compatibilidade": "POCO C65 / SAMSUNG A05 / SAMSUNG A05S / REDMI 13C / REALME C51 / REDMI A3 / REALME C63 / REALME C53 / SAMSUNG A06 /REALME C61 / REALME NOTE 60X E 60"
+  },
+  {
+    "modelo": "INFINIX SMART 6",
+    "compatibilidade": "SAMSUNG A03S / A03 CORE / A12 / A13 / M12 /A02 / A02S / A04 / A23 / A23"
+  },
+  {
+    "modelo": "infinix smart 7",
+    "compatibilidade": "SAMSUNG A02S / A03 / A03S /A13 / A23 / A70 / M12 / A12 /"
+  },
+  {
+    "modelo": "INFINIX HOT 20i HOT 10i",
+    "compatibilidade": "SAMSUNG A02 / A02s / A03 / A03s / A04 / A04e A04S / A12 / A13 / A 23 / A32 5g / M12 / A22 4g / G10 / G20 / G30 G50 E7 / E7POWER / E7 PLUS / G9 PAY / E22"
+  },
+  {
+    "modelo": "INFINIX HOT 20i HOT 10i",
+    "compatibilidade": "SAMSUNG A02 / A02s / A03 / A03s / A04 / A04e A04S / A12 / A13 / A 23 / A32 5g / M12 / A22 4g / G10 / G20 / G30 G50 E7 / E7POWER / E7 PLUS / G9 PAY / E22"
+  },
+  {
+    "modelo": "INFINIX HOT 11s & 11s NFC",
+    "compatibilidade": "MOTO G35 / MOTO G60S / MOTO G15 / MOTO G40 FUSION / XIAOMI REDMI 12 4G"
+  },
+  {
+    "modelo": "INFINIX HOT 11",
+    "compatibilidade": "MOTO E22 / SAMSUNG A32 5G / MOTO E13"
+  },
+  {
+    "modelo": "INFINIX HOT 20s",
+    "compatibilidade": "MOTO G60S / MOTO G35 / XIAOMI REDMI 12 4G / MOTO G15 / MOTO G40 FUSION"
+  },
+  {
+    "modelo": "INFINIX HOT 20i HOT 10i",
+    "compatibilidade": "SAMSUNG A02 / A02s / A03 / A03s / A04 / A04e A04S / A12 / A13 / A 23 / A32 5g / M12 / A22 4g / G10 / G20 / G30 G50 E7 / E7POWER / E7 PLUS / G9 PAY / E22"
+  },
+  {
+    "modelo": "INFINIX HOT 20",
+    "compatibilidade": "SAMSUNG A80 / REDMI NOTE 12 / POCO X5 PRO / POCO X5"
+  },
+  {
+    "modelo": "INFINIX HOT 30i",
+    "compatibilidade": "SAMSUNG A02 / A03 / A04 / A12 / A32 5g / MOTO E13 / A13 / M13"
+  },
+  {
+    "modelo": "INFINIX HOT 30",
+    "compatibilidade": "MOTOROLA MOTO G62 / MOTO G13 / MOTO G32 / MOTO G14 / MOTO G54 /"
+  },
+  {
+    "modelo": "INFINIX HOT 50 - 50i",
+    "compatibilidade": "XIAOMI REDMI NOTE 12 / POCO X5 / MOTO G04 / MOTO G15 / G35 / MOTO E40 / POCO M4 PRO 5g"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 7",
+    "compatibilidade": "NOTE 7S / NOTE 8 / A20 / A30 / A50 / A50S / G8 PLAY / G8 PLUS / MOTO ONE ZOM"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 8T",
+    "compatibilidade": "REDMI 9T / REDMI NOTE 9 4G"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 8",
+    "compatibilidade": "NOTE 7 / A20 / A30 / G7 / G7 PLUS /G8 PLUS / G8 PLAY / ONE ZOM / K40S"
+  },
+  {
+    "modelo": "XIAOMI Redmi Note 8 Pro",
+    "compatibilidade": "M10s"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 10 LITE",
+    "compatibilidade": "XIAOMI NOTE 10 / NOTE 10S / NOTE 11 / NOTE 11 S / NOTE 10 4G /REDMI 10 / XIAOMI POCO M5S"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 10",
+    "compatibilidade": "XIAOMI NOTE 10 / NOTE 10S / NOTE 11 / NOTE 11 S / NOTE 10 LITE / NOTE 10 4G /REDMI 10 / XIAOMI POCO M5S"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 10S",
+    "compatibilidade": "XIAOMI NOTE 10 / NOTE 11 / NOTE 11 S / NOTE 10 LITE / NOTE 10 4G /REDMI 10 / XIAOMI POCO M5S"
+  },
+  {
+    "modelo": "INFINIX NOTE 10 PRO",
+    "compatibilidade": "MOTO G9 PLUS / MOTO G9 POWER"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 10 5G",
+    "compatibilidade": "NOTE 10T / NOTE 11 SE"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 10 PRO",
+    "compatibilidade": "REALME C6 PRO / G71 / M51 / A21S / A21 / A11 / A52 /MOTO ONE FUSION / XIAOMI MI 11i / REDMI NOTE 10"
+  },
+  {
+    "modelo": "SAMSUNG NOTE 10",
+    "compatibilidade": "K51S A80 A21S"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 11",
+    "compatibilidade": "XIAOMI NOTE 10 / NOTE 10S / NOTE 11 S / NOTE 10 LITE / NOTE 10 4G /REDMI 10 / XIAOMI POCO M5S"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 11 PRO MAX",
+    "compatibilidade": "REALME C6 PRO / G71 / M51 / A21S / A21 / A11 / A52 /MOTO ONE FUSION / XIAOMI MI 11i / REDMI NOTE 10 PRO"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 11 PRO",
+    "compatibilidade": "REDMI NOTE 13 / REDMI NOTE 14 / NOTE 12 PRO / NOTE 10 PRO / G53 / G52 / A71 / A72 / A82 / K52"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 11 5G",
+    "compatibilidade": "NOTE 11 T 5G / POCO M4 PRO 5G"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 11S 11 S",
+    "compatibilidade": "XIAOMI NOTE 10 / NOTE 10S / NOTE 11 / / NOTE 10 LITE / NOTE 10 4G /REDMI 10 / XIAOMI POCO M5S"
+  },
+  {
+    "modelo": "XIAOMI REDIMI NOTE 12 PRO 4g & 5g",
+    "compatibilidade": "XIAOMI POCO X5 / POCO M4 PRO 5G / REALME 11X / G53 / G32 /REDIMI NOTE 10 PRO / XIAOMI MI11 / SAMSUNG A72 / G71 /82 / SAMSUNG M52 5G / M62 / A73 / MI 11 LITE"
+  },
+  {
+    "modelo": "INFINIX NOTE 12 PRO",
+    "compatibilidade": "REDMI NOTE 13 PRO / NOTE 12 / SAMSUNG A80 / POCO X5 PRO / POCO F5 / REDMI NOTE 13 / POCO X5 REDMI NOTE 14 /"
+  },
+  {
+    "modelo": "XIAOMI REDIMI NOTE 12 4G E 5G",
+    "compatibilidade": "XIAOMI POCO X5 / POCO M4 PRO 5G / REALME 11X / G53 / G32 /REDIMI NOTE 10 PRO / XIAOMI MI11 / SAMSUNG A72 / G71 /82 / SAMSUNG M52 5G / M62 / A73 / MI 11 LITE"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 12S",
+    "compatibilidade": "XIAOMI NOTE 10 / NOTE 10S / NOTE 11 / NOTE 11 S / NOTE 10 LITE / NOTE 10 4G /REDMI 10 / XIAOMI POCO M5S"
+  },
+  {
+    "modelo": "INFINIX NOTE 30 PRO",
+    "compatibilidade": "XIAOMI REDMI NOTE 13 / REDMI NOTE 14 / MOTOROLA MOTO G 13 / G14 / G54 / G71S / POCO F5 PRO"
+  },
+  {
+    "modelo": "INFINIX NOTE 30 .5G",
+    "compatibilidade": "REDMI 12 4G / REDMI NOTE 12 / MOTO G100 / POCO X5"
+  },
+  {
+    "modelo": "CUBOT NOTE 40",
+    "compatibilidade": "MOTO E13 / MOTO E22"
+  },
+  {
+    "modelo": "INFINIX ZERO 30 5G",
+    "compatibilidade": "REDMI NOTE 13 PRO / NOTE 12 PRO / NOTE 13 / POCO F5 PRO"
+  },
+  {
+    "modelo": "INFINIX ZERO 30 5G",
+    "compatibilidade": "REDMI NOTE 13 PRO / NOTE 12 PRO / NOTE 13 / POCO F5 PRO"
+  },
+  {
+    "modelo": "REALME C11 C 11",
+    "compatibilidade": "MOTOROLA G10 / G20 / G30 / G50 / E7 / E7 POWER / E7 PLUS / G9 PLAY / MOTO E22 / MOTO ONE MACRO / MOTO E 13 / MOTO E22 / MOTO E 20 / REALME C25 / LG K41S / LG K12 PRIME / LG K50S / SAMSUNG A20S / SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / A13 / A23 5G / A23 5G"
+  },
+  {
+    "modelo": "REALME C 25 C25",
+    "compatibilidade": "MOTOROLA G10 / G20 / G30 / G50 / E7 / E7 POWER / E7 PLUS / G9 PLAY / MOTO E22 / MOTO ONE MACRO / MOTO E 13 / MOTO E22 / MOTO E 20 REALME C11 / LG K41S / LG K12 PRIME / LG K50S / SAMSUNG A20S / SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / A13 / A23 5G / A23 5G"
+  },
+  {
+    "modelo": "REALME C21Y",
+    "compatibilidade": "SAMSUNG A02 / A03 /A12/ A13 / A04 / M33 / MOTO E22 / XIAOMI POCO M5 / XIAOMI POCO M4 / REALME C11 / REALME C35 /SAMSUNG A32 5G"
+  },
+  {
+    "modelo": "NOKIA C20",
+    "compatibilidade": "MOTO G60 / MOTO G100 / G40 FUSION"
+  },
+  {
+    "modelo": "REALME C3",
+    "compatibilidade": "MOTOROLA G10 / G20 / G30 / G50 / E7 POWER / E7 PLUS / G9 PLAY / MOTO E22 / MOTO ONE MACRO / MOTO E 13 / MOTO E22 / MOTO E 20 / REALME C25 / REALME C11 / LG K41S / LG K12 PRIME / LG K50S / SAMSUNG A20S / SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / A13 / A23 5G / A23 5G"
+  },
+  {
+    "modelo": "REALME C35",
+    "compatibilidade": "REALME C21Y/ A02 / A02S / A03 / A03S /A32 5G / M12"
+  },
+  {
+    "modelo": "REALME C33",
+    "compatibilidade": "SAMSUNG A02 / A02S"
+  },
+  {
+    "modelo": "REALME C30S",
+    "compatibilidade": "SAMSUNG A02 / A03 / A12 / A13 /A04 / REDMI 9A / 9C / MOTO E 20 /E7 /E22 / MOTO G20 / G10 /G30"
+  },
+  {
+    "modelo": "POCO C3",
+    "compatibilidade": "REDIMI 9A / 9C / REDMI 10A / SAMSUNG A12 / A02 /A03 / A22 5G"
+  },
+  {
+    "modelo": "XIAOMI REDMI POCO C31",
+    "compatibilidade": "REDIMI 9A / 9C / REDMI 10A / SAMSUNG A12"
+  },
+  {
+    "modelo": "NOKIA C20",
+    "compatibilidade": "MOTO G60 / MOTO G100 / G40 FUSION"
+  },
+  {
+    "modelo": "REALME C21Y",
+    "compatibilidade": "SAMSUNG A02 / A03 /A12/ A13 / A04 / M33 / MOTO E22 / XIAOMI POCO M5 / XIAOMI POCO M4 / REALME C11 / REALME C35 /SAMSUNG A32 5G"
+  },
+  {
+    "modelo": "MOTOROLA moto g100 g 100",
+    "compatibilidade": "moto g40 fusion / moto g60"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G10",
+    "compatibilidade": "MOTOROLA G20 / G30 / G50 / E7 / E7 POWER / E7 PLUS / G9 PLAY / MOTO E22 / MOTO ONE MACRO / MOTO E 13 / MOTO E22 / MOTO E 20 / REALME C25 / REALME C11 / LG K41S / LG K12 PRIME / LG K50S /SAMSUNG A20S / SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / A13 / A23 5G / A23 5G"
+  },
+  {
+    "modelo": "NOKIA G11 PLUS",
+    "compatibilidade": "SAMSUNG A22 5G/ A12 / A13 / A03 / A02 / MOTEO E13 / MOTO E22 / MOTO E 20"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G 200 G200",
+    "compatibilidade": "MOTO G 40 FUSION /"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G20",
+    "compatibilidade": "MOTOROLA G10 / G30 / G50 / E7 / E7 POWER / E7 PLUS / G9 PLAY / MOTO E22 / MOTO ONE MACRO / MOTO E 13 / MOTO E22 / MOTO E 20 / REALME C25 / REALME C11 / LG K41S / LG K12 PRIME / LG K50S / SAMSUNG A20S / SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / A13 / A23 5G / A23 5G"
+  },
+  {
+    "modelo": "MOTOROLA G22 / MOTO G22",
+    "compatibilidade": "G23 / A72 / MOTO E 22/ LG K52 / LG K62 / MOTO E32 LG K62"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G 42 G42",
+    "compatibilidade": "G41 / G52 / G71 / A53 / REDMI NOTE 10 / A11"
+  },
+  {
+    "modelo": "IPHONE 6",
+    "compatibilidade": "IPHONE 6G / 6S / 7"
+  },
+  {
+    "modelo": "IPHONE 7",
+    "compatibilidade": "IPHONE SE 2020 / IPHONE 8"
+  },
+  {
+    "modelo": "IPHONE XR",
+    "compatibilidade": "IPHONE XR / IPHONE 11 / IPHONE 12 / IPHONE 12 PRO"
+  },
+  {
+    "modelo": "IPHONE XS MAX",
+    "compatibilidade": "IPHONE 11 PRO MAX"
+  },
+  {
+    "modelo": "IPHONE XS MAX",
+    "compatibilidade": "IPHONE 11 PRO MAX"
+  },
+  {
+    "modelo": "IPHONE 11 PRO MAX",
+    "compatibilidade": "IPHONE XS MAX"
+  },
+  {
+    "modelo": "IPHONE 11 PRO",
+    "compatibilidade": "IPHONE X / IPHONE XS"
+  },
+  {
+    "modelo": "IPHONE 11",
+    "compatibilidade": "IPHONE XR / IPHONE 12 / IPHONE 12 PRO"
+  },
+  {
+    "modelo": "IPHONE 11 PRO MAX",
+    "compatibilidade": "IPHONE XS MAX"
+  },
+  {
+    "modelo": "IPHONE 11 PRO",
+    "compatibilidade": "IPHONE X / IPHONE XS"
+  },
+  {
+    "modelo": "IPHONE 11 PRO MAX",
+    "compatibilidade": "IPHONE XS MAX"
+  },
+  {
+    "modelo": "IPHONE 13 PLUS",
+    "compatibilidade": "IPHONE 15 PRO MAX / IPHONE 13 PRO MAX"
+  },
+  {
+    "modelo": "IPHONE 13 PRO MAX",
+    "compatibilidade": "IPHONE 14 PRO MAX / IPHONE 13 PLUS / IPHONE 14 MAX"
+  },
+  {
+    "modelo": "IPHONE 13",
+    "compatibilidade": "IPHONE 13 PRO / IPHONE 14 / E 14 PRO"
+  },
+  {
+    "modelo": "IPHONE 13 MINI",
+    "compatibilidade": "IPHONE 12 MINI"
+  },
+  {
+    "modelo": "IPHONE 13 MINI",
+    "compatibilidade": "IPHONE 12 MINI"
+  },
+  {
+    "modelo": "IPHONE 13 PRO MAX",
+    "compatibilidade": "IPHONE 14 PRO MAX / IPHONE 13 PLUS / IPHONE 14 MAX"
+  },
+  {
+    "modelo": "IPHONE 13 PRO MAX",
+    "compatibilidade": "IPHONE 14 PRO MAX / IPHONE 13 PLUS / IPHONE 14 MAX"
+  },
+  {
+    "modelo": "IPHONE 14 PRO MAX",
+    "compatibilidade": "IPHONE 14 PRO MAX / IPHONE 13 PRO MAX / IPHONE 15 PRO MAX / IPHONE 13 PLUS / IPHONE 14 PLUS / IPHONE 15 PLUS"
+  },
+  {
+    "modelo": "IPHONE 14 PRO",
+    "compatibilidade": "IPHONE 13 PRO / IPHONE 14 / IPHONE 13"
+  },
+  {
+    "modelo": "IPHONE 14 PLUS",
+    "compatibilidade": "IPHONE 14 PRO MAX / IPHONE 13 PRO MAX /IPHONE 13 PLUS / IPHONE 15 PRO MAX"
+  },
+  {
+    "modelo": "IPHONE 14 PLUS",
+    "compatibilidade": "IPHONE 14 PRO MAX / IPHONE 13 PRO MAX /IPHONE 13 PLUS / IPHONE 15 PRO MAX"
+  },
+  {
+    "modelo": "IPHONE 14 PRO MAX",
+    "compatibilidade": "IPHONE 14 PRO MAX / IPHONE 13 PRO MAX / IPHONE 15 PRO MAX / IPHONE 13 PLUS / IPHONE 14 PLUS / IPHONE 15 PLUS"
+  },
+  {
+    "modelo": "IPHONE 14 PRO",
+    "compatibilidade": "IPHONE 13 PRO / IPHONE 14 / IPHONE 13"
+  },
+  {
+    "modelo": "IPHONE 14 PRO MAX",
+    "compatibilidade": "IPHONE 14 PRO MAX / IPHONE 13 PRO MAX / IPHONE 15 PRO MAX / IPHONE 13 PLUS / IPHONE 14 PLUS / IPHONE 15 PLUS"
+  },
+  {
+    "modelo": "IPHONE 14 PRO",
+    "compatibilidade": "IPHONE 13 PRO / IPHONE 14 / IPHONE 13"
+  },
+  {
+    "modelo": "IPHONE 14 PRO MAX",
+    "compatibilidade": "IPHONE 14 PRO MAX / IPHONE 13 PRO MAX / IPHONE 15 PRO MAX / IPHONE 13 PLUS / IPHONE 14 PLUS / IPHONE 15 PLUS"
+  },
+  {
+    "modelo": "IPHONE 15 PLUS",
+    "compatibilidade": "IPHONE 14 PRO MAX /PHONE 13 PRO MAX / IPHONE 15 PRO MAX"
+  },
+  {
+    "modelo": "IPHONE 15 PRO MAX",
+    "compatibilidade": "IPHONE 13 PRO MAX / IPHONE 14 PRO MAX / IPHONE 14 PLUS / IPHONE 13 PLUS"
+  },
+  {
+    "modelo": "IPHONE 15 PRO MAX",
+    "compatibilidade": "IPHONE 13 PRO MAX / IPHONE 14 PRO MAX / IPHONE 14 PLUS / IPHONE 13 PLUS"
+  },
+  {
+    "modelo": "IPHONE 16",
+    "compatibilidade": "IPHONE 15 / IPHONE 15 PRO"
+  },
+  {
+    "modelo": "SAMSUNG A01",
+    "compatibilidade": "XIAOMI MI9 SE / MI PLAY"
+  },
+  {
+    "modelo": "SAMSUNG S8 PLUS",
+    "compatibilidade": "SAMSUNG S9 PLUS / SAMSUNG S20"
+  },
+  {
+    "modelo": "SAMSUNG S9 PLUS",
+    "compatibilidade": "SAMSUNG S8 PLUS / SAMSUNG S20"
+  },
+  {
+    "modelo": "SAMSUNG S10 LITE",
+    "compatibilidade": "SAMSUNG A71 / REDMI NOTE 12 PRO"
+  },
+  {
+    "modelo": "REALME NOTE 50",
+    "compatibilidade": "POCO C65 / SAMSUNG A05 / SAMSUNG A05S / REDMI 13C / REALME C51 / REDMI A3 / REALME C63 / REALME C53 / SAMSUNG A06 /REALME C61 / REALME NOTE 60X E 60"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 7",
+    "compatibilidade": "NOTE 7S / NOTE 8 / A20 / A30 / A50 / A50S / G8 PLAY / G8 PLUS / MOTO ONE ZOM"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 8",
+    "compatibilidade": "NOTE 7 / A20 / A30 / G7 / G7 PLUS /G8 PLUS / G8 PLAY / ONE ZOM / K40S"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 8T",
+    "compatibilidade": "REDMI 9T / REDMI NOTE 9 4G"
+  },
+  {
+    "modelo": "XIAOMI Redmi Note 8 Pro",
+    "compatibilidade": "M10s"
+  },
+  {
+    "modelo": "XIAMI REDMI NOTE 9 PRO 4G",
+    "compatibilidade": "REDMI NOTE 9s / SAMSUNG M55 5g / M62 / M52 5g / XIAOMI POCO M4 PRO 5g / 13T / 13T PRO / X5 / X5 PRO / NOTE 13 PRO / MOTOROLA MOTO G04"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 9S",
+    "compatibilidade": "REDMI NOTE 9 PRO / SAMSUNG M55 5g / M62 / M52 5g / XIAOMI POCO M4 PRO 5g / 13T / 13T PRO / X5 / X5 PRO / NOTE 13 PRO / MOTOROLA MOTO G04 / REDMI NOTE 14"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 9",
+    "compatibilidade": "REDMI NOTE 13 PRO PLUS / REDMI NOTE 14S / MOTO G84 / G72 / POCO M3 PRO 5G / REDMI NOTE 11 / 11S / SAMSUNG A11 / MI 11 LITE"
+  },
+  {
+    "modelo": "SAMSUNG A33",
+    "compatibilidade": "SAMSUNG M21S / SAMSUNG M31"
+  },
+  {
+    "modelo": "SAMSUNG A36 5g",
+    "compatibilidade": "SAMSUNG A56 / SAMSUNG S24 FE / M35 5g / A35 / A55 /"
+  },
+  {
+    "modelo": "SAMSUNG A30s",
+    "compatibilidade": "SAMSUNG A30 / A50 / A20 / M30 / MOTOROLA ONE ZOOM / G8 PLUS / G8 Play / MOTO ONE MACRO / REDMI NOTE 7 / REDMI NOTE 8 / LG K22"
+  },
+  {
+    "modelo": "SAMSUNG A30",
+    "compatibilidade": "SAMSUNG A20 / A50 / A30S / M30 / MOTOROLA ONE ZOOM / G8 PLUS / G8 Play / MOTO ONE MACRO / REDMI NOTE 7 / REDMI NOTE 8 / LG K22"
+  },
+  {
+    "modelo": "SAMSUNG A35",
+    "compatibilidade": "SAMSUNG A55 / SAMSUNG M35 / SAMSUNG S23 PLUS / IPHONE 15 PRO MAX / IPHONE 14 PRO MAX / 13 PRO MAX / SAMSUNG S22 PLUS"
+  },
+  {
+    "modelo": "SAMSUNG A34",
+    "compatibilidade": "SAMSUNG M34 / A15 / A25 / S22+ / M15"
+  },
+  {
+    "modelo": "SAMSUNG A31",
+    "compatibilidade": "A33 / A32 / A22 / M31"
+  },
+  {
+    "modelo": "XIAOMI REDMI A3 A3X",
+    "compatibilidade": "REDMI 13C / POCO C65 / SAMSUNG A05 / SAMSUNG A05S / SAMSUNG A06 / REALME NOTE 50 / REALME C51 / REALME C63 / REALME C61 / REALME C53 / REALME NOTE 60X E 60"
+  },
+  {
+    "modelo": "SAMSUNG A32 5G",
+    "compatibilidade": "SAMSUNG A12 / SAMSUNG M12 / SAMSUNG A13 / SAMSUNG A03S / SAMSUNG M22 / A20S / A02 /"
+  },
+  {
+    "modelo": "SAMSUNG A32 4G",
+    "compatibilidade": "SAMSUNG A33 / A32 4G / A22 4G / A31 4G / M31"
+  },
+  {
+    "modelo": "XIAOMI REDMI A5",
+    "compatibilidade": "POCO C75 / XIAOMI REDMI 14C / REDMI A4 / REDMI 14R / INFINIX HOT PLAY / ( MOTOG 9 POWER Obs; e preciso deixar a película ajustada para parte de cima da tela por conta da câmera, ate o momento essa e unica pelicula que pode atender o tamanho da tela deste aparelho )"
+  },
+  {
+    "modelo": "SAMSUNG A50S",
+    "compatibilidade": "A20 / A30 / A31 / A50 / M31 / K40S"
+  },
+  {
+    "modelo": "SAMSUNG A56",
+    "compatibilidade": "SAMSUNG A36 5g / SAMSUNG S24 FE / M35 5g / A35 / A55 /"
+  },
+  {
+    "modelo": "SAMSUNG A5",
+    "compatibilidade": "J2 PRIME / GRAND PRIME / J5"
+  },
+  {
+    "modelo": "SAMSUNG A52S 5g",
+    "compatibilidade": "MOTOROLA MOTO G52 / G 82 / G84 / MOTO G72 / MOTOROLA EDGE 30 / SAMSUNG S23 PLUS / MI 11 LIGHT / RFEDMI NOTE 11 / NOTE 11S"
+  },
+  {
+    "modelo": "SAMSUNG A54 A 54",
+    "compatibilidade": "SAMSUNG S22+ / S24 SAMSUNG S23 FE"
+  },
+  {
+    "modelo": "SAMSUNG A51",
+    "compatibilidade": "A52 / A52S / A52 5G / S20 FE / NOTE 10 / NOTE 11"
+  },
+  {
+    "modelo": "SAMSUNG A53 A 53",
+    "compatibilidade": "REDMI NOTE 10 / a52 /RM NOTE 10 4G / RM NOTE 10 S"
+  },
+  {
+    "modelo": "OPPO A56S",
+    "compatibilidade": "SAMSUNG A02 / A02S / A03 / A12 / A13 / A23 / A04 / REALME C33"
+  },
+  {
+    "modelo": "SAMSUNG A52",
+    "compatibilidade": "A31 REDMI NOTE 10 S / REALME 7 PRO / A11 / A53 / A51 REDIMI NOTE 11 4G"
+  },
+  {
+    "modelo": "SAMSUNG A7 2018",
+    "compatibilidade": "J4 PLUS / J6 PLUS / J8"
+  },
+  {
+    "modelo": "SAMSUNG A70",
+    "compatibilidade": "SAMSUNG A02 / A02S /A03 / A12 / A13 / A32 5G / M33 / A20S / MOTOROLA E22"
+  },
+  {
+    "modelo": "SAMSUNG A72",
+    "compatibilidade": "MI POCO F3 / M51 / MOTO G52 / XIAOMI REDMI NOTE 10 PRO / XIAOMI MI 11i"
+  },
+  {
+    "modelo": "SAMSUNG A73 A 73",
+    "compatibilidade": "M51 / A21S / A21 / MOTO G52 / XIAOMI 10 T / XIAOMI 11 LITE / XIAOMI 10T / POCO F3 / XIAOMI X3"
+  },
+  {
+    "modelo": "OPPO A72 4g",
+    "compatibilidade": "MOTOROLA MOTO G04 / G13 / MOTO ONE FUSION PLUS / XIAOMI POCO F5 PRO / REDMI NOTE 13"
+  },
+  {
+    "modelo": "SAMSUNG A71",
+    "compatibilidade": "A80 / A51 / A21 / MOTO G 41 / MOTO G 52 / XIAOMI MI 11 LITE / G62 / REALME 7 PRO / REDMI NOTE 10 S / XIAOMI NOTE 10 / A71"
+  },
+  {
+    "modelo": "SAMSUNG A7 2016",
+    "compatibilidade": "J7 METAL / ON7"
+  },
+  {
+    "modelo": "OPPO A78",
+    "compatibilidade": "OPPO A56 / OPPO A1X"
+  },
+  {
+    "modelo": "SAMSUNG A8",
+    "compatibilidade": "A8 2016"
+  },
+  {
+    "modelo": "SAMSUNG A80",
+    "compatibilidade": "A 21S / K62 / MOTO G62"
+  },
+  {
+    "modelo": "SAMSUNG A8 PLUS",
+    "compatibilidade": "A6 PLUS / J8 / REDMI 5 PLUS / REDMI S2"
+  },
+  {
+    "modelo": "OPPO A98",
+    "compatibilidade": "OPPO A23"
+  },
+  {
+    "modelo": "SAMSUNG A9 2018",
+    "compatibilidade": "J4 PLUS / J6 PLUS / J8 / J8 PLUS"
+  },
+  {
+    "modelo": "OPPO A98",
+    "compatibilidade": "OPPO A23"
+  },
+  {
+    "modelo": "SAMSUNG A9 2018",
+    "compatibilidade": "J4 PLUS / J6 PLUS / J8 / J8 PLUS"
+  },
+  {
+    "modelo": "OPPO A98",
+    "compatibilidade": "OPPO A23"
+  },
+  {
+    "modelo": "SAMSUNG A9 2018",
+    "compatibilidade": "J4 PLUS / J6 PLUS / J8 / J8 PLUS"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G41 G 41",
+    "compatibilidade": "MOTOG 31 / MOTO G52 / G71 / REDMI NOTE 10 / G52 / REALME 7 PRO / A11"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G40 FUSION",
+    "compatibilidade": "MOTO G60 / MOTO G 9 PLUS / MOTO G200"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G5 PLUS",
+    "compatibilidade": "REDMI NOTE 3"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G52",
+    "compatibilidade": "MOTO G71S / G82 / G84 / MOTOROLA EDGE 30 / SAMSUNG A51 / XIAO MI POCO M4 PRO 4G / POCO M5S"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G55",
+    "compatibilidade": "MOTOROLA MOTO G64 / G71 / G41 / G31 / G32 / G73 / XIAOMI POCO M5S"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G50 5G",
+    "compatibilidade": "MOTOROLA G10 / G20 / G30 / E7 / E7 POWER / E7 PLUS / G9 PLAY / MOTO E22 / MOTO ONE MACRO / MOTO E 13 / MOTO E22 / MOTO E 20 / REALME C25 / REALME C11 / LG K41S / LG K12 PRIME / LG K50S / SAMSUNG A20S / SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / A13 / A23 5G / A23 5G"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G51 5G",
+    "compatibilidade": "MOTO G60 / G60S / G 40 FUSION / G9 PLUS / G200"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G5S PLUS",
+    "compatibilidade": "E4 PLUS"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G5G",
+    "compatibilidade": "MOTO G100 / K71"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G5 PLUS",
+    "compatibilidade": "REDMI NOTE 3"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G52",
+    "compatibilidade": "MOTO G71S / G82 / G84 / MOTOROLA EDGE 30 / SAMSUNG A51 / XIAO MI POCO M4 PRO 4G / POCO M5S"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G55",
+    "compatibilidade": "MOTOROLA MOTO G64 / G71 / G41 / G31 / G32 / G73 / XIAOMI POCO M5S"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G50 5G",
+    "compatibilidade": "MOTOROLA G10 / G20 / G30 / E7 / E7 POWER / E7 PLUS / G9 PLAY / MOTO E22 / MOTO ONE MACRO / MOTO E 13 / MOTO E22 / MOTO E 20 / REALME C25 / REALME C11 / LG K41S / LG K12 PRIME / LG K50S / SAMSUNG A20S / SAMSUNG A02 / A02S/ A02 CORE / A03 / A03S /A03 / A04 / A04E / A12 / A13 / A23 5G / A23 5G"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G51 5G",
+    "compatibilidade": "MOTO G60 / G60S / G 40 FUSION / G9 PLUS / G200"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G5S PLUS",
+    "compatibilidade": "E4 PLUS"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G5G",
+    "compatibilidade": "MOTO G100 / K71"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G5 PLUS",
+    "compatibilidade": "REDMI NOTE 3"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G7 PLAY",
+    "compatibilidade": "IPHONE X / IPHONE 11 PRO / A01 CORE / K8 PLUS"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G75",
+    "compatibilidade": "MOTO G05 / MOTO G15 / MOTO G35/ POCO X5 / REDMI NOTE 12 / EDGE 20 LITE"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G7",
+    "compatibilidade": "G7 PLUS / MOTO E6S / E6 PLUS / A10 / A10S / M10 / A30"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G7 PLUS",
+    "compatibilidade": "G8 PLUS / G8 PLAY / A10"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G71S",
+    "compatibilidade": "MOTO G52 / G82 / G84 / MOTOROLA EDGE 30 / REDMI NOTE 10 / NOTE 11 NOTE 11S / SAMSUNG A51 / XIAO MI POCO M4 PRO 4G / POCO M5S"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G71 G 71",
+    "compatibilidade": "A53 / MOTO G41 / A41 / MOTO G52 / G71 / G62 / G53 / G32 / G13 / G22 / G54 REALME 7 PRO"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G8 PLUS",
+    "compatibilidade": "MOTO G7 / MOTO ONE MACRO / E6 PLUS / A10 / NOTE 8 / G8 / POCO M3 PRO / A53 K40S MOTO G8 PLAY"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G8 PLUS",
+    "compatibilidade": "MOTO G7 / MOTO ONE MACRO / E6 PLUS / A10 / NOTE 8 / G8 / POCO M3 PRO / A53 K40S MOTO G8 PLAY"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G8 PLUS",
+    "compatibilidade": "MOTO G7 / MOTO ONE MACRO / E6 PLUS / A10 / NOTE 8 / G8 / POCO M3 PRO / A53 K40S MOTO G8 PLAY"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G8 PLUS",
+    "compatibilidade": "MOTO G7 / MOTO ONE MACRO / E6 PLUS / A10 / NOTE 8 / G8 / POCO M3 PRO / A53 K40S MOTO G8 PLAY"
+  },
+  {
+    "modelo": "MOTOROLA MOTO E4 PLUS",
+    "compatibilidade": "MOTO G5S PLUS"
+  },
+  {
+    "modelo": "MOTOROLA MOTO E5",
+    "compatibilidade": "MOTO G6 PLAY"
+  },
+  {
+    "modelo": "MOTOROLA MOTO E5",
+    "compatibilidade": "MOTO G6 PLAY"
+  },
+  {
+    "modelo": "MOTOROLA MOTO E5",
+    "compatibilidade": "MOTO G6 PLAY"
+  },
+  {
+    "modelo": "MOTOROLA MOTO E5",
+    "compatibilidade": "MOTO G6 PLAY"
+  },
+  {
+    "modelo": "MOTOROLA MOTO E6S",
+    "compatibilidade": "MOTOROLA MOTO E6 PLUS / E6i / LG K40S"
+  },
+  {
+    "modelo": "MOTOROLA MOTO E6 PLAY",
+    "compatibilidade": "A01 CORE"
+  },
+  {
+    "modelo": "MOTOROLA MOTO E6 PLUS",
+    "compatibilidade": "MOTO E6S / E6i / LG K40S"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G41 G 41",
+    "compatibilidade": "MOTOG 31 / MOTO G52 / G71 / REDMI NOTE 10 / G52 / REALME 7 PRO / A11"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G40 FUSION",
+    "compatibilidade": "MOTO G60 / MOTO G 9 PLUS / MOTO G200"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G 42 G42",
+    "compatibilidade": "G41 / G52 / G71 / A53 / REDMI NOTE 10 / A11"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G41 G 41",
+    "compatibilidade": "MOTOG 31 / MOTO G52 / G71 / REDMI NOTE 10 / G52 / REALME 7 PRO / A11"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G40 FUSION",
+    "compatibilidade": "MOTO G60 / MOTO G 9 PLUS / MOTO G200"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G 42 G42",
+    "compatibilidade": "G41 / G52 / G71 / A53 / REDMI NOTE 10 / A11"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G41 G 41",
+    "compatibilidade": "MOTOG 31 / MOTO G52 / G71 / REDMI NOTE 10 / G52 / REALME 7 PRO / A11"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G40 FUSION",
+    "compatibilidade": "MOTO G60 / MOTO G 9 PLUS / MOTO G200"
+  },
+  {
+    "modelo": "MOTOROLA MOTO G 42 G42",
+    "compatibilidade": "G41 / G52 / G71 / A53 / REDMI NOTE 10 / A11"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 10 PRO",
+    "compatibilidade": "REALME C6 PRO / G71 / M51 / A21S / A21 / A11 / A52 /MOTO ONE FUSION / XIAOMI MI 11i / REDMI NOTE 10"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 10 PRO",
+    "compatibilidade": "REALME C6 PRO / G71 / M51 / A21S / A21 / A11 / A52 /MOTO ONE FUSION / XIAOMI MI 11i / REDMI NOTE 10"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 10 PRO",
+    "compatibilidade": "REALME C6 PRO / G71 / M51 / A21S / A21 / A11 / A52 /MOTO ONE FUSION / XIAOMI MI 11i / REDMI NOTE 10"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 10 PRO",
+    "compatibilidade": "REALME C6 PRO / G71 / M51 / A21S / A21 / A11 / A52 /MOTO ONE FUSION / XIAOMI MI 11i / REDMI NOTE 10"
+  },
+  {
+    "modelo": "XIAMI REDMI NOTE 9 PRO 4G",
+    "compatibilidade": "REDMI NOTE 9s / SAMSUNG M55 5g / M62 / M52 5g / XIAOMI POCO M4 PRO 5g / 13T / 13T PRO / X5 / X5 PRO / NOTE 13 PRO / MOTOROLA MOTO G04"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 9S",
+    "compatibilidade": "REDMI NOTE 9 PRO / SAMSUNG M55 5g / M62 / M52 5g / XIAOMI POCO M4 PRO 5g / 13T / 13T PRO / X5 / X5 PRO / NOTE 13 PRO / MOTOROLA MOTO G04 / REDMI NOTE 14"
+  },
+  {
+    "modelo": "XIAOMI REDMI NOTE 9",
+    "compatibilidade": "REDMI NOTE 13 PRO PLUS / REDMI NOTE 14S / MOTO G84 / G72 / POCO M3 PRO 5G / REDMI NOTE 11 / 11S / SAMSUNG A11 / MI 11 LITE"
+  },
+  {
+    "modelo": "XIAOMI REDMI 8A",
+    "compatibilidade": "A10 / A10S / K40S / MOTO E6S / MOTO E6 PLUS"
+  },
+  {
+    "modelo": "XIAOMI REDMI 8",
+    "compatibilidade": "REDMI 8A / A10"
+  },
+  {
+    "modelo": "XIAOMI REDMI 9I",
+    "compatibilidade": "A23 / A12 / A32 / MOTO E 7 PLUS / A23 / A03S / REDMI 9 POWER / REDMI 9T / REALME C11 / REALME C25 / POCO M3 / REDMI 9A / REDMI 9C"
+  },
+  {
+    "modelo": "XIAOMI REDMI 9 POWER",
+    "compatibilidade": "POCO M3 / MOTO ONE ZOOM / REDMI 9T / REDMI NOTE 9 4G / REDMI 9 /"
+  },
+  {
+    "modelo": "XIAOMI REDMI 9A",
+    "compatibilidade": "9C / 9I / 9I SPORT / K50S / A12 / A20S / A23"
+  },
+  {
+    "modelo": "XIAOMI REDMI 9",
+    "compatibilidade": "POCO M3 / MOTO ONE ZOOM / REDMI 9T / REDMI NOTE 9 4G /"
+  },
+  {
+    "modelo": "XIAOMI REDMI 9",
+    "compatibilidade": "SAMSUNG M21S / SAMSUNG M31"
+  },
+  {
+    "modelo": "XIAOMI REDMI 9T",
+    "compatibilidade": "POCO M3 / MOTO ONE ZOOM / REDMI NOTE 9 4G / REDMI 9 /"
+  },
+  {
+    "modelo": "XIAOMI REDMI 9A",
+    "compatibilidade": "A23 / A12 / A32 / MOTO E 7 PLUS / A23 / A03S / REDMI 9 POWER / REDMI 9T / REALME C11 / REALME C25 / POCO M3 / REDMI 9C / REDMI 9I"
+  },
+  {
+    "modelo": "XIAOMI REDMI 9A",
+    "compatibilidade": "ONE FUSION / A12 / A02 / A03 / A04 / A13 / A22 5G / A23 5G"
+  },
+  {
+    "modelo": "XIAOMI REDMI 9C",
+    "compatibilidade": "A23 / A12 / A32 GG / A04 / A02 / A03 MOTO E 7 PLUS / A03S / REDMI 9 POWER / REDMI 9T / REALME C11 / REALME C25 / POCO M3 / A20S REDMI 9A / REDMI 9I"
+  },
+  {
+    "modelo": "XIAOMI REDMI 9I",
+    "compatibilidade": "9I SPORT / 9A / 9C /A12 / A23 / A71 / E7 PLUS"
+  }
+]
