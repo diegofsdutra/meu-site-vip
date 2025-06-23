@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { useAuth } from '../../../components/ui/AuthProvider'
+import { useAuth } from '../../../components/AuthProvider'
 import { useRouter } from 'next/navigation'
 
 export default function SuccessPage() {
