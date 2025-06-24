@@ -505,7 +505,7 @@ export default function CompatibilidadePage() {
   const exibidosConectoresTypeC = buscaConectoresTypeC ? filtradasConectoresTypeC : (dadosConectoresTypeC || []).slice(0, 10);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 text-gray-900 px-0 py-6 font-sans">
+    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 text-gray-900 px-0 py-6 font-sans" style={{ zoom: '0.9' }}>
       <Head>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
         <style>{`body { font-family: 'Inter', sans-serif; }`}</style>
@@ -1054,38 +1054,153 @@ export default function CompatibilidadePage() {
                 <div className="flex justify-center mb-4">
                   <ArrowDown className="animate-bounce text-yellow-500 w-6 h-6" />
                 </div>
-                <div className="flex flex-col items-center mb-6">
-                  <div className="bg-gradient-to-r from-blue-100 to-blue-50 p-4 rounded-xl mb-4 border-2 border-blue-200">
-                    <p className="text-blue-800 font-semibold text-center mb-2">
-                      🔍 Digite o modelo do seu aparelho abaixo:
-                    </p>
-                    <Input
-                      placeholder="Ex: A54, iPhone 14, Redmi Note 12..."
-                      className="w-full md:w-96 h-14 border-3 border-blue-600 mb-0 p-4 text-lg font-medium shadow-lg focus:border-blue-800 focus:ring-4 focus:ring-blue-200"
-                      value={buscaConectoresTypeC}
-                      onChange={(e) => setBuscaConectoresTypeC(e.target.value)}
-                    />
-                    <p className="text-sm text-blue-600 text-center mt-2">
-                      Busca instantânea em nossa base completa
-                    </p>
-                  </div>
-                </div>
-                <table className="w-full border border-blue-500 text-base rounded-xl overflow-hidden">
-                  <thead>
-                    <tr className="bg-blue-800 text-white">
-                      <th className="border border-blue-500 px-6 py-4 w-1/3 text-left font-semibold">Modelo do Aparelho</th>
-                      <th className="border border-blue-500 px-6 py-4 w-2/3 text-left font-semibold">Conector Type-C Compatível</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {exibidosConectoresTypeC.map((item, i) => (
-                      <tr key={i} className="odd:bg-white even:bg-blue-50">
-                        <td className="border border-blue-500 px-6 py-4 font-medium text-gray-800">{item.modelo}</td>
-                        <td className="border border-blue-500 px-6 py-4 text-gray-700">{item.compatibilidade}</td>
+                
+                <div className="overflow-x-auto">
+                  <table className="w-full border-2 border-black">
+                    <thead>
+                      <tr className="bg-gray-300">
+                        <th className="border-2 border-black px-6 py-4 text-center font-bold text-lg">CELULARES COMPATÍVEIS</th>
+                        <th className="border-2 border-black px-6 py-4 text-center font-bold text-lg">FOTO DO CONECTOR</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            A20 A21S A30 A40 A50 A60 A70 M20 M30 A31 A51 A71 S10 LITE A22 A50S A30S A13 A12 M51 A51S A32 M31 A12 A40 A70S M40 M62 NOTE 10 LITE
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector a 20.webp" 
+                            alt="Conector Type-C A20" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            A20S A21 LG K41S K61S K61 MOTO E7 E7 POWER E20 E30 E22 E32 E40 G50 5G ONE FUSION
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector a20s.webp" 
+                            alt="Conector Type-C A20S" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            A52 A72 A52s A72 A82 A33 A73 A54 A34
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector a52.webp" 
+                            alt="Conector Type-C A52" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            CONECTOR DE CARGA MOTO G7 POWER G10 G20 G30 G50 G9 POWER G9 PLAY G9 ONE FUSION PLUS G8 POWER K51 / ONE MACRO / ONE POWER / G STILUS 2021 /
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector de carga moto g10.webp" 
+                            alt="Conector Moto G10" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            CARGA TIPO C MOTO G7 PLAY A02S A03S A11 G8 G9 PLUS G51 G41 G31 ONE VISION G60 G60S ONE ACTION / ONE VISION / MOTO GPOWER / G PLAY 2021
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector de carga moto g7 play.webp" 
+                            alt="Conector Moto G7 Play" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            LG K50s K51S K50
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector de carga lg k 50.webp" 
+                            alt="Conector LG K50" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            S10 / S10 PLUS / S10+ / S10E / S20 / S20 Plus / S20 Ultra / S20 FE / Note 10 / Note 10 Plus Tipo C
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector de carga s10.webp" 
+                            alt="Conector S10" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            XIAOMI REDMI NOTE 11 4G / REDMI NOTE 11S / REDMI NOTE 11E / REDMI 10C / NOTE 12 5G / NOTE 12 PRO 5G / POCO X5 / X5 PRO
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector de carga redimi note 11 4g.webp" 
+                            alt="Conector Xiaomi Note 11" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            XIAOMI NOTE 7 / NOTE 7 PRO / NOTE 8 / NOTE 8 PRO / NOTE 9 / NOTE 9 PRO / NOTE 9S / NOTE 10 / NOTE 10 PRO
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector de carga xiomi note 7.png" 
+                            alt="Conector Xiaomi Note 7" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             )}
 
@@ -1095,38 +1210,448 @@ export default function CompatibilidadePage() {
                 <div className="flex justify-center mb-4">
                   <ArrowDown className="animate-bounce text-yellow-500 w-6 h-6" />
                 </div>
-                <div className="flex flex-col items-center mb-6">
-                  <div className="bg-gradient-to-r from-blue-100 to-blue-50 p-4 rounded-xl mb-4 border-2 border-blue-200">
-                    <p className="text-blue-800 font-semibold text-center mb-2">
-                      🔍 Digite o modelo do seu aparelho abaixo:
-                    </p>
-                    <Input
-                      placeholder="Ex: A54, iPhone 14, Redmi Note 12..."
-                      className="w-full md:w-96 h-14 border-3 border-blue-600 mb-0 p-4 text-lg font-medium shadow-lg focus:border-blue-800 focus:ring-4 focus:ring-blue-200"
-                      value={buscaConectoresV8}
-                      onChange={(e) => setBuscaConectoresV8(e.target.value)}
-                    />
-                    <p className="text-sm text-blue-600 text-center mt-2">
-                      Busca instantânea em nossa base completa
-                    </p>
-                  </div>
-                </div>
-                <table className="w-full border border-blue-500 text-base rounded-xl overflow-hidden">
-                  <thead>
-                    <tr className="bg-blue-800 text-white">
-                      <th className="border border-blue-500 px-6 py-4 w-1/3 text-left font-semibold">Modelo do Aparelho</th>
-                      <th className="border border-blue-500 px-6 py-4 w-2/3 text-left font-semibold">Conector V8 Compatível</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {exibidosConectoresV8.map((item, i) => (
-                      <tr key={i} className="odd:bg-white even:bg-blue-50">
-                        <td className="border border-blue-500 px-6 py-4 font-medium text-gray-800">{item.modelo}</td>
-                        <td className="border border-blue-500 px-6 py-4 text-gray-700">{item.compatibilidade}</td>
+                
+                <div className="overflow-x-auto">
+                  <table className="w-full border-2 border-black">
+                    <thead>
+                      <tr className="bg-gray-300">
+                        <th className="border-2 border-black px-6 py-4 text-center font-bold text-lg">CELULARES COMPATÍVEIS</th>
+                        <th className="border-2 border-black px-6 py-4 text-center font-bold text-lg">FOTO DO CONECTOR</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            XIAOMI REDMI 12C / A1 A2 / A1 PLUS / A2 PLUS / 9A / 9C / 9T / 10A / 8A / Poco C3
+                            SAMSUNG NORMAL / A01 / A03 / A03 CORE
+                            LG K12 K12 PLUS K12 PRIME K40 K40S Q60 K22 K22 PLUS
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <div className="text-green-600 text-sm font-bold mb-2">COMPRAR LOTE DE 100 PEÇAS</div>
+                          <img 
+                            src="/conector-v8-1.webp" 
+                            alt="Conector V8 Xiaomi Samsung LG" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            MOTOROLA MOTO E6i / E6 / E4 / E4 PLUS / E5 / E5 PLUS / G4 PLAY / G5 POWER LITE
+                            Lenovo a850, a850, a820, a800, a650, a660, a720, a820, e580
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <div className="text-green-600 text-sm font-bold mb-2">COMPRAR LOTE DE 100 PEÇAS</div>
+                          <img 
+                            src="/conector-v8-2.webp" 
+                            alt="Conector V8 Motorola Lenovo" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            SAMSUNG A05 / A01 J8 Novo - J6 Novo - J4 J300 j4 core
+                            J7 Duo - J5 Pro - J7 Pro - J1 - J2 - J5 Prime - J5 Prime
+                            G570 - J7 Prime G610 - A10 - A10 s
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <div className="text-green-600 text-sm font-bold mb-2">COMPRAR LOTE DE 100 PCS</div>
+                          <img 
+                            src="/conector-v8-3.webp" 
+                            alt="Conector V8 Samsung A05 J series" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            G531 - G531 - G355 - G355 - G7102 - G7102 - G6102
+                            G570 - J7 Meta J7 G5 - G Meta G516 - core plus - S3 - S3 - S4
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector-v8-4.webp" 
+                            alt="Conector V8 Samsung G series" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            i8552 - i9060 - i9082 - G360 - i9062 - i9152 - i8730 - i8730 - T110 - T111 - T560 - T561
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector-v8-5.webp" 
+                            alt="Conector V8 Samsung i series T series" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            Moto G1 - Moto E1 - Moto E4 - Moto E4 Plus / Lenovo S7 - S500 - S650 - A2106 - A2105 - S90 - S850 - S880 - P780
+                            T/ Tablets Diversos - moto g5 - moto g6 - moto e5 plus
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector-v8-6.webp" 
+                            alt="Conector V8 Moto G E Lenovo" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            K10 - K8 - K5 - K4 - D377 - H815 - H522 - H522 - K8 K326 - Nexus 4 / linha 2016 / LG Nexus 5 D820 D821 Nitro g5 F850 Optimus 3d P920
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector-v8-7.webp" 
+                            alt="Conector V8 LG K series H series" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            Moto G4 - Moto E2 - Moto XT / Sony M2 Aqua
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector-v8-8.webp" 
+                            alt="Conector V8 Moto G4 E2 Sony" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            T210 - T211 - P5200 - P5210 - P5200 - i9200 - N5100 - i9205 - T230 - T231 - T235
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector-v8-9.webp" 
+                            alt="Conector V8 Samsung Tablets" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            N530 - N625 - I320 - I020
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector-v8-10.webp" 
+                            alt="Conector V8 N series I series" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            S3 / i9300 - i9308 - i930 - T999 - 959 - I747 - i535 - L710
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector-v8-11.webp" 
+                            alt="Conector V8 Samsung S3" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            S4 i9500 - i9502 - i9505 - N7100 - N7108 - N7102 - N719 - N7105
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector-v8-12.webp" 
+                            alt="Conector V8 Samsung S4 Note" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            i365 - i450 - i365 - G105 - E415 - E470 - D295 - L3 - E445 - E465 - E610 - i9150 - P188 - E450 - L40 - E610 - G105 - E316 - E315 i9150 - P165 - E710 - E710
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector-v8-13.webp" 
+                            alt="Conector V8 Samsung diversos modelos" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            Tablet DL - Multilaser - Navicity (modelo 1 padrão universal)
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector-v8-14.webp" 
+                            alt="Conector V8 Tablets universais" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            Tablets Diversos / Gps Diversos / V3
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector-v8-15.webp" 
+                            alt="Conector V8 Tablets GPS" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            Moto G2
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector-v8-16.webp" 
+                            alt="Conector V8 Moto G2" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            S6812 - J105 - J210 - G130 - G313 - J110 - J120 - S5360 - I8262 - S7272 - I739 - I759 - I9128 - S6352 - S6312 - E7 - A8 A300 - A800F
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector-v8-17.webp" 
+                            alt="Conector V8 Samsung série S G J" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr><tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            Tablet DL - Multilaser - Navicity (modelo 1 padrão universal)
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector-v8-14.webp" 
+                            alt="Conector V8 Tablets universais" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            Tablets Diversos / Gps Diversos / V3
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector-v8-15.webp" 
+                            alt="Conector V8 Tablets GPS" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            Moto G2
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector-v8-16.webp" 
+                            alt="Conector V8 Moto G2" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-green-100">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            S6812 - J105 - J210 - G130 - G313 - J110 - J120 - S5360 - I8262 - S7272 - I739 - I759 - I9128 - S6352 - S6312 - E7 - A8 A300 - A800F
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle bg-green-200">
+                          <img 
+                            src="/conector-v8-17.webp" 
+                            alt="Conector V8 Samsung série S G J" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            Moto X2 - Asus K012 / Asus Me170
+                            Zenfone Max e Diversos
+                            JBL - Para caixa de som JBL
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector-v8-18.webp" 
+                            alt="Conector V8 Moto X2 Asus Zenfone JBL" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-green-100">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            Moto X Play / Moto X Style
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle bg-green-200">
+                          <img 
+                            src="/conector-v8-20.webp" 
+                            alt="Conector V8 Moto X Play Style" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            S3 Mini - i8190 - i8160 - S7562 - S7560 - i9050
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector-v8-21.webp" 
+                            alt="Conector V8 Samsung S3 Mini" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            S6293 - i8262 - i9192 - i9195 - G110 - G613 - G310 - i8160
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector-v8-22.webp" 
+                            alt="Conector V8 Samsung S G series diversos" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            Moto G5s / Alcatel One Touch plus 4 OT 4924 / Huawei Y5 II CUN L01
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector-v8-23.webp" 
+                            alt="Conector V8 Moto G5s Alcatel Huawei" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            Xperia C / C2304 C2305 - Xperia E3 / Tablets Diversos
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector-v8-24.webp" 
+                            alt="Conector V8 Sony Xperia" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-white">
+                        <td className="border-2 border-black px-6 py-6 align-top">
+                          <div className="font-medium text-black leading-relaxed">
+                            SAMSUNG A10s / M10 / M15 / Moto E5 Play / E5C / g k11 / k11
+                          </div>
+                        </td>
+                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
+                          <img 
+                            src="/conector-v8-25.webp" 
+                            alt="Conector V8 Samsung A10s M10 M15 Moto E5" 
+                            className="w-80 h-auto object-contain mx-auto"
+                          />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             )}
 
@@ -1249,9 +1774,9 @@ export default function CompatibilidadePage() {
               <div className="mt-3">
                 <a
                   href="/como-funciona"
-                  className="bg-gradient-to-r from-green-400 to-green-500 text-black px-5 py-2 rounded-full font-semibold hover:from-green-500 hover:to-green-600 transition-all duration-300 inline-block animate-pulse shadow-lg"
+                  className="bg-gradient-to-r from-green-600 to-green-700 text-white px-5 py-2 rounded-full font-semibold hover:from-green-700 hover:to-green-800 transition-all duration-300 inline-block animate-pulse shadow-lg"
                 >
-                  ⏳ VIP grátis disponível para novos clientes
+                  VIP grátis disponível para novos clientes
                 </a>
               </div>
             </div>

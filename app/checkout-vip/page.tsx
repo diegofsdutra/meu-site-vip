@@ -123,7 +123,7 @@ export default function CheckoutVIPPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-black text-white">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-black text-white" style={{ zoom: '0.8' }}>
       <Head>
         <title>Checkout VIP - Lista Compatível</title>
         <meta name="description" content="Assine o plano VIP e tenha acesso completo à nossa base de dados" />

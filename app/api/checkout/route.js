@@ -19,7 +19,7 @@ export async function POST(req) {
     }
 
     const mercadoPagoToken = process.env.MERCADO_PAGO_TOKEN || 'APP_USR-5004009313003728-061315-c81aaefb6eb2221c9b902dfbd00a8aa7-167454602';
-    const webhookUrl = 'https://petite-news-eat.loca.lt';  // Novo tunnel correto
+    const webhookUrl = 'https://seven-oranges-greet.loca.lt';  // Novo tunnel
 
     const fullWebhookUrl = `${webhookUrl}/api/webhook/mercado_pago`;
 
@@ -54,7 +54,7 @@ export async function POST(req) {
           pending: `${webhookUrl}/checkout/pending`,
         },
         auto_return: 'approved',
-        notification_url: fullWebhookUrl,  // Usando o caminho correto
+        notification_url: fullWebhookUrl,
         external_reference: JSON.stringify({ 
           planType, 
           email,

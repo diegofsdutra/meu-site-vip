@@ -74,7 +74,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         // Escutar mudanças de autenticação
         const { data: { subscription } } = supabaseClient.auth.onAuthStateChange(
           async (event, session) => {
-            console.log('Auth state changed:', event, session?.user?.email)
+            console.log('🔐 Auth state changed:', event, session?.user?.email)
             
             if (session?.user) {
               setUser(session.user)
@@ -88,11 +88,45 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           }
         )
 
+        // ✅ NOVO: Escutar mudanças na tabela de pagamentos/VIP
+        const vipSubscription = supabaseClient
+          .channel('vip_updates')
+          .on('postgres_changes', {
+            event: '*',
+            schema: 'public',
+            table: 'payments' // ou sua tabela de pagamentos
+          }, async (payload: any) => {
+            console.log('💳 Pagamento atualizado:', payload)
+            
+            // Se o pagamento for do usuário atual
+            if (user && payload.new?.user_email === user.email) {
+              console.log('🔄 Atualizando status VIP do usuário atual...')
+              await refreshVIPStatus()
+            }
+          })
+          .on('postgres_changes', {
+            event: '*',
+            schema: 'public',
+            table: 'profiles'
+          }, async (payload: any) => {
+            console.log('👤 Perfil atualizado:', payload)
+            
+            // Se for o perfil do usuário atual
+            if (user && payload.new?.id === user.id) {
+              console.log('🔄 Recarregando perfil...')
+              await loadUserProfile(user.id, supabaseClient)
+            }
+          })
+          .subscribe()
+
         setLoading(false)
         
-        return () => subscription.unsubscribe()
+        return () => {
+          subscription.unsubscribe()
+          vipSubscription.unsubscribe()
+        }
       } catch (error) {
-        console.error('Erro ao inicializar Supabase:', error)
+        console.error('❌ Erro ao inicializar Supabase:', error)
         setLoading(false)
       }
     }
@@ -101,19 +135,89 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     initSupabase()
   }, [])
 
-  // Atualizar status VIP quando profile mudar
+  // ✅ CORRIGIDO: Atualizar status VIP quando profile mudar
   useEffect(() => {
     if (profile) {
-      import('../app/lib/vipUtils').then(({ isVIPActive }) => {
-        setIsVIP(isVIPActive(profile))
-      })
+      checkVIPStatus(profile)
     } else {
       setIsVIP(false)
     }
   }, [profile])
 
+  // ✅ NOVA FUNÇÃO: Verificar status VIP de forma mais robusta
+  const checkVIPStatus = async (profileData: any) => {
+    try {
+      // Método 1: Verificar usando vipUtils se existir
+      try {
+        const { isVIPActive } = await import('../app/lib/vipUtils')
+        const vipStatus = isVIPActive(profileData)
+        console.log('📊 Status VIP (vipUtils):', vipStatus)
+        setIsVIP(vipStatus)
+        return
+      } catch (error) {
+        console.log('⚠️ vipUtils não encontrado, usando método alternativo')
+      }
+
+      // Método 2: Verificar diretamente no perfil
+      if (profileData.is_vip) {
+        // Se tem data de expiração, verificar se ainda é válida
+        if (profileData.vip_expires_at) {
+          const isActive = new Date(profileData.vip_expires_at) > new Date()
+          console.log('📅 VIP expires at:', profileData.vip_expires_at, 'Active:', isActive)
+          setIsVIP(isActive)
+        } else {
+          // VIP sem expiração
+          setIsVIP(true)
+        }
+      } else if (profileData.vip_data?.status === 'active') {
+        // Verificar via vip_data
+        setIsVIP(true)
+      } else {
+        // Método 3: Verificar na tabela de pagamentos
+        await checkVIPFromPayments(profileData.email)
+      }
+    } catch (error) {
+      console.error('❌ Erro ao verificar status VIP:', error)
+      setIsVIP(false)
+    }
+  }
+
+  // ✅ NOVA FUNÇÃO: Verificar VIP na tabela de pagamentos
+  const checkVIPFromPayments = async (email: string) => {
+    if (!supabase || !email) return
+
+    try {
+      const { data, error } = await supabase
+        .from('payments')
+        .select('*')
+        .eq('user_email', email)
+        .eq('status', 'approved')
+        .order('created_at', { ascending: false })
+        .limit(1)
+
+      if (!error && data && data.length > 0) {
+        const payment = data[0]
+        // Verificar se o pagamento ainda é válido (ex: último mês)
+        const paymentDate = new Date(payment.created_at)
+        const oneMonthAgo = new Date()
+        oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1)
+
+        const isActive = paymentDate > oneMonthAgo
+        console.log('💳 Último pagamento:', paymentDate, 'Ativo:', isActive)
+        setIsVIP(isActive)
+      } else {
+        setIsVIP(false)
+      }
+    } catch (error) {
+      console.error('❌ Erro ao verificar pagamentos:', error)
+      setIsVIP(false)
+    }
+  }
+
   const loadUserProfile = async (userId: string, supabaseClient: any) => {
     try {
+      console.log('📥 Carregando perfil do usuário:', userId)
+      
       // Carregar dados básicos do perfil
       const { data, error } = await supabaseClient
         .from('profiles')
@@ -122,34 +226,60 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         .single()
 
       if (!error && data) {
-        // Carregar dados VIP separadamente
-        const { loadUserVIPData } = await import('../app/lib/vipUtils')
-        const vipData = await loadUserVIPData(data.email)
+        console.log('✅ Perfil carregado:', data)
         
-        // Adicionar dados VIP ao perfil
-        const profileWithVIP = {
-          ...data,
-          vip_data: vipData
+        // Tentar carregar dados VIP separadamente
+        try {
+          const { loadUserVIPData } = await import('../app/lib/vipUtils')
+          const vipData = await loadUserVIPData(data.email)
+          
+          // Adicionar dados VIP ao perfil
+          const profileWithVIP = {
+            ...data,
+            vip_data: vipData
+          }
+          
+          setProfile(profileWithVIP)
+          console.log('🎯 Profile com VIP:', {
+            email: data.email,
+            hasVIP: !!vipData,
+            vipExpires: vipData?.data_expiracao
+          })
+        } catch (vipError) {
+          console.log('⚠️ Erro ao carregar VIP data, usando perfil básico:', vipError)
+          setProfile(data)
         }
-        
-        setProfile(profileWithVIP)
-        console.log('Profile carregado:', {
-          email: data.email,
-          hasVIP: !!vipData,
-          vipExpires: vipData?.data_expiraca
-        })
       } else if (error) {
-        console.error('Erro ao carregar perfil:', error)
+        console.error('❌ Erro ao carregar perfil:', error)
       }
     } catch (err) {
-      console.error('Erro ao carregar perfil:', err)
+      console.error('❌ Erro geral ao carregar perfil:', err)
     }
   }
 
+  // ✅ CORRIGIDO: Função de refresh mais robusta
   const refreshVIPStatus = async () => {
-    if (user && profile && supabase) {
-      console.log('🔄 Atualizando status VIP...')
+    if (!user || !supabase) {
+      console.log('⚠️ Não é possível atualizar: usuário ou supabase não disponível')
+      return
+    }
+
+    console.log('🔄 Iniciando atualização de status VIP...')
+    
+    try {
+      // Recarregar perfil completo
       await loadUserProfile(user.id, supabase)
+      
+      // Forçar nova verificação de VIP após um delay
+      setTimeout(async () => {
+        if (profile) {
+          await checkVIPStatus(profile)
+        }
+      }, 1000)
+      
+      console.log('✅ Status VIP atualizado!')
+    } catch (error) {
+      console.error('❌ Erro ao atualizar status VIP:', error)
     }
   }
 
@@ -242,6 +372,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           error
         }
       }
+
+      // ✅ ADICIONADO: Forçar atualização do status VIP após login
+      setTimeout(async () => {
+        console.log('🔄 Verificando status VIP após login...')
+        await refreshVIPStatus()
+      }, 2000) // Aguardar 2 segundos para garantir que o perfil foi carregado
 
       return {
         success: true,
@@ -345,7 +481,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   }
 
-  // FUNÇÃO VIP INTEGRADA
+  // ✅ CORRIGIDO: FUNÇÃO VIP INTEGRADA
   const upgradeToVIP = async (paymentMethod: string = 'pix') => {
     if (!user) {
       return {
@@ -357,18 +493,22 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       setLoading(true)
       
-      console.log('Iniciando upgrade VIP para usuário:', user.id)
+      console.log('💳 Iniciando upgrade VIP para usuário:', user.id)
       
       const { processVIPUpgrade } = await import('../app/lib/vipUtils')
       const result = await processVIPUpgrade(user.id, paymentMethod)
       
       if (result.success) {
-        console.log('VIP upgrade bem-sucedido!')
+        console.log('✅ VIP upgrade bem-sucedido!')
+        // Atualizar status imediatamente
+        setTimeout(async () => {
+          await refreshVIPStatus()
+        }, 1000)
       }
       
       return result
     } catch (error: any) {
-      console.error('Erro no upgrade VIP:', error)
+      console.error('❌ Erro no upgrade VIP:', error)
       return {
         success: false,
         message: error.message || 'Erro interno. Tente novamente.'

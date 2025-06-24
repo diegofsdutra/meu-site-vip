@@ -8,8 +8,8 @@ export async function POST(req) {
     const body = await req.json();
     console.log('📦 Dados do webhook:', JSON.stringify(body, null, 2));
 
-    if (body.action !== 'payment.created' && body.type !== 'payment') {
-      console.log('ℹ️ Evento ignorado:', body.action || body.type);
+    if (body.type !== 'payment') {
+      console.log('ℹ️ Evento ignorado:', body.type);
       return NextResponse.json({ message: 'Evento ignorado' }, { status: 200 });
     }
 
@@ -74,109 +74,86 @@ export async function POST(req) {
       quarterly: 90,
       yearly: 365,
     };
-
     const days = plans[planTypeFinal] || 30;
-
     const dataExpiracao = new Date();
     dataExpiracao.setDate(dataExpiracao.getDate() + days);
 
-    console.log('📅 Datas calculadas:', {
-      inicio: now.toLocaleDateString('pt-BR'),
-      expiracao: dataExpiracao.toLocaleDateString('pt-BR'),
-      dias: days
-    });
-
-    console.log('💰 Registrando pagamento...');
-
+    // Buscar o perfil correto pelo email
     const { data: profileData, error: profileError } = await supabase
       .from('profiles')
       .select('id')
       .eq('email', emailFinal)
       .single();
 
-    if (profileError) {
-      console.error('❌ Erro ao buscar perfil:', profileError);
-      return NextResponse.json({ error: 'Usuário não encontrado' }, { status: 404 });
+    if (profileError || !profileData) {
+      console.error('❌ Usuário não encontrado no Supabase:', profileError || 'Nenhum dado retornado');
+      return NextResponse.json({ error: 'Usuário não encontrado no Supabase' }, { status: 404 });
     }
 
-    const { data: paymentData, error: paymentRegisterError } = await supabase
+    // Inserir no vip_payments
+    const { error: paymentError } = await supabase
       .from('vip_payments')
       .insert([{
         user_id: profileData.id,
-        payment_id: paymentId,
+        payment_id: paymentId.toString(),
         amount: payment.transaction_amount || payment.total_paid_amount,
         payment_method: payment.payment_method_id || payment.payment_type_id || 'unknown',
         payment_status: 'approved'
-      }])
-      .select();
+      }]);
 
-    if (paymentRegisterError) {
-      console.error('❌ Erro ao registrar pagamento:', paymentRegisterError);
+    if (paymentError) {
+      console.error('❌ Erro ao registrar pagamento:', paymentError);
     } else {
-      console.log('✅ Pagamento registrado:', paymentData[0]);
+      console.log('✅ Pagamento registrado com sucesso');
     }
 
-    console.log('⭐ Ativando status VIP...');
-
-    const { data: existingVIP, error: searchError } = await supabase
+    // Inserir ou atualizar no usuarios_vip
+    const { data: existingVIP, error: vipSearchError } = await supabase
       .from('usuarios_vip')
       .select('*')
       .eq('email', emailFinal)
       .maybeSingle();
 
-    if (searchError) {
-      console.error('❌ Erro ao buscar VIP existente:', searchError);
+    if (vipSearchError) {
+      console.error('❌ Erro ao buscar VIP:', vipSearchError);
       return NextResponse.json({ error: 'Erro ao buscar VIP' }, { status: 500 });
     }
 
-    let vipResult;
-
     if (existingVIP) {
-      console.log('🔄 Atualizando VIP existente para:', emailFinal);
-      const { data, error } = await supabase
+      const { error: vipUpdateError } = await supabase
         .from('usuarios_vip')
         .update({
           plano: planTypeFinal,
           data_inicio: now.toISOString(),
-          data_expiracao: dataExpiracao.toISOString(),
+          data_expiraca: dataExpiracao.toISOString(),
           pagamento_aprovado: true
         })
-        .eq('email', emailFinal)
-        .select();
+        .eq('email', emailFinal);
 
-      if (error) {
-        console.error('❌ Erro ao atualizar VIP:', error);
+      if (vipUpdateError) {
+        console.error('❌ Erro ao atualizar VIP:', vipUpdateError);
         return NextResponse.json({ error: 'Erro ao atualizar VIP' }, { status: 500 });
       }
 
-      vipResult = data[0];
+      console.log('✅ VIP atualizado com sucesso');
     } else {
-      console.log('➕ Criando novo VIP para:', emailFinal);
-      const { data, error } = await supabase
+      const { error: vipInsertError } = await supabase
         .from('usuarios_vip')
         .insert([{
           email: emailFinal,
           plano: planTypeFinal,
           data_inicio: now.toISOString(),
-          data_expiracao: dataExpiracao.toISOString(),
+          data_expiraca: dataExpiracao.toISOString(),
           pagamento_aprovado: true
-        }])
-        .select();
+        }]);
 
-      if (error) {
-        console.error('❌ Erro ao criar VIP:', error);
+      if (vipInsertError) {
+        console.error('❌ Erro ao criar VIP:', vipInsertError);
         return NextResponse.json({ error: 'Erro ao criar VIP' }, { status: 500 });
       }
 
-      vipResult = data[0];
+      console.log('✅ VIP criado com sucesso');
     }
-
-    console.log('🎉 VIP ATIVADO COM SUCESSO!');
-    console.log('📧 Email:', emailFinal);
-    console.log('⭐ Plano:', planTypeFinal);
-    console.log('📅 Válido até:', dataExpiracao.toLocaleDateString('pt-BR'));
-    console.log('💵 Valor pago: R$', payment.transaction_amount || payment.total_paid_amount);
-    console.log('🆔 Payment ID:', paymentId);
 
     return NextResponse.json({
       success: true,
@@ -185,15 +162,12 @@ export async function POST(req) {
         email: emailFinal,
         plano: planTypeFinal,
         expira_em: dataExpiracao.toISOString(),
-        payment_id: paymentId,
-        amount: payment.transaction_amount || payment.total_paid_amount,
-        vip_id: vipResult.id
+        payment_id: paymentId
       }
     });
 
   } catch (error) {
     console.error('💥 ERRO CRÍTICO no webhook:', error);
-    console.error('📍 Stack trace:', error.stack);
     return NextResponse.json({
       error: 'Erro interno no webhook',
       detail: error.message

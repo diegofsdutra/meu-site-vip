@@ -1,12 +1,11 @@
 import { supabase } from './supabaseClient'
 
 // Verificar se o usuário é VIP usando a tabela usuarios_vip
-export const isVIPActive = (profile) => {
+export const isVIPActive = (profile: any) => {
   if (!profile || !profile.email) {
     return false
   }
 
-  // Se o perfil já tem dados VIP carregados, usar eles
   if (profile.vip_data) {
     const now = new Date()
     const expiresAt = new Date(profile.vip_data.data_expiraca)
@@ -17,23 +16,62 @@ export const isVIPActive = (profile) => {
 }
 
 // Carregar dados VIP do usuário
-export const loadUserVIPData = async (email) => {
+export const loadUserVIPData = async (email: string) => {
   try {
     if (!email) {
       console.log('❌ Email não fornecido para carregar VIP')
       return null
     }
 
-    console.log('🔍 Carregando dados VIP para:', email)
+    const cleanEmail = email.trim().toLowerCase()
+    console.log('🔍 Carregando dados VIP para:', cleanEmail)
 
-    const { data, error } = await supabase
+    // Primeira tentativa: busca exata
+    let { data, error } = await supabase
       .from('usuarios_vip')
       .select('*')
-      .eq('email', email)
+      .eq('email', cleanEmail)
       .eq('pagamento_aprovado', true)
       .order('data_inicio', { ascending: false })
       .limit(1)
       .maybeSingle()
+
+    if (error) {
+      console.error('❌ Erro na busca exata:', error)
+    }
+
+    // Segunda tentativa: busca case-insensitive
+    if (!data) {
+      console.log('🔄 Tentando busca case-insensitive...')
+      const result = await supabase
+        .from('usuarios_vip')
+        .select('*')
+        .ilike('email', cleanEmail)
+        .eq('pagamento_aprovado', true)
+        .order('data_inicio', { ascending: false })
+        .limit(1)
+        .maybeSingle()
+      
+      data = result.data
+      error = result.error
+    }
+
+    // Terceira tentativa: busca por padrão (caso o email tenha pequenas diferenças)
+    if (!data) {
+      console.log('🔄 Tentando busca por padrão...')
+      const emailPattern = cleanEmail.replace('@gmail.com', '%gmail.com')
+      const result = await supabase
+        .from('usuarios_vip')
+        .select('*')
+        .ilike('email', emailPattern)
+        .eq('pagamento_aprovado', true)
+        .order('data_inicio', { ascending: false })
+        .limit(1)
+        .maybeSingle()
+      
+      data = result.data
+      error = result.error
+    }
 
     if (error) {
       console.error('❌ Erro ao carregar dados VIP:', error)
@@ -41,20 +79,26 @@ export const loadUserVIPData = async (email) => {
     }
 
     if (!data) {
-      console.log('ℹ️ Nenhum registro VIP encontrado para:', email)
+      console.log('ℹ️ Nenhum registro VIP encontrado para:', cleanEmail)
       return null
     }
 
-    // Verificar se ainda não expirou
     const now = new Date()
     const expiresAt = new Date(data.data_expiraca)
-    
+
+    console.log('📅 Verificando expiração:', {
+      data_expiraca: data.data_expiraca,
+      expires_at: expiresAt,
+      now: now,
+      is_expired: expiresAt <= now
+    })
+
     if (expiresAt <= now) {
-      console.log('⏰ VIP expirado para:', email, 'expirou em:', expiresAt.toLocaleDateString('pt-BR'))
+      console.log('⏰ VIP expirado para:', cleanEmail, 'expirou em:', expiresAt.toLocaleDateString('pt-BR'))
       return null
     }
 
-    console.log('✅ VIP ativo para:', email, 'expira em:', expiresAt.toLocaleDateString('pt-BR'))
+    console.log('✅ VIP ativo para:', cleanEmail, 'expira em:', expiresAt.toLocaleDateString('pt-BR'))
     return data
 
   } catch (error) {
@@ -63,13 +107,10 @@ export const loadUserVIPData = async (email) => {
   }
 }
 
-// Processar upgrade VIP (usado pelo AuthProvider)
-export const processVIPUpgrade = async (userId, paymentMethod) => {
+// Processar upgrade VIP (simulação)
+export const processVIPUpgrade = async (userId: string, paymentMethod: string) => {
   try {
     console.log('🚀 Iniciando processo de upgrade VIP para usuário:', userId)
-    
-    // Esta função agora só retorna sucesso
-    // O VIP será ativado automaticamente pelo webhook após o pagamento
     return {
       success: true,
       message: 'Redirecionando para pagamento...'
@@ -83,61 +124,8 @@ export const processVIPUpgrade = async (userId, paymentMethod) => {
   }
 }
 
-// Registrar pagamento na tabela vip_payments
-export const registerPayment = async (userId, paymentId, amount, method, status = 'pending') => {
-  try {
-    console.log('💰 Registrando pagamento:', { userId, paymentId, amount, method, status })
-
-    const { data, error } = await supabase
-      .from('vip_payments')
-      .insert([{
-        user_id: userId,
-        payment_id: paymentId,
-        amount: amount,
-        payment_method: method,
-        payment_status: status
-      }])
-      .select()
-
-    if (error) {
-      console.error('❌ Erro ao registrar pagamento:', error)
-      return { success: false, error }
-    }
-
-    console.log('✅ Pagamento registrado com sucesso:', data[0])
-    return { success: true, data: data[0] }
-  } catch (error) {
-    console.error('💥 Erro ao registrar pagamento:', error)
-    return { success: false, error: error.message }
-  }
-}
-
-// Atualizar status do pagamento
-export const updatePaymentStatus = async (paymentId, status) => {
-  try {
-    console.log('🔄 Atualizando status do pagamento:', paymentId, 'para:', status)
-
-    const { data, error } = await supabase
-      .from('vip_payments')
-      .update({ payment_status: status })
-      .eq('payment_id', paymentId)
-      .select()
-
-    if (error) {
-      console.error('❌ Erro ao atualizar status do pagamento:', error)
-      return { success: false, error }
-    }
-
-    console.log('✅ Status do pagamento atualizado:', data[0])
-    return { success: true, data: data[0] }
-  } catch (error) {
-    console.error('💥 Erro ao atualizar status do pagamento:', error)
-    return { success: false, error: error.message }
-  }
-}
-
-// Verificar se email tem VIP ativo (função auxiliar)
-export const checkVIPStatus = async (email) => {
+// Verificar se email tem VIP ativo
+export const checkVIPStatus = async (email: string) => {
   const vipData = await loadUserVIPData(email)
   return {
     isVIP: !!vipData,
