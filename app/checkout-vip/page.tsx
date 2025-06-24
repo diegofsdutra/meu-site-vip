@@ -42,7 +42,7 @@ export default function CheckoutVIPPage() {
     setShowModal(true);
   };
 
-  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+ const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setMessage({ type: '', text: '' });
