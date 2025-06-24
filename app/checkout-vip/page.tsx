@@ -31,7 +31,7 @@ export default function CheckoutVIPPage() {
     quarterly: { name: '3 Meses', price: 19.90, savings: 'Economize R$ 3,20' },
     yearly: { name: '1 Ano', price: 59.90, savings: 'Economize R$ 32,50' }
   };
-  
+
   const handlePlanClick = (planType: 'monthly' | 'quarterly' | 'yearly') => {
     setSelectedPlan(planType);
     if (isLoggedIn) {
@@ -42,7 +42,7 @@ export default function CheckoutVIPPage() {
     setShowModal(true);
   };
 
-  const handleLogin = async (e) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setMessage({ type: '', text: '' });
