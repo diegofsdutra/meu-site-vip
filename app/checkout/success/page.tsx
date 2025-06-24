@@ -2,7 +2,8 @@
 
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { useAuth } from '../../../components/ui/AuthProvider'
+import { useAuth } from '../../../../components/AuthProvider' // Caminho ajustado!
+
 const CheckoutSuccessPage = () => {
   const { refreshVIPStatus, isVIP, profile } = useAuth()
   const [loading, setLoading] = useState(true)
