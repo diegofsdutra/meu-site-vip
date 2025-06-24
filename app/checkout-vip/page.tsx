@@ -31,8 +31,8 @@ export default function CheckoutVIPPage() {
     quarterly: { name: '3 Meses', price: 19.90, savings: 'Economize R$ 3,20' },
     yearly: { name: '1 Ano', price: 59.90, savings: 'Economize R$ 32,50' }
   };
-
-  const handlePlanClick = (planType) => {
+  
+  const handlePlanClick = (planType: 'monthly' | 'quarterly' | 'yearly') => {
     setSelectedPlan(planType);
     if (isLoggedIn) {
       setModalStep('payment');
