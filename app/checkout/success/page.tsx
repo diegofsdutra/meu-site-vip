@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { useAuth } from '../../../../components/AuthProvider' // Caminho ajustado!
+import { useAuth } from '../../../../components/ui/AuthProvider'
 
 const CheckoutSuccessPage = () => {
   const { refreshVIPStatus, isVIP, profile } = useAuth()
@@ -40,12 +40,10 @@ const CheckoutSuccessPage = () => {
       <div className="bg-white p-8 rounded-lg shadow-lg text-center">
         <h2 className="text-3xl font-bold text-green-600">✅ Pagamento Aprovado!</h2>
         {isVIP ? (
-          <>
-            <p className="text-gray-700 mt-2">
-              Seu plano VIP <strong>{profile?.vip_data?.plano}</strong> está ativo até{' '}
-              <strong>{new Date(profile?.vip_data?.data_expiraca).toLocaleDateString()}</strong>.
-            </p>
-          </>
+          <p className="text-gray-700 mt-2">
+            Seu plano VIP <strong>{profile?.vip_data?.plano}</strong> está ativo até{' '}
+            <strong>{new Date(profile?.vip_data?.data_expiraca).toLocaleDateString()}</strong>.
+          </p>
         ) : (
           <>
             <p className="text-gray-700 mt-2">
