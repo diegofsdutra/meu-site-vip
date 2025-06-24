@@ -6,11 +6,11 @@ import Image from "next/image";
 import { useAuth } from "../../components/AuthProvider";
 
 export default function CheckoutVIPPage() {
-  const [selectedPlan, setSelectedPlan] = useState('quarterly');
+  const [selectedPlan, setSelectedPlan] = useState<'monthly' | 'quarterly' | 'yearly'>('quarterly');
   const [showModal, setShowModal] = useState(false);
-  const [modalStep, setModalStep] = useState('auth'); // 'auth' ou 'payment'
-  const [authMode, setAuthMode] = useState('login');
-  const [paymentMethod, setPaymentMethod] = useState('pix');
+  const [modalStep, setModalStep] = useState<'auth' | 'payment'>('auth');
+  const [authMode, setAuthMode] = useState<'login' | 'register'>('login');
+  const [paymentMethod, setPaymentMethod] = useState<'pix' | 'card'>('pix');
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState({ type: '', text: '' });
   
@@ -42,7 +42,7 @@ export default function CheckoutVIPPage() {
     setShowModal(true);
   };
 
- const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setMessage({ type: '', text: '' });
@@ -61,7 +61,7 @@ export default function CheckoutVIPPage() {
     setLoading(false);
   };
 
-  const handleRegister = async (e) => {
+  const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setMessage({ type: '', text: '' });
