@@ -42,7 +42,12 @@ const CheckoutSuccessPage = () => {
         {isVIP ? (
           <p className="text-gray-700 mt-2">
             Seu plano VIP <strong>{profile?.vip_data?.plano}</strong> está ativo até{' '}
-            <strong>{new Date(profile?.vip_data?.data_expiraca).toLocaleDateString()}</strong>.
+            <strong>
+              {profile?.vip_data?.data_expiraca 
+                ? new Date(profile.vip_data.data_expiraca).toLocaleDateString()
+                : 'Data não disponível'
+              }
+            </strong>.
           </p>
         ) : (
           <>
