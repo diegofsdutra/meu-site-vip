@@ -2,8 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { useAuth } from '../../../../../components/AuthProvider'
-
+import { useAuth } from '../../../components/ui/AuthProvider'
 const CheckoutSuccessPage = () => {
   const { refreshVIPStatus, isVIP, profile } = useAuth()
   const [loading, setLoading] = useState(true)
@@ -41,11 +40,16 @@ const CheckoutSuccessPage = () => {
         <h2 className="text-3xl font-bold text-green-600">✅ Pagamento Aprovado!</h2>
         {isVIP ? (
           <>
-            <p className="text-gray-700 mt-2">Seu plano VIP <strong>{profile?.vip_data?.plano}</strong> está ativo até <strong>{new Date(profile?.vip_data?.data_expiraca).toLocaleDateString()}</strong>.</p>
+            <p className="text-gray-700 mt-2">
+              Seu plano VIP <strong>{profile?.vip_data?.plano}</strong> está ativo até{' '}
+              <strong>{new Date(profile?.vip_data?.data_expiraca).toLocaleDateString()}</strong>.
+            </p>
           </>
         ) : (
           <>
-            <p className="text-gray-700 mt-2">Seu pagamento foi aprovado, mas o VIP ainda está processando.</p>
+            <p className="text-gray-700 mt-2">
+              Seu pagamento foi aprovado, mas o VIP ainda está processando.
+            </p>
             <p className="text-gray-500">Tente recarregar a página ou entre em contato.</p>
           </>
         )}
