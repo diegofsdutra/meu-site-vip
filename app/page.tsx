@@ -35,7 +35,7 @@ const LoginModal = React.memo(({ show, onClose, message, setMessage }: ModalProp
 
   if (!show) return null;
 
-  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     setMessage({ type: '', text: '' });
     
@@ -132,7 +132,7 @@ const RegisterModal = React.memo(({ show, onClose, message, setMessage }: ModalP
 
   if (!show) return null;
 
-  const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleRegister = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     setMessage({ type: '', text: '' });
     
@@ -255,7 +255,7 @@ const ForgotPasswordModal = React.memo(({ show, onClose, message, setMessage }: 
 
   if (!show) return null;
 
-  const handleForgotPassword = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleForgotPassword = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     setMessage({ type: '', text: '' });
     
@@ -325,7 +325,7 @@ const ForgotPasswordModal = React.memo(({ show, onClose, message, setMessage }: 
   );
 });
 
-export default function CompatibilidadePage() {
+export default function CompatibilidadePage(): JSX.Element {
   // Estados básicos da página
   const [busca, setBusca] = useState("");
   const [categoriaSelecionada, setCategoriaSelecionada] = useState("Películas 3D Compatíveis");
@@ -398,7 +398,7 @@ export default function CompatibilidadePage() {
 
   // Controle do botão "Voltar ao topo"
   React.useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = (): void => {
       setShowBackToTop(window.scrollY > 500);
     };
 
@@ -407,7 +407,7 @@ export default function CompatibilidadePage() {
   }, []);
 
   // Função para voltar ao topo
-  const scrollToTop = () => {
+  const scrollToTop = (): void => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
@@ -415,7 +415,7 @@ export default function CompatibilidadePage() {
   };
 
   // Função para upgrade VIP
-  const handleVIPUpgrade = async () => {
+  const handleVIPUpgrade = async (): Promise<void> => {
     if (!isLoggedIn) {
       setShowLoginModal(true);
       return;
@@ -429,19 +429,19 @@ export default function CompatibilidadePage() {
   };
 
   // Função de logout
-  const handleLogout = async () => {
+  const handleLogout = async (): Promise<void> => {
     await signOut();
     setMessage({ type: 'success', text: 'Logout realizado com sucesso!' });
   };
 
   // Função de login do dropdown
-  const handleDropdownLogin = async (e) => {
+  const handleDropdownLogin = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     setMessage({ type: '', text: '' });
     
-    const formData = new FormData(e.target);
-    const email = formData.get('email');
-    const password = formData.get('password');
+    const formData = new FormData(e.target as HTMLFormElement);
+    const email = formData.get('email') as string;
+    const password = formData.get('password') as string;
     
     const result = await signIn(email, password);
     
@@ -454,22 +454,22 @@ export default function CompatibilidadePage() {
   };
 
   // Função de cadastro do dropdown
-  const handleDropdownRegister = async (e) => {
+  const handleDropdownRegister = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     setMessage({ type: '', text: '' });
     
-    const formData = new FormData(e.target);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const password = formData.get('password');
-    const confirmPassword = formData.get('confirmPassword');
+    const formData = new FormData(e.target as HTMLFormElement);
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const password = formData.get('password') as string;
+    const confirmPassword = formData.get('confirmPassword') as string;
     
     if (password !== confirmPassword) {
       setMessage({ type: 'error', text: 'Senhas não coincidem' });
       return;
     }
     
-    if (password.length < 6) {
+    if (password && password.length < 6) {
       setMessage({ type: 'error', text: 'Senha deve ter pelo menos 6 caracteres' });
       return;
     }
@@ -485,12 +485,12 @@ export default function CompatibilidadePage() {
   };
 
   // Função de recuperação de senha do dropdown
-  const handleDropdownForgot = async (e) => {
+  const handleDropdownForgot = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     setMessage({ type: '', text: '' });
     
-    const formData = new FormData(e.target);
-    const email = formData.get('email');
+    const formData = new FormData(e.target as HTMLFormElement);
+    const email = formData.get('email') as string;
     
     const result = await resetPassword(email);
     
@@ -848,7 +848,7 @@ export default function CompatibilidadePage() {
               </div>
             </div>
             <nav className="space-y-4">
-              {categorias.map((item) => (
+              {categorias.map((item: string) => (
                 <button
                   key={item}
                   onClick={() => setCategoriaSelecionada(item)}
@@ -903,7 +903,7 @@ export default function CompatibilidadePage() {
                         </td>
                       </tr>
                     ) : exibidosPeliculas.length > 0 ? (
-                      exibidosPeliculas.map((item, i) => (
+                      exibidosPeliculas.map((item: any, i: number) => (
                         <tr key={item.id || i} className="odd:bg-white even:bg-blue-50">
                           <td className="border border-blue-500 px-6 py-4 font-medium text-gray-800">{item.modelo}</td>
                           <td className="border border-blue-500 px-6 py-4 text-gray-700">{item.compatibilidade}</td>
@@ -982,10 +982,10 @@ export default function CompatibilidadePage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {exibidosCapas.map((item, i) => (
+                    {exibidosCapas.map((item: any, i: number) => (
                       <tr key={i} className="odd:bg-white even:bg-blue-50">
                         <td className="border border-blue-500 px-6 py-4 font-medium text-gray-800">{item.modelo}</td>
-                        <td className="border border-blue-500 px-6 py-4 text-gray-700">{item.compatibilidade}</td>
+                        <td className="border border-blue-500 px-6 py-4 text-gray-700">{item.marca}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -1023,7 +1023,7 @@ export default function CompatibilidadePage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {exibidosTelas.map((item, i) => (
+                    {exibidosTelas.map((item: any, i: number) => (
                       <tr key={i} className="odd:bg-white even:bg-blue-50">
                         <td className="border border-blue-500 px-6 py-4 font-medium text-gray-800">{item.modelo}</td>
                         <td className="border border-blue-500 px-6 py-4 text-gray-700">{item.compatibilidade}</td>
@@ -1080,7 +1080,7 @@ export default function CompatibilidadePage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {exibidosBaterias.map((item, i) => (
+                    {exibidosBaterias.map((item: any, i: number) => (
                       <tr key={i}>
                         <td className="border border-blue-500 px-6 py-4 font-medium">{item.modelo}</td>
                         <td className="border border-blue-500 px-6 py-4">{item.compatibilidade}</td>
@@ -1513,7 +1513,7 @@ export default function CompatibilidadePage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {exibidosTelas.map((item, i) => (
+                    {exibidosTelas.map((item: any, i: number) => (
                       <tr key={i} className="odd:bg-white even:bg-blue-50">
                         <td className="border border-blue-500 px-6 py-4 font-medium text-gray-800">{item.modelo}</td>
                         <td className="border border-blue-500 px-6 py-4 text-gray-700">{item.compatibilidade}</td>
