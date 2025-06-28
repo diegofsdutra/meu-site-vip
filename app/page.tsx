@@ -359,7 +359,7 @@ export default function CompatibilidadePage() {
   // Fechar dropdown quando clicar fora
   React.useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (showAccountDropdown && !event.target.closest('.relative')) {
+      if (showAccountDropdown && !(event.target as Element)?.closest('.relative')) {
         setShowAccountDropdown(false);
       }
     };
