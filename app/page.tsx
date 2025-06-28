@@ -255,7 +255,7 @@ const ForgotPasswordModal = React.memo(({ show, onClose, message, setMessage }: 
 
   if (!show) return null;
 
-  const handleForgotPassword = async (e) => {
+  const handleForgotPassword = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setMessage({ type: '', text: '' });
     
