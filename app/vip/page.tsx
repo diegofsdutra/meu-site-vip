@@ -65,7 +65,7 @@ export default function PlanoVIPPage() {
       // Primeiro, tentar obter dados do usuário
       const upgradeResult = await upgradeToVIP('mercado_pago');
       
-      if (upgradeResult.success && upgradeResult.redirectToCheckout) {
+      if (upgradeResult.success && (upgradeResult as any).redirectToCheckout) {
         // Redirecionar para checkout do Mercado Pago
         const checkoutResponse = await fetch('/api/checkout', {
           method: 'POST',
@@ -74,8 +74,8 @@ export default function PlanoVIPPage() {
           },
           body: JSON.stringify({
             planType: planType,
-            email: upgradeResult.userData.email,
-            userId: upgradeResult.userData.userId
+            email: (upgradeResult as any).userData?.email || user.email,
+            userId: (upgradeResult as any).userData?.userId || user.id
           }),
         });
 
@@ -170,7 +170,7 @@ export default function PlanoVIPPage() {
                 </p>
                 {vipStatus?.expiresAt && (
                   <p className="text-green-600 text-sm mt-1">
-                    Válido até: {formatDate(vipStatus.expiresAt)}
+                    Válido até: {formatDate(vipStatus.expiresAt?.toString())}
                   </p>
                 )}
               </div>

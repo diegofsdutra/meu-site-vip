@@ -114,15 +114,31 @@ export const loadUserVIPData = async (email: string): Promise<VIPData | null> =>
 export const processVIPUpgrade = async (userId: string, paymentMethod: string) => {
   try {
     console.log('🚀 Iniciando processo de upgrade VIP para usuário:', userId);
+    
+    // Para Mercado Pago, indicar que deve redirecionar para checkout
+    if (paymentMethod === 'mercado_pago') {
+      return {
+        success: true,
+        message: 'Redirecionando para pagamento...',
+        redirectToCheckout: true,
+        userData: {
+          userId: userId,
+          email: 'user@example.com' // Placeholder - seria obtido do usuário real
+        }
+      };
+    }
+    
     return {
       success: true,
-      message: 'Redirecionando para pagamento...'
+      message: 'Redirecionando para pagamento...',
+      redirectToCheckout: false
     };
   } catch (error) {
     console.error('❌ Erro no upgrade VIP:', error);
     return {
       success: false,
-      message: 'Erro ao processar upgrade VIP'
+      message: 'Erro ao processar upgrade VIP',
+      redirectToCheckout: false
     };
   }
 }

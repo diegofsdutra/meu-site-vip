@@ -243,7 +243,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           console.log('🎯 Profile com VIP:', {
             email: data.email,
             hasVIP: !!vipData,
-            vipExpires: vipData?.data_expiracao
+            vipExpires: vipData?.data_expiraca
           })
         } catch (vipError) {
           console.log('⚠️ Erro ao carregar VIP data, usando perfil básico:', vipError)
