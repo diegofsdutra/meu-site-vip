@@ -325,7 +325,7 @@ const ForgotPasswordModal = React.memo(({ show, onClose, message, setMessage }: 
   );
 });
 
-export default function CompatibilidadePage(): JSX.Element {
+export default function CompatibilidadePage(): React.JSX.Element {
   // Estados básicos da página
   const [busca, setBusca] = useState("");
   const [categoriaSelecionada, setCategoriaSelecionada] = useState("Películas 3D Compatíveis");
