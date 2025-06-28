@@ -521,11 +521,11 @@ export default function CompatibilidadePage(): React.JSX.Element {
   const exibidosBaterias = buscaBaterias ? filtradasBaterias : dadosBaterias.slice(0, 10);
 
   const filtradasConectoresV8 = (dadosConectoresV8 || []).filter((item) =>
-    item.modelo && item.modelo.toLowerCase().includes(buscaConectoresV8.toLowerCase())
+    item.modelos && item.modelos.toLowerCase().includes(buscaConectoresV8.toLowerCase())
   );
   const exibidosConectoresV8 = buscaConectoresV8 ? filtradasConectoresV8 : (dadosConectoresV8 || []).slice(0, 10);
 
-  const filtradasConectoresTypeC = (dadosConectoresTypeC || []).filter((item) =>
+  const filtradasConectoresTypeC = (dadosConectoresTypeC || []).filter((item: any) =>
     item.modelo && item.modelo.toLowerCase().includes(buscaConectoresTypeC.toLowerCase())
   );
   const exibidosConectoresTypeC = buscaConectoresTypeC ? filtradasConectoresTypeC : (dadosConectoresTypeC || []).slice(0, 10);
