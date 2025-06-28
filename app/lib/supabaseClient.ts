@@ -1,46 +1,34 @@
 import { createClient } from '@supabase/supabase-js'
 
-// Variáveis de ambiente + fallback direto
-const supabaseUrl = process.env.SUPABASE_URL || 'https://gttyvzepkwhckgnepnxt.supabase.co'
-const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd0dHl2emVwa3doY2tnbmVwbnh0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0OTgyNTcxMywiZXhwIjoyMDY1NDAxNzEzfQ.EQaMY4wIxznVbPNz144mR-ZJP8n1IqdZXlx5DYClusc'
+// ============================================================================
+// CLIENT-SIDE SUPABASE CLIENT (Para uso em componentes React)
+// ============================================================================
 
-// Verificação
-if (!supabaseUrl || !supabaseServiceRoleKey) {
-  throw new Error('❌ Variáveis do Supabase não configuradas corretamente (service role)')
+// Variáveis públicas para client-side
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+
+// Verificação de variáveis client-side
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error('❌ Missing client-side environment variables: NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY must be set in .env.local')
 }
 
-console.log('✅ Supabase Client (service role) configurado:', {
-  url: supabaseUrl,
-  usingEnvVars: !!process.env.SUPABASE_SERVICE_ROLE_KEY
+// Cliente para uso no browser (autenticação, operações de usuário)
+export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+  auth: {
+    autoRefreshToken: true,
+    persistSession: true,
+    detectSessionInUrl: true
+  }
 })
 
-export const supabase = createClient(supabaseUrl, supabaseServiceRoleKey)
+console.log('✅ Supabase Client (client-side) configurado:', {
+  url: supabaseUrl,
+  mode: 'client-side (anon key)',
+  hasAnonKey: !!supabaseAnonKey
+})
 
-// Tipos TypeScript das suas tabelas
-export interface UserProfile {
-  id: string
-  email: string
-  name?: string
-  created_at?: string
-  updated_at?: string
-  vip_data?: VIPData | null
-}
+// Re-export types from global types file
+export type { UserProfile, VIPData, Payment as VIPPayment } from '../../types/global'
 
-export interface VIPData {
-  id: number
-  email: string
-  plano: string
-  data_inicio: string
-  data_expiraca: string
-  pagamento_aprovado: boolean
-}
-
-export interface VIPPayment {
-  id: string
-  user_id: string
-  payment_id: string
-  amount: number
-  payment_method: string
-  payment_status: string
-  created_at: string
-}
+// NOTA: Para uso server-side (API routes), importe de './supabaseServer'

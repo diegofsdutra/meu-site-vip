@@ -94,12 +94,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           .on('postgres_changes', {
             event: '*',
             schema: 'public',
-            table: 'payments' // ou sua tabela de pagamentos
+            table: 'vip_payments'
           }, async (payload: any) => {
             console.log('💳 Pagamento atualizado:', payload)
             
             // Se o pagamento for do usuário atual
-            if (user && payload.new?.user_email === user.email) {
+            if (user && payload.new?.user_id === user.id) {
               console.log('🔄 Atualizando status VIP do usuário atual...')
               await refreshVIPStatus()
             }
@@ -174,7 +174,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setIsVIP(true)
       } else {
         // Método 3: Verificar na tabela de pagamentos
-        await checkVIPFromPayments(profileData.email)
+        await checkVIPFromPayments(profileData.id)
       }
     } catch (error) {
       console.error('❌ Erro ao verificar status VIP:', error)
@@ -183,15 +183,15 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }
 
   // ✅ NOVA FUNÇÃO: Verificar VIP na tabela de pagamentos
-  const checkVIPFromPayments = async (email: string) => {
-    if (!supabase || !email) return
+  const checkVIPFromPayments = async (userId: string) => {
+    if (!supabase || !userId) return
 
     try {
       const { data, error } = await supabase
-        .from('payments')
+        .from('vip_payments')
         .select('*')
-        .eq('user_email', email)
-        .eq('status', 'approved')
+        .eq('user_id', userId)
+        .eq('payment_status', 'approved')
         .order('created_at', { ascending: false })
         .limit(1)
 

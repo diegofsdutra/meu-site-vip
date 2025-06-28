@@ -48,31 +48,40 @@ export const recordVIPPayment = async (userId: string, paymentData: {
   return { data, error }
 }
 
-export const processVIPUpgrade = async (userId: string, paymentMethod: string = 'pix') => {
+export const processVIPUpgrade = async (userId: string, paymentMethod: string = 'mercado_pago') => {
   try {
-    const paymentResult = await recordVIPPayment(userId, {
-      amount: 7.70,
-      method: paymentMethod,
-      status: 'completed'
-    })
+    // Buscar dados do usuário
+    const { data: profile, error: profileError } = await supabase
+      .from('profiles')
+      .select('email')
+      .eq('id', userId)
+      .single()
 
-    if (paymentResult.error) {
-      return { success: false, error: paymentResult.error }
+    if (profileError || !profile) {
+      return { 
+        success: false, 
+        message: 'Usuário não encontrado',
+        error: profileError 
+      }
     }
 
-    const vipResult = await activateVIP(userId, 1)
-
-    if (vipResult.error) {
-      return { success: false, error: vipResult.error }
-    }
-
+    // Em vez de ativar VIP diretamente, redirecionar para checkout
+    // O VIP será ativado automaticamente pelo webhook após pagamento
     return { 
       success: true, 
-      message: 'VIP ativado com sucesso!',
-      data: vipResult.data 
+      message: 'Redirecionando para pagamento...',
+      redirectToCheckout: true,
+      userData: {
+        userId,
+        email: profile.email
+      }
     }
 
   } catch (error) {
-    return { success: false, error }
+    return { 
+      success: false, 
+      message: 'Erro interno',
+      error 
+    }
   }
 }

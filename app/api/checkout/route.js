@@ -3,9 +3,24 @@ import { NextResponse } from 'next/server';
 export async function POST(req) {
   try {
     const body = await req.json();
-    const { planType, email } = body;
+    const { planType, email, userId } = body;
 
-    console.log('🛒 Iniciando checkout para:', email, 'plano:', planType);
+    console.log('🛒 Iniciando checkout para:', email, 'plano:', planType, 'userId:', userId);
+
+    // Validar apenas os dados mínimos necessários
+    if (!email || !planType) {
+      return NextResponse.json({ 
+        error: 'Email e tipo de plano são obrigatórios' 
+      }, { status: 400 });
+    }
+
+    // Validar formato do email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json({ 
+        error: 'Email inválido' 
+      }, { status: 400 });
+    }
 
     const plans = {
       monthly: { title: 'VIP 1 Mês', price: 7.70, days: 30 },
@@ -18,15 +33,28 @@ export async function POST(req) {
       return NextResponse.json({ error: 'Plano inválido' }, { status: 400 });
     }
 
-    const mercadoPagoToken = process.env.MERCADO_PAGO_TOKEN || 'APP_USR-5004009313003728-061315-c81aaefb6eb2221c9b902dfbd00a8aa7-167454602';
-    const webhookUrl = 'https://seven-oranges-greet.loca.lt';  // Novo tunnel
+    const mercadoPagoToken = process.env.MERCADO_PAGO_TOKEN;
+    const webhookUrl = process.env.WEBHOOK_BASE_URL || process.env.NEXT_PUBLIC_APP_URL;
+
+    if (!mercadoPagoToken) {
+      console.error('❌ MERCADO_PAGO_TOKEN not configured');
+      return NextResponse.json({ 
+        error: 'Payment system not configured' 
+      }, { status: 500 });
+    }
+
+    if (!webhookUrl) {
+      console.error('❌ Webhook URL not configured');
+      return NextResponse.json({ 
+        error: 'Webhook configuration missing' 
+      }, { status: 500 });
+    }
 
     const fullWebhookUrl = `${webhookUrl}/api/webhook/mercado_pago`;
 
     console.log('🔗 Configurações:', {
       webhookUrl: fullWebhookUrl,
-      hasToken: true,
-      tokenLength: mercadoPagoToken.length,
+      hasToken: !!mercadoPagoToken,
       usingEnvToken: !!process.env.MERCADO_PAGO_TOKEN
     });
 
@@ -58,11 +86,13 @@ export async function POST(req) {
         external_reference: JSON.stringify({ 
           planType, 
           email,
+          userId: userId || 'guest_' + Date.now(),
           timestamp: Date.now()
         }),
         metadata: {
           email,
-          planType
+          planType,
+          userId: userId || 'guest_' + Date.now()
         },
       }),
     });

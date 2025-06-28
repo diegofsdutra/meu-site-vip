@@ -6,7 +6,7 @@ import Head from "next/head";
 import { ArrowDown, Package } from "lucide-react";
 import Image from "next/image";
 import { useAuth } from "../components/AuthProvider";
-import dadosMock from "../data/dadosPeliculas.json";
+import { fetchPeliculas, PeliculaData } from "../app/lib/peliculasService";
 import dadosTelas from "../data/dadosTelas.json";
 import dadosCapas from "../data/dados_capas_compatíveis_2025.json";
 import dadosBaterias from "../data/dados_baterias_compatíveis.json";
@@ -15,15 +15,21 @@ import dadosConectoresTypeC from "../data/dados_conectores_typec.json";
 
 const categorias = [
   "Películas 3D Compatíveis",
-  "Capas Compatíveis 2025",
   "Conectores Type-C",
   "Conectores V8",
-  "Telas Compatíveis",
-  "Baterias Compatíveis"
+  "Telas Compatíveis"
 ];
 
+// Interface para as props dos modais
+interface ModalProps {
+  show: boolean;
+  onClose: () => void;
+  message: { type: string; text: string };
+  setMessage: (message: { type: string; text: string }) => void;
+}
+
 // Modal de Login INTEGRADO COM SUPABASE
-const LoginModal = React.memo(({ show, onClose, message, setMessage }) => {
+const LoginModal = React.memo(({ show, onClose, message, setMessage }: ModalProps) => {
   const [loginForm, setLoginForm] = useState({ email: '', password: '' });
   const { signIn, loading } = useAuth();
 
@@ -115,7 +121,7 @@ const LoginModal = React.memo(({ show, onClose, message, setMessage }) => {
 });
 
 // Modal de Cadastro INTEGRADO COM SUPABASE
-const RegisterModal = React.memo(({ show, onClose, message, setMessage }) => {
+const RegisterModal = React.memo(({ show, onClose, message, setMessage }: ModalProps) => {
   const [registerForm, setRegisterForm] = useState({ 
     name: '', 
     email: '', 
@@ -243,7 +249,7 @@ const RegisterModal = React.memo(({ show, onClose, message, setMessage }) => {
 });
 
 // Modal de Recuperação de Senha INTEGRADO COM SUPABASE
-const ForgotPasswordModal = React.memo(({ show, onClose, message, setMessage }) => {
+const ForgotPasswordModal = React.memo(({ show, onClose, message, setMessage }: ModalProps) => {
   const [forgotForm, setForgotForm] = useState({ email: '' });
   const { resetPassword, loading } = useAuth();
 
@@ -332,6 +338,11 @@ export default function CompatibilidadePage() {
   const [showAccountDropdown, setShowAccountDropdown] = useState(false);
   const [dropdownView, setDropdownView] = useState('login');
   
+  // Estados para películas dinâmicas
+  const [peliculasData, setPeliculasData] = useState<PeliculaData[]>([]);
+  const [peliculasLoading, setPeliculasLoading] = useState(true);
+  const [peliculasMessage, setPeliculasMessage] = useState('');
+  
   // Estados dos modais
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showRegisterModal, setShowRegisterModal] = useState(false);
@@ -343,7 +354,7 @@ export default function CompatibilidadePage() {
   const isLoggedIn = !!user;
 
   // Contador total de modelos
-  const totalModelos = dadosMock.length + dadosTelas.length + dadosCapas.length + dadosBaterias.length + (dadosConectoresV8?.length || 0) + (dadosConectoresTypeC?.length || 0);
+  const totalModelos = peliculasData.length + dadosTelas.length + dadosCapas.length + dadosBaterias.length + (dadosConectoresV8?.length || 0) + (dadosConectoresTypeC?.length || 0);
 
   // Fechar dropdown quando clicar fora
   React.useEffect(() => {
@@ -356,6 +367,34 @@ export default function CompatibilidadePage() {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [showAccountDropdown]);
+
+  // Carregar películas quando usuário ou busca mudar
+  React.useEffect(() => {
+    const loadPeliculas = async () => {
+      try {
+        setPeliculasLoading(true);
+        const result = await fetchPeliculas(user?.email, busca);
+        
+        setPeliculasData(result.data);
+        setPeliculasMessage(result.message);
+        
+        console.log('🎬 Películas carregadas:', {
+          total: result.data.length,
+          isVIP: result.isVIP,
+          message: result.message
+        });
+        
+      } catch (error) {
+        console.error('❌ Erro ao carregar películas:', error);
+        setPeliculasData([]);
+        setPeliculasMessage('Erro ao carregar dados');
+      } finally {
+        setPeliculasLoading(false);
+      }
+    };
+
+    loadPeliculas();
+  }, [user?.email, busca]);
 
   // Controle do botão "Voltar ao topo"
   React.useEffect(() => {
@@ -463,21 +502,8 @@ export default function CompatibilidadePage() {
     }
   };
 
-  // Limita a 20% dos dados para usuários não VIP
-  const limitarDados = (dados) => {
-    if (isVIP) return dados;
-    const limite = Math.ceil(dados.length * 0.2);
-    return dados.slice(0, limite);
-  };
-
-  const filtrados = dadosMock.filter(
-    (item) =>
-      item.modelo.toLowerCase().includes(busca.toLowerCase()) &&
-      categoriaSelecionada === "Películas 3D Compatíveis"
-  );
-  
-  const dadosLimitados = limitarDados(filtrados);
-  const exibidosPeliculas = busca ? dadosLimitados : limitarDados(dadosMock).slice(0, 10);
+  // Dados das películas já vêm limitados da API baseado no status VIP
+  const exibidosPeliculas = peliculasData.slice(0, busca ? peliculasData.length : 10);
 
   const filtradasTelas = dadosTelas.filter((item) =>
     item.modelo.toLowerCase().includes(buscaTelas.toLowerCase())
@@ -511,18 +537,32 @@ export default function CompatibilidadePage() {
         <style>{`body { font-family: 'Inter', sans-serif; }`}</style>
       </Head>
 
-      <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-blue-900 to-blue-800 text-white py-2 shadow-md">
-        <div className="absolute top-3 right-5 z-60">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-blue-900 to-blue-800 text-white shadow-md backdrop-blur-sm min-h-[140px]">
+        <div className="grid grid-cols-1 md:grid-cols-1 items-center px-4 pt-2">
+          <div className="text-center md:text-left">
+            <div className="flex justify-center md:justify-start items-center">
+              <div>
+                <h1 className="text-4xl md:text-6xl font-extrabold text-white">
+                  TODAS AS PELÍCULAS <span className="text-yellow-400">3D</span> <span className="text-green-400">COMPATÍVEIS</span>
+                </h1>
+                <div className="w-full h-1 bg-gradient-to-r from-black via-white to-black my-1" />
+                <p className="text-base md:text-lg text-gray-200 font-medium">100% Atualizada 2025 - Powered by Supabase</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-end px-4 pt-2 pb-3">
           {isLoggedIn ? (
             <div className="flex items-center gap-3">
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
+              <div className="flex items-center gap-2 bg-[#1E40AF] backdrop-blur-sm rounded-full px-4 py-2 border border-[#3B82F6]">
                 <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
                   <svg className="w-5 h-5 text-blue-800" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                   </svg>
                 </div>
                 <div className="text-left">
-                  <p className="text-sm font-medium text-white">Olá, {user?.email?.split('@')[0]}!</p>
+                  <p className="text-sm font-medium text-[#FFFFFF]">Olá, {user?.email?.split('@')[0]}!</p>
                   <div className="flex items-center gap-2">
                     {isVIP ? (
                       <span className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
@@ -532,7 +572,7 @@ export default function CompatibilidadePage() {
                         VIP ATIVO
                       </span>
                     ) : (
-                      <span className="bg-gray-500/80 text-white px-3 py-1 rounded-full text-xs font-medium">
+                      <span className="bg-[#64748B] text-[#FFFFFF] px-3 py-1 rounded-full text-xs font-medium">
                         Plano Gratuito
                       </span>
                     )}
@@ -546,7 +586,7 @@ export default function CompatibilidadePage() {
                     href="/checkout-vip"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black px-4 py-2 rounded-full text-xs font-bold transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-1"
+                    className="bg-[#FFB800] hover:bg-[#e0a200] text-black px-4 py-2 rounded-full text-xs font-bold transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-1"
                   >
                     <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -557,7 +597,7 @@ export default function CompatibilidadePage() {
                 <button
                   onClick={handleLogout}
                   disabled={loading}
-                  className="bg-red-600/80 hover:bg-red-700 text-white px-4 py-2 rounded-full text-xs font-medium transition-all duration-300 backdrop-blur-sm border border-red-400/30 disabled:opacity-50"
+                  className="bg-[#D32F2F] hover:bg-[#B71C1C] text-[#FFFFFF] px-4 py-2 rounded-full text-xs font-medium transition-all duration-300 shadow-lg disabled:opacity-50"
                 >
                   Sair da Conta
                 </button>
@@ -586,7 +626,7 @@ export default function CompatibilidadePage() {
               
               {/* Dropdown Menu */}
               {showAccountDropdown && (
-                <div className="absolute right-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-200 z-70">
+                <div className="absolute right-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-200 z-50">
                   
                   {/* Login View */}
                   {dropdownView === 'login' && (
@@ -780,30 +820,16 @@ export default function CompatibilidadePage() {
             </div>
           )}
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-1 items-center px-4 pt-8">
-          <div className="text-center md:text-left">
-            <div className="flex justify-center md:justify-start items-center">
-              <div>
-                <h1 className="text-4xl md:text-6xl font-extrabold text-white">
-                  TODAS AS PELÍCULAS <span className="text-yellow-400">3D</span> <span className="text-green-400">COMPATÍVEIS</span>
-                </h1>
-                <div className="w-full h-1 bg-gradient-to-r from-black via-white to-black my-1" />
-                <p className="text-base md:text-lg text-gray-200 font-medium">100% Atualizada 2025 - Powered by Supabase</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </header>
 
-      <div className="pt-16 px-4">
+      <div className="pt-32 px-4">
         <div className="w-full flex justify-center -mb-20">
           <Image src="/tela prime s fundoo.png" alt="Logo Centralizada" width={350} height={175} className="mx-auto" />
         </div>
 
         <div className="text-center py-2 bg-green-100 border border-green-300 rounded-lg mx-4 mb-4">
           <p className="text-lg font-bold text-green-800">
-            ✅ Mais de {totalModelos.toLocaleString()} modelos compatíveis em nossa base!
+            ✅ Lista completa, confiável e em constante atualização!
           </p>
           <p className="text-sm text-green-600">Atualizada diariamente com novos lançamentos - Sistema Supabase</p>
         </div>
@@ -814,9 +840,9 @@ export default function CompatibilidadePage() {
 
         <main className="grid grid-cols-1 md:grid-cols-[270px_1fr_300px] gap-6 items-start">
           <aside className="flex flex-col space-y-4 min-h-[1500px]">
-            <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl p-8 text-center font-semibold text-white text-lg shadow-lg">
+            <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl p-12 text-center font-semibold text-white text-xl shadow-lg">
               Confira também outras categorias de <br />compatibilidade
-              <div className="flex justify-center mt-4">
+              <div className="flex justify-center mt-6">
                 <ArrowDown className="animate-bounce text-yellow-300 w-7 h-7" />
                 <ArrowDown className="animate-bounce text-yellow-300 w-7 h-7 -ml-2" />
               </div>
@@ -826,7 +852,7 @@ export default function CompatibilidadePage() {
                 <button
                   key={item}
                   onClick={() => setCategoriaSelecionada(item)}
-                  className={`w-full text-left px-6 py-5 font-semibold rounded-xl shadow transition-all ${
+                  className={`w-full text-left px-6 py-7 font-semibold rounded-xl shadow transition-all ${
                     categoriaSelecionada === item ? "bg-blue-800 text-white" : "bg-blue-50 text-blue-900 hover:bg-blue-100"
                   }`}
                 >
@@ -867,19 +893,36 @@ export default function CompatibilidadePage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {exibidosPeliculas.map((item, i) => (
-                      <tr key={i} className="odd:bg-white even:bg-blue-50">
-                        <td className="border border-blue-500 px-6 py-4 font-medium text-gray-800">{item.modelo}</td>
-                        <td className="border border-blue-500 px-6 py-4 text-gray-700">{item.compatibilidade}</td>
+                    {peliculasLoading ? (
+                      <tr>
+                        <td colSpan={2} className="border border-blue-500 px-6 py-8 text-center text-gray-600">
+                          <div className="flex items-center justify-center gap-2">
+                            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600"></div>
+                            Carregando películas...
+                          </div>
+                        </td>
                       </tr>
-                    ))}
+                    ) : exibidosPeliculas.length > 0 ? (
+                      exibidosPeliculas.map((item, i) => (
+                        <tr key={item.id || i} className="odd:bg-white even:bg-blue-50">
+                          <td className="border border-blue-500 px-6 py-4 font-medium text-gray-800">{item.modelo}</td>
+                          <td className="border border-blue-500 px-6 py-4 text-gray-700">{item.compatibilidade}</td>
+                        </tr>
+                      ))
+                    ) : (
+                      <tr>
+                        <td colSpan={2} className="border border-blue-500 px-6 py-8 text-center text-gray-600">
+                          {busca ? `Nenhuma película encontrada para "${busca}"` : 'Nenhuma película disponível'}
+                        </td>
+                      </tr>
+                    )}
                   </tbody>
                 </table>
                 
-                {!isVIP && (
+                {!isVIP && peliculasData.length > 0 && (
                   <div className="mt-6 p-4 bg-black border-2 border-yellow-400 rounded-xl text-center">
                     <p className="text-lg font-semibold text-white mb-2">
-                      🔒 Você tem acesso apenas a 20% dos modelos compatíveis
+                      🔒 {peliculasMessage}
                     </p>
                     <p className="text-sm text-gray-300 mb-3">
                       Desbloqueie TODOS os modelos! Base completa + atualizações diárias com novos lançamentos
@@ -897,9 +940,9 @@ export default function CompatibilidadePage() {
                   </div>
                 )}
                 <div className="w-full flex flex-col md:flex-row justify-center items-center gap-4 mt-8">
-                  <Image src="/shopee1.png" alt="Shopee 1" width={200} height={300} className="rounded-xl shadow-md" />
-                  <Image src="/shopee2.png" alt="Shopee 2" width={200} height={300} className="rounded-xl shadow-md" />
-                  <Image src="/shopee3.png" alt="Shopee 3" width={200} height={300} className="rounded-xl shadow-md" />
+                  <Image src="/pelicula shoppe1.webp" alt="Shopee 1" width={200} height={300} className="rounded-xl shadow-md" />
+                  <Image src="/pelicula shoppe 2.webp" alt="Shopee 2" width={200} height={300} className="rounded-xl shadow-md" />
+                  <Image src="/pelicula 3 shopee.webp" alt="Shopee 3" width={200} height={300} className="rounded-xl shadow-md" />
                 </div>
                 <div className="flex justify-center mt-6">
                   <a href="https://shopee.com.br" target="_blank" rel="noopener noreferrer" className="bg-orange-600 hover:bg-orange-700 text-white font-bold px-8 py-4 rounded-full text-lg">
@@ -1229,10 +1272,11 @@ export default function CompatibilidadePage() {
                           </div>
                         </td>
                         <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <div className="text-green-600 text-sm font-bold mb-2">COMPRAR LOTE DE 100 PEÇAS</div>
-                          <img 
-                            src="/conector-v8-1.webp" 
+                          <Image 
+                            src="/conector de carga redimi 12 c.webp" 
                             alt="Conector V8 Xiaomi Samsung LG" 
+                            width={320}
+                            height={200}
                             className="w-80 h-auto object-contain mx-auto"
                           />
                         </td>
@@ -1246,10 +1290,11 @@ export default function CompatibilidadePage() {
                           </div>
                         </td>
                         <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <div className="text-green-600 text-sm font-bold mb-2">COMPRAR LOTE DE 100 PEÇAS</div>
-                          <img 
-                            src="/conector-v8-2.webp" 
+                          <Image 
+                            src="/conector de carga moto e 6i.webp" 
                             alt="Conector V8 Motorola Lenovo" 
+                            width={320}
+                            height={200}
                             className="w-80 h-auto object-contain mx-auto"
                           />
                         </td>
@@ -1258,16 +1303,17 @@ export default function CompatibilidadePage() {
                       <tr className="bg-white">
                         <td className="border-2 border-black px-6 py-6 align-top">
                           <div className="font-medium text-black leading-relaxed">
-                            SAMSUNG A05 / A01 J8 Novo - J6 Novo - J4 J300 j4 core
+                            SAMSUNG A02 / A01 J8 Novo - J6 Novo - J4 J300 j4 core
                             J7 Duo - J5 Pro - J7 Pro - J1 - J2 - J5 Prime - J5 Prime
                             G570 - J7 Prime G610 - A10 - A10 s
                           </div>
                         </td>
                         <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <div className="text-green-600 text-sm font-bold mb-2">COMPRAR LOTE DE 100 PCS</div>
-                          <img 
-                            src="/conector-v8-3.webp" 
+                          <Image 
+                            src="/conector de carga a02.jpeg" 
                             alt="Conector V8 Samsung A05 J series" 
+                            width={320}
+                            height={200}
                             className="w-80 h-auto object-contain mx-auto"
                           />
                         </td>
@@ -1276,33 +1322,20 @@ export default function CompatibilidadePage() {
                       <tr className="bg-white">
                         <td className="border-2 border-black px-6 py-6 align-top">
                           <div className="font-medium text-black leading-relaxed">
-                            G531 - G531 - G355 - G355 - G7102 - G7102 - G6102
+                            G530 - G531 - G355 - G355 - G7102 - G7102 - G6102
                             G570 - J7 Meta J7 G5 - G Meta G516 - core plus - S3 - S3 - S4
                           </div>
                         </td>
                         <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <img 
-                            src="/conector-v8-4.webp" 
+                          <Image 
+                            src="/conector de carga g530.webp" 
                             alt="Conector V8 Samsung G series" 
+                            width={320}
+                            height={200}
                             className="w-80 h-auto object-contain mx-auto"
                           />
                         </td>
-                      </tr>
-                      
-                      <tr className="bg-white">
-                        <td className="border-2 border-black px-6 py-6 align-top">
-                          <div className="font-medium text-black leading-relaxed">
-                            i8552 - i9060 - i9082 - G360 - i9062 - i9152 - i8730 - i8730 - T110 - T111 - T560 - T561
-                          </div>
-                        </td>
-                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <img 
-                            src="/conector-v8-5.webp" 
-                            alt="Conector V8 Samsung i series T series" 
-                            className="w-80 h-auto object-contain mx-auto"
-                          />
-                        </td>
-                      </tr>
+                      </tr>                     
                       
                       <tr className="bg-white">
                         <td className="border-2 border-black px-6 py-6 align-top">
@@ -1312,9 +1345,11 @@ export default function CompatibilidadePage() {
                           </div>
                         </td>
                         <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <img 
-                            src="/conector-v8-6.webp" 
+                          <Image 
+                            src="/conector de carga moto g1.webp" 
                             alt="Conector V8 Moto G E Lenovo" 
+                            width={320}
+                            height={200}
                             className="w-80 h-auto object-contain mx-auto"
                           />
                         </td>
@@ -1327,9 +1362,11 @@ export default function CompatibilidadePage() {
                           </div>
                         </td>
                         <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <img 
-                            src="/conector-v8-7.webp" 
+                          <Image 
+                            src="/conector de carga k10.webp" 
                             alt="Conector V8 LG K series H series" 
+                            width={320}
+                            height={200}
                             className="w-80 h-auto object-contain mx-auto"
                           />
                         </td>
@@ -1342,89 +1379,16 @@ export default function CompatibilidadePage() {
                           </div>
                         </td>
                         <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <img 
-                            src="/conector-v8-8.webp" 
+                          <Image 
+                            src="/conector de carga g4.webp" 
                             alt="Conector V8 Moto G4 E2 Sony" 
+                            width={320}
+                            height={200}
                             className="w-80 h-auto object-contain mx-auto"
                           />
                         </td>
                       </tr>
-                      
-                      <tr className="bg-white">
-                        <td className="border-2 border-black px-6 py-6 align-top">
-                          <div className="font-medium text-black leading-relaxed">
-                            T210 - T211 - P5200 - P5210 - P5200 - i9200 - N5100 - i9205 - T230 - T231 - T235
-                          </div>
-                        </td>
-                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <img 
-                            src="/conector-v8-9.webp" 
-                            alt="Conector V8 Samsung Tablets" 
-                            className="w-80 h-auto object-contain mx-auto"
-                          />
-                        </td>
-                      </tr>
-                      
-                      <tr className="bg-white">
-                        <td className="border-2 border-black px-6 py-6 align-top">
-                          <div className="font-medium text-black leading-relaxed">
-                            N530 - N625 - I320 - I020
-                          </div>
-                        </td>
-                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <img 
-                            src="/conector-v8-10.webp" 
-                            alt="Conector V8 N series I series" 
-                            className="w-80 h-auto object-contain mx-auto"
-                          />
-                        </td>
-                      </tr>
-                      
-                      <tr className="bg-white">
-                        <td className="border-2 border-black px-6 py-6 align-top">
-                          <div className="font-medium text-black leading-relaxed">
-                            S3 / i9300 - i9308 - i930 - T999 - 959 - I747 - i535 - L710
-                          </div>
-                        </td>
-                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <img 
-                            src="/conector-v8-11.webp" 
-                            alt="Conector V8 Samsung S3" 
-                            className="w-80 h-auto object-contain mx-auto"
-                          />
-                        </td>
-                      </tr>
-                      
-                      <tr className="bg-white">
-                        <td className="border-2 border-black px-6 py-6 align-top">
-                          <div className="font-medium text-black leading-relaxed">
-                            S4 i9500 - i9502 - i9505 - N7100 - N7108 - N7102 - N719 - N7105
-                          </div>
-                        </td>
-                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <img 
-                            src="/conector-v8-12.webp" 
-                            alt="Conector V8 Samsung S4 Note" 
-                            className="w-80 h-auto object-contain mx-auto"
-                          />
-                        </td>
-                      </tr>
-                      
-                      <tr className="bg-white">
-                        <td className="border-2 border-black px-6 py-6 align-top">
-                          <div className="font-medium text-black leading-relaxed">
-                            i365 - i450 - i365 - G105 - E415 - E470 - D295 - L3 - E445 - E465 - E610 - i9150 - P188 - E450 - L40 - E610 - G105 - E316 - E315 i9150 - P165 - E710 - E710
-                          </div>
-                        </td>
-                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <img 
-                            src="/conector-v8-13.webp" 
-                            alt="Conector V8 Samsung diversos modelos" 
-                            className="w-80 h-auto object-contain mx-auto"
-                          />
-                        </td>
-                      </tr>
-                      
+                        
                       <tr className="bg-white">
                         <td className="border-2 border-black px-6 py-6 align-top">
                           <div className="font-medium text-black leading-relaxed">
@@ -1432,9 +1396,11 @@ export default function CompatibilidadePage() {
                           </div>
                         </td>
                         <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <img 
-                            src="/conector-v8-14.webp" 
+                          <Image 
+                            src="/conector de carga tablet dl.png" 
                             alt="Conector V8 Tablets universais" 
+                            width={320}
+                            height={200}
                             className="w-80 h-auto object-contain mx-auto"
                           />
                         </td>
@@ -1447,9 +1413,11 @@ export default function CompatibilidadePage() {
                           </div>
                         </td>
                         <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <img 
-                            src="/conector-v8-15.webp" 
+                          <Image 
+                            src="/conector de carga tablet v3.webp" 
                             alt="Conector V8 Tablets GPS" 
+                            width={320}
+                            height={200}
                             className="w-80 h-auto object-contain mx-auto"
                           />
                         </td>
@@ -1462,9 +1430,11 @@ export default function CompatibilidadePage() {
                           </div>
                         </td>
                         <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <img 
-                            src="/conector-v8-16.webp" 
+                          <Image 
+                            src="/conector de carga moto g2.webp" 
                             alt="Conector V8 Moto G2" 
+                            width={320}
+                            height={200}
                             className="w-80 h-auto object-contain mx-auto"
                           />
                         </td>
@@ -1477,164 +1447,16 @@ export default function CompatibilidadePage() {
                           </div>
                         </td>
                         <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <img 
-                            src="/conector-v8-17.webp" 
+                          <Image 
+                            src="/conector de carga  s6812.png" 
                             alt="Conector V8 Samsung série S G J" 
+                            width={320}
+                            height={200}
                             className="w-80 h-auto object-contain mx-auto"
                           />
                         </td>
-                      </tr><tr className="bg-white">
-                        <td className="border-2 border-black px-6 py-6 align-top">
-                          <div className="font-medium text-black leading-relaxed">
-                            Tablet DL - Multilaser - Navicity (modelo 1 padrão universal)
-                          </div>
-                        </td>
-                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <img 
-                            src="/conector-v8-14.webp" 
-                            alt="Conector V8 Tablets universais" 
-                            className="w-80 h-auto object-contain mx-auto"
-                          />
-                        </td>
-                      </tr>
-                      
-                      <tr className="bg-white">
-                        <td className="border-2 border-black px-6 py-6 align-top">
-                          <div className="font-medium text-black leading-relaxed">
-                            Tablets Diversos / Gps Diversos / V3
-                          </div>
-                        </td>
-                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <img 
-                            src="/conector-v8-15.webp" 
-                            alt="Conector V8 Tablets GPS" 
-                            className="w-80 h-auto object-contain mx-auto"
-                          />
-                        </td>
-                      </tr>
-                      
-                      <tr className="bg-white">
-                        <td className="border-2 border-black px-6 py-6 align-top">
-                          <div className="font-medium text-black leading-relaxed">
-                            Moto G2
-                          </div>
-                        </td>
-                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <img 
-                            src="/conector-v8-16.webp" 
-                            alt="Conector V8 Moto G2" 
-                            className="w-80 h-auto object-contain mx-auto"
-                          />
-                        </td>
-                      </tr>
-                      
-                      <tr className="bg-green-100">
-                        <td className="border-2 border-black px-6 py-6 align-top">
-                          <div className="font-medium text-black leading-relaxed">
-                            S6812 - J105 - J210 - G130 - G313 - J110 - J120 - S5360 - I8262 - S7272 - I739 - I759 - I9128 - S6352 - S6312 - E7 - A8 A300 - A800F
-                          </div>
-                        </td>
-                        <td className="border-2 border-black px-6 py-6 text-center align-middle bg-green-200">
-                          <img 
-                            src="/conector-v8-17.webp" 
-                            alt="Conector V8 Samsung série S G J" 
-                            className="w-80 h-auto object-contain mx-auto"
-                          />
-                        </td>
-                      </tr>
-                      
-                      <tr className="bg-white">
-                        <td className="border-2 border-black px-6 py-6 align-top">
-                          <div className="font-medium text-black leading-relaxed">
-                            Moto X2 - Asus K012 / Asus Me170
-                            Zenfone Max e Diversos
-                            JBL - Para caixa de som JBL
-                          </div>
-                        </td>
-                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <img 
-                            src="/conector-v8-18.webp" 
-                            alt="Conector V8 Moto X2 Asus Zenfone JBL" 
-                            className="w-80 h-auto object-contain mx-auto"
-                          />
-                        </td>
-                      </tr>
-                      
-                      <tr className="bg-green-100">
-                        <td className="border-2 border-black px-6 py-6 align-top">
-                          <div className="font-medium text-black leading-relaxed">
-                            Moto X Play / Moto X Style
-                          </div>
-                        </td>
-                        <td className="border-2 border-black px-6 py-6 text-center align-middle bg-green-200">
-                          <img 
-                            src="/conector-v8-20.webp" 
-                            alt="Conector V8 Moto X Play Style" 
-                            className="w-80 h-auto object-contain mx-auto"
-                          />
-                        </td>
-                      </tr>
-                      
-                      <tr className="bg-white">
-                        <td className="border-2 border-black px-6 py-6 align-top">
-                          <div className="font-medium text-black leading-relaxed">
-                            S3 Mini - i8190 - i8160 - S7562 - S7560 - i9050
-                          </div>
-                        </td>
-                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <img 
-                            src="/conector-v8-21.webp" 
-                            alt="Conector V8 Samsung S3 Mini" 
-                            className="w-80 h-auto object-contain mx-auto"
-                          />
-                        </td>
-                      </tr>
-                      
-                      <tr className="bg-white">
-                        <td className="border-2 border-black px-6 py-6 align-top">
-                          <div className="font-medium text-black leading-relaxed">
-                            S6293 - i8262 - i9192 - i9195 - G110 - G613 - G310 - i8160
-                          </div>
-                        </td>
-                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <img 
-                            src="/conector-v8-22.webp" 
-                            alt="Conector V8 Samsung S G series diversos" 
-                            className="w-80 h-auto object-contain mx-auto"
-                          />
-                        </td>
-                      </tr>
-                      
-                      <tr className="bg-white">
-                        <td className="border-2 border-black px-6 py-6 align-top">
-                          <div className="font-medium text-black leading-relaxed">
-                            Moto G5s / Alcatel One Touch plus 4 OT 4924 / Huawei Y5 II CUN L01
-                          </div>
-                        </td>
-                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <img 
-                            src="/conector-v8-23.webp" 
-                            alt="Conector V8 Moto G5s Alcatel Huawei" 
-                            className="w-80 h-auto object-contain mx-auto"
-                          />
-                        </td>
-                      </tr>
-                      
-                      <tr className="bg-white">
-                        <td className="border-2 border-black px-6 py-6 align-top">
-                          <div className="font-medium text-black leading-relaxed">
-                            Xperia C / C2304 C2305 - Xperia E3 / Tablets Diversos
-                          </div>
-                        </td>
-                        <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <img 
-                            src="/conector-v8-24.webp" 
-                            alt="Conector V8 Sony Xperia" 
-                            className="w-80 h-auto object-contain mx-auto"
-                          />
-                        </td>
-                      </tr>
-                      
+                      </tr>                                      
+                                          
                       <tr className="bg-white">
                         <td className="border-2 border-black px-6 py-6 align-top">
                           <div className="font-medium text-black leading-relaxed">
@@ -1642,9 +1464,11 @@ export default function CompatibilidadePage() {
                           </div>
                         </td>
                         <td className="border-2 border-black px-6 py-6 text-center align-middle">
-                          <img 
-                            src="/conector-v8-25.webp" 
+                          <Image 
+                            src="/conector de carga a10s.webp" 
                             alt="Conector V8 Samsung A10s M10 M15 Moto E5" 
+                            width={320}
+                            height={200}
                             className="w-80 h-auto object-contain mx-auto"
                           />
                         </td>
@@ -1719,7 +1543,7 @@ export default function CompatibilidadePage() {
 
           <div className="space-y-6">
             <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-200 max-w-sm mx-auto">
-              <h3 className="text-xl font-bold text-center text-gray-800 mb-4">💬 O que dizem nossos usuários</h3>
+              <h3 className="text-xl font-bold text-center text-gray-800 mb-4">O que dizem nossos usuários</h3>
               
               <div className="space-y-4">
                 <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-gray-400">
@@ -1782,13 +1606,13 @@ export default function CompatibilidadePage() {
             </div>
 
             <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-xl p-6 text-center shadow-md max-w-sm mx-auto">
-              <h3 className="text-xl font-bold mb-2">🎁 Promoção por Tempo Limitado</h3>
+              <h3 className="text-xl font-bold mb-2">Promoção por Tempo Limitado</h3>
               <p className="text-base font-medium">
                 Na sua <strong>primeira compra</strong> no site 
                 <a href="https://telaprimeexpress.com" target="_blank" className="text-cyan-300 font-bold underline mx-1">
                   telaprimeexpress.com
                 </a>
-                você ganha <strong>1 mês de acesso VIP</strong> totalmente grátis! <span className="text-cyan-300 font-bold">🔒</span>
+                você ganha <strong>1 mês de acesso VIP</strong> totalmente grátis!
               </p>
               <p className="text-sm mt-3 text-blue-100">*Oferta válida apenas para novos clientes</p>
               <a
@@ -1822,7 +1646,7 @@ export default function CompatibilidadePage() {
               </div>
               
               <div className="bg-yellow-400 text-black rounded-lg p-2 mb-3">
-                <p className="text-xs font-bold">🎁 COMPRE E GANHE:</p>
+                <p className="text-xs font-bold">COMPRE E GANHE:</p>
                 <p className="text-sm font-extrabold">1 MÊS LISTA VIP GRÁTIS</p>
               </div>
               

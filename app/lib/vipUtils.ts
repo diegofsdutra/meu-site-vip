@@ -1,7 +1,10 @@
 import { supabase } from './supabaseClient'
 
+// Import types from global types file
+import type { VIPData, VIPStatusResult, PaymentsResult, Payment } from '../../types/global'
+
 // Verificar se o usuário é VIP usando a tabela usuarios_vip
-export const isVIPActive = (profile: any) => {
+export const isVIPActive = (profile: any): boolean => {
   if (!profile || !profile.email) {
     return false;
   }
@@ -16,10 +19,10 @@ export const isVIPActive = (profile: any) => {
 }
 
 // Carregar dados VIP do usuário
-export const loadUserVIPData = async (email: string) => {
+export const loadUserVIPData = async (email: string): Promise<VIPData | null> => {
   try {
-    if (!email) {
-      console.log('❌ Email não fornecido para carregar VIP');
+    if (!email || typeof email !== 'string' || email.trim() === '') {
+      console.log('❌ Email inválido ou não fornecido para carregar VIP');
       return null;
     }
 
@@ -93,8 +96,8 @@ export const loadUserVIPData = async (email: string) => {
       is_expired: expiresAt <= now
     });
 
-    if (expiresAt <= now) {
-      console.log('⏰ VIP expirado para:', cleanEmail, 'expirou em:', expiresAt.toLocaleDateString('pt-BR'));
+    if (isNaN(expiresAt.getTime()) || expiresAt <= now) {
+      console.log('⏰ VIP expirado ou data inválida para:', cleanEmail, 'expirou em:', data.data_expiraca);
       return null;
     }
 
@@ -125,21 +128,44 @@ export const processVIPUpgrade = async (userId: string, paymentMethod: string) =
 }
 
 // Verificar se email tem VIP ativo
-export const checkVIPStatus = async (email: string) => {
-  const vipData = await loadUserVIPData(email);
-  return {
-    isVIP: !!vipData,
-    data: vipData,
-    expiresAt: vipData ? new Date(vipData.data_expiraca) : null
-  };
+export const checkVIPStatus = async (email: string): Promise<VIPStatusResult> => {
+  try {
+    if (!email || typeof email !== 'string') {
+      return {
+        success: false,
+        isVIP: false,
+        data: null,
+        expiresAt: null,
+        error: 'Email inválido'
+      };
+    }
+
+    const vipData = await loadUserVIPData(email);
+    
+    return {
+      success: true,
+      isVIP: !!vipData,
+      data: vipData,
+      expiresAt: vipData ? new Date(vipData.data_expiraca) : null
+    };
+  } catch (error) {
+    console.error('❌ Erro ao verificar status VIP:', error);
+    return {
+      success: false,
+      isVIP: false,
+      data: null,
+      expiresAt: null,
+      error: error instanceof Error ? error.message : 'Erro desconhecido'
+    };
+  }
 }
 
 // Buscar pagamentos do usuário
-export const getUserPayments = async (userId: string) => {
+export const getUserPayments = async (userId: string): Promise<PaymentsResult> => {
   try {
-    if (!userId) {
-      console.log('❌ userId não fornecido para buscar pagamentos');
-      return { success: false, payments: [] };
+    if (!userId || typeof userId !== 'string' || userId.trim() === '') {
+      console.log('❌ userId inválido ou não fornecido para buscar pagamentos');
+      return { success: false, payments: [], error: 'userId inválido' };
     }
 
     const { data, error } = await supabase
@@ -150,12 +176,20 @@ export const getUserPayments = async (userId: string) => {
 
     if (error) {
       console.error('❌ Erro ao buscar pagamentos:', error);
-      return { success: false, payments: [] };
+      return { 
+        success: false, 
+        payments: [], 
+        error: `Erro na busca: ${error.message}` 
+      };
     }
 
     return { success: true, payments: data || [] };
   } catch (error) {
     console.error('💥 Erro inesperado ao buscar pagamentos:', error);
-    return { success: false, payments: [] };
+    return { 
+      success: false, 
+      payments: [], 
+      error: error instanceof Error ? error.message : 'Erro desconhecido' 
+    };
   }
 };

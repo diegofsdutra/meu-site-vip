@@ -7,12 +7,15 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "../../components/AuthProvider";
 import { checkVIPStatus, getUserPayments } from "../lib/vipUtils";
 
+// Import types from global types file
+import type { VIPStatusResult as VIPStatus, Payment, Message } from "../../types/global";
+
 export default function PlanoVIPPage() {
   const { user, isVIP, loading, upgradeToVIP } = useAuth();
   const [processingPayment, setProcessingPayment] = useState(false);
-  const [message, setMessage] = useState({ type: '', text: '' });
-  const [vipStatus, setVipStatus] = useState(null);
-  const [userPayments, setUserPayments] = useState([]);
+  const [message, setMessage] = useState<Message>({ type: '', text: '' });
+  const [vipStatus, setVipStatus] = useState<VIPStatus | null>(null);
+  const [userPayments, setUserPayments] = useState<Payment[]>([]);
   const router = useRouter();
 
   // Verificar status VIP detalhado
@@ -41,7 +44,7 @@ export default function PlanoVIPPage() {
     }
   };
 
-  const handleVIPUpgrade = async (planType = 'mensal') => {
+  const handleVIPUpgrade = async (planType: string = 'monthly') => {
     if (!user) {
       router.push('/?login=true');
       return;
@@ -59,29 +62,46 @@ export default function PlanoVIPPage() {
     setMessage({ type: '', text: '' });
 
     try {
-      const result = await upgradeToVIP('pix');
+      // Primeiro, tentar obter dados do usuário
+      const upgradeResult = await upgradeToVIP('mercado_pago');
       
-      if (result.success) {
-        setMessage({ 
-          type: 'success', 
-          text: result.message 
+      if (upgradeResult.success && upgradeResult.redirectToCheckout) {
+        // Redirecionar para checkout do Mercado Pago
+        const checkoutResponse = await fetch('/api/checkout', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            planType: planType,
+            email: upgradeResult.userData.email,
+            userId: upgradeResult.userData.userId
+          }),
         });
-        
-        // Recarregar status
-        await loadVipStatus();
-        await loadUserPayments();
-        
-        // Redirecionar após 3 segundos
-        setTimeout(() => {
-          router.push('/');
-        }, 3000);
+
+        const checkoutData = await checkoutResponse.json();
+
+        if (checkoutData.init_point) {
+          setMessage({ 
+            type: 'success', 
+            text: 'Redirecionando para pagamento...' 
+          });
+          
+          // Redirecionar para o Mercado Pago
+          setTimeout(() => {
+            window.location.href = checkoutData.init_point;
+          }, 1000);
+        } else {
+          throw new Error(checkoutData.error || 'Erro ao criar checkout');
+        }
       } else {
         setMessage({ 
           type: 'error', 
-          text: result.message || 'Erro ao processar pagamento' 
+          text: upgradeResult.message || 'Erro ao processar upgrade' 
         });
       }
     } catch (error) {
+      console.error('Erro no upgrade VIP:', error);
       setMessage({ 
         type: 'error', 
         text: 'Erro interno. Tente novamente.' 
@@ -91,15 +111,29 @@ export default function PlanoVIPPage() {
     }
   };
 
-  const formatDate = (dateString) => {
-    return new Date(dateString).toLocaleDateString('pt-BR');
+  const formatDate = (dateString: string | null | undefined): string => {
+    if (!dateString) return 'Data inválida';
+    try {
+      return new Date(dateString).toLocaleDateString('pt-BR');
+    } catch (error) {
+      console.error('Erro ao formatar data:', error);
+      return 'Data inválida';
+    }
   };
 
-  const formatPrice = (amountInCents) => {
-    return (amountInCents / 100).toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    });
+  const formatPrice = (amountInCents: number | null | undefined): string => {
+    if (typeof amountInCents !== 'number' || amountInCents < 0) {
+      return 'R$ 0,00';
+    }
+    try {
+      return (amountInCents / 100).toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+      });
+    } catch (error) {
+      console.error('Erro ao formatar preço:', error);
+      return 'R$ 0,00';
+    }
   };
 
   if (loading) {
@@ -178,7 +212,17 @@ export default function PlanoVIPPage() {
       </p>
 
       <div className="flex justify-center mb-8">
-        <Image src="/vippp.png" alt="Exemplo da Lista VIP" width={300} height={400} className="rounded-xl shadow-md" />
+        <Image 
+          src="/vippp.png" 
+          alt="Screenshot da lista VIP mostrando modelos de dispositivos compatíveis com preços e disponibilidade" 
+          width={300} 
+          height={400} 
+          className="rounded-xl shadow-md"
+          onError={(e) => {
+            console.error('Erro ao carregar imagem VIP');
+            (e.target as HTMLImageElement).style.display = 'none';
+          }}
+        />
       </div>
 
       {/* Benefícios */}
@@ -204,7 +248,7 @@ export default function PlanoVIPPage() {
             
             {user && !isVIP ? (
               <button
-                onClick={() => handleVIPUpgrade('mensal')}
+                onClick={() => handleVIPUpgrade('monthly')}
                 disabled={processingPayment || loading}
                 className="w-full bg-yellow-400 text-black px-5 py-3 rounded-full font-semibold hover:bg-yellow-500 transition disabled:opacity-50 disabled:cursor-not-allowed"
               >
@@ -258,7 +302,7 @@ export default function PlanoVIPPage() {
         <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-8">
           <h3 className="text-lg font-bold mb-4">📋 Histórico de Pagamentos</h3>
           <div className="space-y-3">
-            {userPayments.slice(0, 5).map((payment) => (
+            {userPayments.slice(0, 5).map((payment: Payment) => (
               <div key={payment.id} className="flex justify-between items-center bg-white p-3 rounded border">
                 <div>
                   <p className="font-medium">{formatPrice(payment.amount)}</p>
