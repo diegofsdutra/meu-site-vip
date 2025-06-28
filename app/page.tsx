@@ -35,7 +35,7 @@ const LoginModal = React.memo(({ show, onClose, message, setMessage }: ModalProp
 
   if (!show) return null;
 
-  const handleLogin = async (e) => {
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setMessage({ type: '', text: '' });
     
