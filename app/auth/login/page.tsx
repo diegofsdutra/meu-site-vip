@@ -1,13 +1,14 @@
 "use client"
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useAuth } from '../../../components/AuthProvider'
 import { AuthForm } from '../../../components/ui/auth-form'
 import Link from 'next/link'
 import type { AuthResult } from '../../../types/global'
 
-export default function LoginPage() {
+// Componente que usa useSearchParams envolvido em Suspense
+function LoginPageContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const { user } = useAuth()
@@ -123,5 +124,13 @@ export default function LoginPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div>Carregando...</div>}>
+      <LoginPageContent />
+    </Suspense>
   )
 }
