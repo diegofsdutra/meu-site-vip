@@ -132,7 +132,7 @@ const RegisterModal = React.memo(({ show, onClose, message, setMessage }: ModalP
 
   if (!show) return null;
 
-  const handleRegister = async (e) => {
+  const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setMessage({ type: '', text: '' });
     
