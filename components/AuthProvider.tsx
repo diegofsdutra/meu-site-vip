@@ -301,6 +301,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       setLoading(true)
       
+      console.log('🔄 Iniciando signUp para:', email)
+      
       const { data, error } = await supabaseClient.auth.signUp({
         email,
         password,
@@ -309,7 +311,15 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         }
       })
 
+      console.log('📝 Resultado do signUp:', { 
+        hasUser: !!data.user, 
+        hasSession: !!data.session, 
+        error: error?.message,
+        userId: data.user?.id
+      })
+
       if (error) {
+        console.log('❌ Erro no signUp:', error)
         return {
           success: false,
           message: error.message,
@@ -318,6 +328,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
 
       if (data.user && !data.session) {
+        console.log('📧 Usuário criado mas precisa confirmação de email')
         return {
           success: true,
           message: 'Verifique seu email para confirmar a conta',
@@ -326,12 +337,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         }
       }
 
+      console.log('✅ SignUp bem-sucedido com sessão ativa')
       return {
         success: true,
         message: 'Cadastro realizado com sucesso!',
         data
       }
     } catch (error: any) {
+      console.log('❌ Erro geral no signUp:', error)
       return {
         success: false,
         message: error.message || 'Erro interno',
