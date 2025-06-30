@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '../../lib/supabaseClient';
+import { createServerSupabaseClient } from '../../lib/supabaseServer';
 import { loadUserVIPData, isVIPActive } from '../../lib/vipUtils';
 
 // Interface para os dados de películas
@@ -17,14 +17,46 @@ export async function GET(request: NextRequest) {
     const searchTerm = searchParams.get('search') || '';
     
     console.log('🔍 API Películas - Email:', userEmail, 'Search:', searchTerm);
+    
+    // Criar cliente Supabase administrativo
+    const supabase = createServerSupabaseClient();
 
     // Verificar se o usuário é VIP
     let isUserVIP = false;
     if (userEmail) {
       try {
+        console.log('🔍 Verificando status VIP para:', userEmail);
+        
+        // Método 1: Verificar na tabela usuarios_vip
         const vipData = await loadUserVIPData(userEmail);
-        isUserVIP = isVIPActive({ email: userEmail, vip_data: vipData });
-        console.log('👑 Status VIP:', isUserVIP);
+        if (vipData) {
+          isUserVIP = isVIPActive({ email: userEmail, vip_data: vipData });
+          console.log('👑 VIP encontrado na tabela usuarios_vip:', isUserVIP);
+        } else {
+          // Método 2: Verificar na tabela profiles
+          console.log('🔄 Verificando VIP na tabela profiles...');
+          const { data: profileData, error: profileError } = await supabase
+            .from('profiles')
+            .select('is_vip, vip_expires_at')
+            .eq('email', userEmail)
+            .single();
+          
+          if (!profileError && profileData) {
+            if (profileData.is_vip && profileData.vip_expires_at) {
+              const expiresAt = new Date(profileData.vip_expires_at);
+              isUserVIP = expiresAt > new Date();
+              console.log('👑 VIP encontrado na tabela profiles:', isUserVIP, 'expira em:', expiresAt);
+            } else if (profileData.is_vip && !profileData.vip_expires_at) {
+              // VIP sem data de expiração (VIP permanente)
+              isUserVIP = true;
+              console.log('👑 VIP permanente encontrado na tabela profiles');
+            }
+          } else {
+            console.log('❌ Usuário não encontrado na tabela profiles:', profileError?.message);
+          }
+        }
+        
+        console.log('🎯 Status VIP final:', isUserVIP);
       } catch (error) {
         console.error('❌ Erro ao verificar VIP:', error);
       }
@@ -104,6 +136,9 @@ export async function POST(request: NextRequest) {
     }
 
     console.log('🚀 Iniciando migração dos dados de películas...');
+    
+    // Criar cliente Supabase administrativo
+    const supabase = createServerSupabaseClient();
     
     // Carregar dados do JSON
     const dadosPeliculas = require('../../../data/dadosPeliculas.json');
