@@ -17,14 +17,14 @@ function LoginPageContent() {
   // Redirecionar se usuário já estiver logado
   useEffect(() => {
     if (user) {
-      const redirect = searchParams.get('redirect') || '/'
+      const redirect = searchParams?.get('redirect') || '/'
       router.push(redirect)
     }
   }, [user, router, searchParams])
 
   // Definir modo baseado na URL
   useEffect(() => {
-    const modeParam = searchParams.get('mode')
+    const modeParam = searchParams?.get('mode')
     if (modeParam === 'register' || modeParam === 'reset') {
       setMode(modeParam)
     }
