@@ -838,7 +838,7 @@ export default function CompatibilidadePage(): React.JSX.Element {
           <Image src="/banner peliculas compativeis.png" alt="Banner Descubra Películas Compatíveis" width={1200} height={300} className="w-full rounded-none shadow-md" />
         </div>
 
-        <main className="grid grid-cols-1 md:grid-cols-[270px_1fr_300px] gap-6 items-start">
+        <main className="grid grid-cols-1 md:grid-cols-[270px_1fr_300px] gap-2 md:gap-6 items-start">
           <aside className="flex flex-col space-y-4 min-h-[1500px]">
             <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl p-12 text-center font-semibold text-white text-xl shadow-lg">
               Confira também outras categorias de <br />compatibilidade

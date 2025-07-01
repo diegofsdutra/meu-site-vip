@@ -297,12 +297,18 @@
     z-index: 1 !important;
     width: 100% !important;
     max-width: 100% !important;
-    height: 60px !important;
+    height: 80px !important;
     overflow: hidden !important;
-    background-size: contain !important;
+    background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
-    margin-top: 0.5rem !important;
+    margin-top: 0.75rem !important;
+    border: 2px solid rgba(59, 130, 246, 0.3) !important;
+    border-radius: 0.5rem !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    padding: 0.75rem !important;
+    min-height: 80px !important;
   }
   
   /* Garantir que o container dos botões não vaze */
@@ -326,6 +332,6 @@
   /* Ajustar altura total dos cards no mobile para acomodar todos elementos */
   .h-\[400px\] {
     height: auto !important;
-    min-height: 480px !important;
+    min-height: 520px !important;
   }
 }
