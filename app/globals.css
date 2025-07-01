@@ -121,7 +121,7 @@
   }
 }
 
-/* Layout ultra-compacto para mobile */
+/* Layout ultra-compacto para mobile - Deploy trigger */
 @media (max-width: 768px) {
   /* Gap principal do main MÍNIMO */
   main {
