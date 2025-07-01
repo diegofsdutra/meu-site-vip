@@ -153,7 +153,34 @@
   
   /* CORREÇÃO ESPECÍFICA: Reduzir espaçamento entre menu lateral e tabela de resultados */
   main.grid {
-    gap: 0.5rem !important;
+    gap: 0rem !important;
+  }
+  
+  /* CORREÇÃO ESPECÍFICA: Eliminar espaço gigante entre aside e section no mobile */
+  main.grid.grid-cols-1 {
+    gap: 0rem !important;
+    row-gap: 0rem !important;
+    grid-row-gap: 0rem !important;
+  }
+  
+  /* Força gap zero específico para mobile vertical */
+  @media (max-width: 767px) {
+    main.grid {
+      gap: 0rem !important;
+      grid-gap: 0rem !important;
+    }
+  }
+  
+  /* Eliminar margin-bottom do aside no mobile */
+  aside.flex.flex-col.space-y-4 {
+    margin-bottom: 0rem !important;
+    padding-bottom: 0rem !important;
+  }
+  
+  /* Eliminar margin-top da section no mobile */
+  main > section.w-full {
+    margin-top: 0rem !important;
+    padding-top: 0rem !important;
   }
   
   /* Reduzir margin-bottom da section que contém as tabelas */
