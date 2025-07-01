@@ -120,3 +120,21 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Reduzir espaçamento no mobile entre navegação e conteúdo */
+@media (max-width: 768px) {
+  /* Reduzir gap do grid principal no mobile */
+  main {
+    gap: 1rem !important;
+  }
+  
+  /* Reduzir espaçamento entre cards de navegação */
+  aside .space-y-4 > * + * {
+    margin-top: 1rem !important;
+  }
+  
+  /* Reduzir margin bottom das seções para ficarem mais próximas */
+  .mb-8 {
+    margin-bottom: 1rem !important;
+  }
+}
