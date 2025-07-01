@@ -235,6 +235,7 @@
     margin-bottom: 1.5rem !important;
     position: relative !important;
     z-index: 1 !important;
+    overflow: hidden !important;
   }
   
   /* PROBLEMA 2: Corrigir overflow dos badges/selos "RECOMENDADO" e "MELHOR OFERTA" */
@@ -270,5 +271,29 @@
   
   .hover\:scale-105:hover {
     z-index: 3 !important;
+  }
+  
+  /* CORREÇÃO ESPECÍFICA: Botões "Compra garantida pelo Mercado Pago" */
+  button[style*="url(/compra-garantida.png)"] {
+    position: relative !important;
+    z-index: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+  }
+  
+  /* Garantir que o container dos botões não vaze */
+  .w-full.mt-auto {
+    overflow: hidden !important;
+    position: relative !important;
+  }
+  
+  /* Forçar que todos os elementos dentro dos cards fiquem contidos */
+  .bg-white\/10.backdrop-blur-sm.rounded-2xl.p-6 * {
+    max-width: 100% !important;
+    overflow: hidden !important;
   }
 }
