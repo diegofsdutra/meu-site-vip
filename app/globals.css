@@ -128,6 +128,29 @@
     gap: 0.25rem !important;
   }
   
+  /* CORREÇÃO ESPECÍFICA: Eliminar gap entre cards de navegação e card "Películas Compatíveis" */
+  aside.flex.flex-col.space-y-4 {
+    margin-bottom: 0rem !important;
+    padding-bottom: 0rem !important;
+  }
+  
+  /* Eliminar margin-bottom do último elemento do aside (navegação) */
+  aside nav {
+    margin-bottom: 0rem !important;
+    padding-bottom: 0rem !important;
+  }
+  
+  /* Eliminar margin-top do card principal "Películas Compatíveis" */
+  section.w-full {
+    margin-top: 0rem !important;
+    padding-top: 0rem !important;
+  }
+  
+  /* Eliminar margin-top do primeiro card dentro da section */
+  section.w-full > div:first-child {
+    margin-top: 0rem !important;
+  }
+  
   /* Eliminar praticamente todo espaçamento entre elementos da navegação */
   aside .space-y-4 > * + * {
     margin-top: 0.25rem !important;
