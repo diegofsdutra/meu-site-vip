@@ -302,13 +302,15 @@
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
-    margin-top: 0.75rem !important;
+    margin: 0.75rem 0 0 0 !important;
+    padding: 0.75rem !important;
     border: 2px solid rgba(59, 130, 246, 0.3) !important;
     border-radius: 0.5rem !important;
     font-size: 1rem !important;
     font-weight: 600 !important;
-    padding: 0.75rem !important;
     min-height: 80px !important;
+    box-sizing: border-box !important;
+    display: block !important;
   }
   
   /* Garantir que o container dos botões não vaze */
@@ -317,6 +319,8 @@
     position: relative !important;
     margin-top: auto !important;
     padding-top: 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
   
   /* Ajustar botões de compra para ter altura adequada */
