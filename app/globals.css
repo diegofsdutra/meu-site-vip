@@ -121,42 +121,79 @@
   }
 }
 
-/* Reduzir espaçamento no mobile entre navegação e conteúdo */
+/* Layout ultra-compacto para mobile */
 @media (max-width: 768px) {
-  /* Reduzir gap do grid principal no mobile */
+  /* Gap principal do main MÍNIMO */
   main {
-    gap: 1rem !important;
+    gap: 0.25rem !important;
   }
   
-  /* Reduzir espaçamento entre cards de navegação */
+  /* Eliminar praticamente todo espaçamento entre elementos da navegação */
   aside .space-y-4 > * + * {
-    margin-top: 1rem !important;
+    margin-top: 0.25rem !important;
   }
   
-  /* Reduzir margin bottom das seções para ficarem mais próximas */
+  /* Margin bottom das seções MÍNIMO */
   .mb-8 {
-    margin-bottom: 1rem !important;
+    margin-bottom: 0.25rem !important;
   }
   
-  /* Reduzir espaçamento entre bloco VIP e conteúdo principal */
+  /* Eliminar espaço entre bloco "Confira também" e botões de navegação */
+  aside > div:first-child {
+    margin-bottom: 0.25rem !important;
+  }
+  
+  /* Eliminar espaço entre botões de navegação e conteúdo principal */
+  aside nav {
+    margin-bottom: 0rem !important;
+  }
+  
+  /* Eliminar espaço entre bloco VIP e conteúdo principal */
   .bg-black.border-2.border-yellow-400 {
-    margin-bottom: 1rem !important;
+    margin-bottom: 0.25rem !important;
   }
   
-  /* Reduzir espaçamento antes do bloco laranja "OFERTA IMPERDÍVEL" */
+  /* Eliminar completamente o espaçador antes da OFERTA IMPERDÍVEL */
   .h-\[750px\] {
-    height: 2rem !important;
+    height: 0.25rem !important;
   }
   
-  /* Reduzir espaçamento geral entre elementos do sidebar */
+  /* Espaçamento mínimo entre elementos do sidebar */
   .space-y-6 > * + * {
-    margin-top: 1.5rem !important;
+    margin-top: 0.5rem !important;
   }
   
-  /* Reduzir padding dos cards VIP para economizar espaço */
+  /* Padding mínimo dos cards VIP */
   .bg-black.text-white.rounded-xl,
   .bg-gradient-to-r.from-blue-600.to-blue-800,
   .bg-gradient-to-br.from-orange-500.to-orange-600 {
+    padding: 0.75rem !important;
+  }
+  
+  /* Reduzir padding das seções principais */
+  .bg-white.p-6.rounded-xl {
     padding: 1rem !important;
+  }
+  
+  /* Eliminar margens extras */
+  .mb-4 {
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .mb-6 {
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .mt-6 {
+    margin-top: 0.5rem !important;
+  }
+  
+  .mt-8 {
+    margin-top: 0.5rem !important;
+  }
+  
+  /* Reduzir padding do header para economizar espaço */
+  .pt-32 {
+    padding-top: 7rem !important;
   }
 }
