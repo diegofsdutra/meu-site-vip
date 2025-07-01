@@ -197,3 +197,55 @@
     padding-top: 7rem !important;
   }
 }
+
+/* Correções específicas para página de checkout no mobile */
+@media (max-width: 768px) {
+  /* PROBLEMA 1: Corrigir sobreposição dos cards de planos */
+  .grid.grid-cols-1.md\:grid-cols-3.gap-6 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+  
+  /* Garantir que cada card tenha espaço suficiente e não se sobreponha */
+  .bg-white\/10.backdrop-blur-sm.rounded-2xl.p-6 {
+    margin-bottom: 1.5rem !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+  
+  /* PROBLEMA 2: Corrigir overflow dos badges/selos "RECOMENDADO" e "MELHOR OFERTA" */
+  .absolute.-top-4.left-1\/2.transform.-translate-x-1\/2 {
+    position: absolute !important;
+    top: -0.5rem !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 10 !important;
+    width: auto !important;
+    max-width: calc(100% - 2rem) !important;
+  }
+  
+  /* Garantir que os badges ficam dentro dos boundaries do card */
+  .absolute.-top-4.left-1\/2.transform.-translate-x-1\/2 > div {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 100% !important;
+    padding: 0.25rem 1rem !important;
+    font-size: 0.75rem !important;
+  }
+  
+  /* Adicionar padding-top aos cards com badges para evitar sobreposição */
+  .bg-white\/10.backdrop-blur-sm.rounded-2xl.p-6.relative {
+    padding-top: 2rem !important;
+  }
+  
+  /* Corrigir z-index conflicts */
+  .hover\:scale-105 {
+    z-index: 2 !important;
+  }
+  
+  .hover\:scale-105:hover {
+    z-index: 3 !important;
+  }
+}
