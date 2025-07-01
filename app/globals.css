@@ -137,4 +137,26 @@
   .mb-8 {
     margin-bottom: 1rem !important;
   }
+  
+  /* Reduzir espaçamento entre bloco VIP e conteúdo principal */
+  .bg-black.border-2.border-yellow-400 {
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Reduzir espaçamento antes do bloco laranja "OFERTA IMPERDÍVEL" */
+  .h-\[750px\] {
+    height: 2rem !important;
+  }
+  
+  /* Reduzir espaçamento geral entre elementos do sidebar */
+  .space-y-6 > * + * {
+    margin-top: 1.5rem !important;
+  }
+  
+  /* Reduzir padding dos cards VIP para economizar espaço */
+  .bg-black.text-white.rounded-xl,
+  .bg-gradient-to-r.from-blue-600.to-blue-800,
+  .bg-gradient-to-br.from-orange-500.to-orange-600 {
+    padding: 1rem !important;
+  }
 }
