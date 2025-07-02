@@ -262,6 +262,17 @@
   .pt-32 {
     padding-top: 7rem !important;
   }
+  
+  /* CORREÇÃO ESPECÍFICA: Eliminar espaço entre aside e section no mobile */
+  aside.flex.flex-col.space-y-4.min-h-\[1500px\] {
+    margin-bottom: 0rem !important;
+    padding-bottom: 0rem !important;
+  }
+  
+  aside.flex.flex-col.space-y-4.min-h-\[1500px\] + section.w-full {
+    margin-top: 0rem !important;
+    padding-top: 0rem !important;
+  }
 }
 
 /* Correções específicas para página de checkout no mobile */
