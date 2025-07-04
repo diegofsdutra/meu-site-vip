@@ -840,6 +840,16 @@ export default function CompatibilidadePage(): React.JSX.Element {
 
         <main className="grid grid-cols-1 md:grid-cols-[270px_1fr_300px] gap-2 md:gap-6 items-start">
           <aside className="flex flex-col space-y-4 min-h-[1500px]">
+            <style jsx>{`
+              @media (max-width: 768px) {
+                aside {
+                  min-height: auto !important;
+                }
+                main {
+                  gap: 1rem !important;
+                }
+              }
+            `}</style>
             <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl p-12 text-center font-semibold text-white text-xl shadow-lg">
               Confira também outras categorias de <br />compatibilidade
               <div className="flex justify-center mt-6">
