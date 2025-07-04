@@ -62,15 +62,33 @@ export async function GET(request: NextRequest) {
       }
     }
 
-    // Buscar dados no Supabase (com fallback para JSON se tabela não existir)
+    // 🔒 CORREÇÃO DE SEGURANÇA: Buscar dados aplicando limitação VIP no servidor
     let peliculasData: PeliculaData[] = [];
     
     try {
       // Tentar buscar no Supabase primeiro
-      const { data, error } = await supabase
-        .from('peliculas_3d')
-        .select('*')
-        .ilike('modelo', `%${searchTerm}%`);
+      let query = supabase.from('peliculas_3d').select('*');
+      
+      // 🔒 SEGURANÇA: Se não for VIP, limitar busca apenas aos primeiros 10% dos registros
+      if (!isUserVIP) {
+        // Primeiro, obter o total de registros para calcular limite
+        const { count } = await supabase
+          .from('peliculas_3d')
+          .select('*', { count: 'exact', head: true });
+        
+        if (count) {
+          const maxAllowedId = Math.ceil(count * 0.1); // 10% dos registros
+          query = query.lte('id', maxAllowedId);
+          console.log(`🔒 Usuário não-VIP: limitando busca aos primeiros ${maxAllowedId} registros (10%)`);
+        }
+      }
+      
+      // Aplicar filtro de busca
+      if (searchTerm) {
+        query = query.ilike('modelo', `%${searchTerm}%`);
+      }
+      
+      const { data, error } = await query;
 
       if (error) {
         console.log('⚠️ Tabela peliculas_3d não existe, usando fallback JSON');
@@ -81,25 +99,31 @@ export async function GET(request: NextRequest) {
       console.log(`📊 Encontrados ${peliculasData.length} registros no Supabase`);
       
     } catch (supabaseError) {
-      // Fallback: usar dados do JSON
+      // Fallback: usar dados do JSON com limitação segura
       console.log('📄 Usando dados do arquivo JSON como fallback');
       const dadosPeliculas = require('../../../data/dadosPeliculas.json');
       
-      // Filtrar por termo de busca se fornecido
-      peliculasData = dadosPeliculas.filter((item: PeliculaData) => 
+      // 🔒 SEGURANÇA: Aplicar limitação ANTES da busca
+      let limitedData = dadosPeliculas;
+      if (!isUserVIP) {
+        const limitedCount = Math.ceil(dadosPeliculas.length * 0.1); // 10% dos dados
+        limitedData = dadosPeliculas.slice(0, limitedCount);
+        console.log(`🔒 Usuário não-VIP: limitando dataset para ${limitedCount} registros antes da busca`);
+      }
+      
+      // Filtrar por termo de busca APENAS nos dados já limitados
+      peliculasData = limitedData.filter((item: PeliculaData) => 
         searchTerm === '' || 
         item.modelo.toLowerCase().includes(searchTerm.toLowerCase()) ||
         item.compatibilidade.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
 
-    // Aplicar lógica VIP: se não for VIP, mostrar apenas 10% dos dados
-    if (!isUserVIP && peliculasData.length > 0) {
-      const limitedCount = Math.ceil(peliculasData.length * 0.1); // 10% dos dados
-      peliculasData = peliculasData.slice(0, limitedCount);
-      console.log(`🔒 Usuário não-VIP: limitando para ${limitedCount} registros (10%)`);
-    } else if (isUserVIP) {
-      console.log(`🎯 Usuário VIP: mostrando todos os ${peliculasData.length} registros (100%)`);
+    // Log final
+    if (isUserVIP) {
+      console.log(`🎯 Usuário VIP: acesso a todos os dados disponíveis (${peliculasData.length} registros)`);
+    } else {
+      console.log(`🔒 Usuário não-VIP: acesso limitado a ${peliculasData.length} registros`);
     }
 
     return NextResponse.json({
