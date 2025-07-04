@@ -93,11 +93,11 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    // Aplicar lógica VIP: se não for VIP, mostrar apenas 20% dos dados
+    // Aplicar lógica VIP: se não for VIP, mostrar apenas 10% dos dados
     if (!isUserVIP && peliculasData.length > 0) {
-      const limitedCount = Math.ceil(peliculasData.length * 0.2); // 20% dos dados
+      const limitedCount = Math.ceil(peliculasData.length * 0.1); // 10% dos dados
       peliculasData = peliculasData.slice(0, limitedCount);
-      console.log(`🔒 Usuário não-VIP: limitando para ${limitedCount} registros (20%)`);
+      console.log(`🔒 Usuário não-VIP: limitando para ${limitedCount} registros (10%)`);
     } else if (isUserVIP) {
       console.log(`🎯 Usuário VIP: mostrando todos os ${peliculasData.length} registros (100%)`);
     }
@@ -109,7 +109,7 @@ export async function GET(request: NextRequest) {
       totalShown: peliculasData.length,
       message: isUserVIP 
         ? 'Acesso VIP: dados completos disponíveis' 
-        : 'Acesso limitado: apenas 20% dos dados. Assine o VIP para acesso completo!'
+        : 'Acesso limitado: apenas 10% dos dados. Assine o VIP para acesso completo!'
     });
 
   } catch (error) {
@@ -147,7 +147,7 @@ export async function POST(request: NextRequest) {
     const peliculasForInsert = dadosPeliculas.map((item: PeliculaData, index: number) => ({
       modelo: item.modelo,
       compatibilidade: item.compatibilidade,
-      is_premium: index >= Math.ceil(dadosPeliculas.length * 0.2) // Marcar 80% como premium
+      is_premium: index >= Math.ceil(dadosPeliculas.length * 0.1) // Marcar 90% como premium
     }));
 
     // Inserir no Supabase em lotes

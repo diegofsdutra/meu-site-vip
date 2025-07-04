@@ -130,6 +130,13 @@ export default function CheckoutVIPPage() {
             width: 100% !important;
             margin: 0 !important;
             padding: 0 !important;
+            border: none !important;
+            border-radius: 0.5rem !important;
+            box-sizing: border-box !important;
+            display: block !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
           }
         }
       `}</style>

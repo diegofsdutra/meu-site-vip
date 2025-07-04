@@ -24,7 +24,7 @@ console.log(`
 Este script irá:
 1. Criar a tabela 'peliculas_3d' no Supabase
 2. Migrar todos os dados do arquivo JSON
-3. Configurar 20% como dados gratuitos e 80% como VIP
+3. Configurar 10% como dados gratuitos e 90% como VIP
 4. Criar índices para melhor performance
 
 ⚠️  IMPORTANTE: Execute este script apenas UMA VEZ
@@ -32,8 +32,8 @@ Este script irá:
 
 Dados atuais:
 - 490 registros no arquivo JSON
-- 98 registros serão gratuitos (20%)
-- 392 registros serão VIP (80%)
+- 49 registros serão gratuitos (10%)
+- 441 registros serão VIP (90%)
 `);
 
 function askQuestion(question) {
