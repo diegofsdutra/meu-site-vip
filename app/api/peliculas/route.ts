@@ -11,83 +11,95 @@ interface PeliculaData {
 }
 
 /**
- * 🎯 Função para diversificar marcas nos dados limitados para usuários não-VIP
- * Distribui 49 modelos entre diferentes marcas de forma equilibrada
+ * 🎯 Função para seleção estratégica por linhas de produtos para usuários não-VIP
+ * Distribui 49 modelos baseado em linhas específicas e populares
  */
-function diversifyBrandSelection(allData: PeliculaData[]): PeliculaData[] {
-  const brandLimits = {
-    samsung: 15,
-    iphone: 15,
-    motorola: 10,
-    xiaomi: 9
-  };
-  
-  // Agrupar dados por marca (detectar pela presença de palavras-chave no modelo)
-  const brandGroups: { [key: string]: PeliculaData[] } = {
-    samsung: [],
-    iphone: [],
-    motorola: [],
-    xiaomi: [],
-    others: []
-  };
-  
-  allData.forEach(item => {
-    const modelo = item.modelo.toLowerCase();
-    if (modelo.includes('samsung') || modelo.includes('galaxy') || modelo.includes('sm-') || modelo.includes('a0') || modelo.includes('a1') || modelo.includes('a2') || modelo.includes('a3') || modelo.includes('a4') || modelo.includes('a5') || modelo.includes('a6') || modelo.includes('a7') || modelo.includes('a8') || modelo.includes('a9') || modelo.includes('j0') || modelo.includes('j1') || modelo.includes('j2') || modelo.includes('j3') || modelo.includes('j4') || modelo.includes('j5') || modelo.includes('j6') || modelo.includes('j7') || modelo.includes('j8') || modelo.includes('s20') || modelo.includes('s21') || modelo.includes('s22') || modelo.includes('s23') || modelo.includes('s24') || modelo.includes('note') || modelo.includes('m10') || modelo.includes('m20') || modelo.includes('m30')) {
-      brandGroups.samsung.push(item);
-    } else if (modelo.includes('iphone') || modelo.includes('apple')) {
-      brandGroups.iphone.push(item);
-    } else if (modelo.includes('moto') || modelo.includes('motorola')) {
-      brandGroups.motorola.push(item);
-    } else if (modelo.includes('xiaomi') || modelo.includes('redmi') || modelo.includes('poco') || modelo.includes('mi ')) {
-      brandGroups.xiaomi.push(item);
-    } else {
-      brandGroups.others.push(item);
-    }
-  });
-  
-  console.log('📊 Distribuição de marcas encontrada:', {
-    samsung: brandGroups.samsung.length,
-    iphone: brandGroups.iphone.length,
-    motorola: brandGroups.motorola.length,
-    xiaomi: brandGroups.xiaomi.length,
-    others: brandGroups.others.length
-  });
-  
-  // Selecionar modelos respeitando os limites de cada marca
+function selectStrategicProductLines(allData: PeliculaData[]): PeliculaData[] {
   const selectedModels: PeliculaData[] = [];
   
-  // Samsung - máximo 15
-  selectedModels.push(...brandGroups.samsung.slice(0, brandLimits.samsung));
+  // Samsung (20 modelos) - Linhas específicas
+  const samsungLines = [
+    { pattern: ['a0'], limit: 3, name: 'Linha A0x' },
+    { pattern: ['a1'], limit: 5, name: 'Linha A1x' },
+    { pattern: ['a2'], limit: 4, name: 'Linha A2x' },
+    { pattern: ['a3'], limit: 3, name: 'Linha A3x' },
+    { pattern: ['a5'], limit: 3, name: 'Linha A5x' },
+    { pattern: ['m1', 'm2', 'm3', 'm4'], limit: 2, name: 'Linha M' }
+  ];
   
-  // iPhone - máximo 15
-  selectedModels.push(...brandGroups.iphone.slice(0, brandLimits.iphone));
+  samsungLines.forEach(line => {
+    const lineModels = allData.filter(item => {
+      const modelo = item.modelo.toLowerCase();
+      return (modelo.includes('samsung') || modelo.includes('galaxy') || modelo.includes('sm-')) &&
+             line.pattern.some(pattern => modelo.includes(pattern));
+    });
+    selectedModels.push(...lineModels.slice(0, line.limit));
+    console.log(`📱 Samsung ${line.name}: ${Math.min(lineModels.length, line.limit)} modelos selecionados`);
+  });
   
-  // Motorola - máximo 10
-  selectedModels.push(...brandGroups.motorola.slice(0, brandLimits.motorola));
+  // Motorola (13 modelos) - Linhas Moto E e Moto G
+  const motorolaModels = allData.filter(item => {
+    const modelo = item.modelo.toLowerCase();
+    return (modelo.includes('moto e') || modelo.includes('moto g')) && 
+           (modelo.includes('moto') || modelo.includes('motorola'));
+  });
+  selectedModels.push(...motorolaModels.slice(0, 13));
+  console.log(`📱 Motorola (Moto E/G): ${Math.min(motorolaModels.length, 13)} modelos selecionados`);
   
-  // Xiaomi - máximo 9
-  selectedModels.push(...brandGroups.xiaomi.slice(0, brandLimits.xiaomi));
+  // Xiaomi (7 modelos) - Linhas Redmi Note e Redmi
+  const xiaomiModels = allData.filter(item => {
+    const modelo = item.modelo.toLowerCase();
+    return (modelo.includes('redmi note') || modelo.includes('redmi')) &&
+           (modelo.includes('xiaomi') || modelo.includes('redmi'));
+  });
+  selectedModels.push(...xiaomiModels.slice(0, 7));
+  console.log(`📱 Xiaomi (Redmi): ${Math.min(xiaomiModels.length, 7)} modelos selecionados`);
   
-  // Se não atingiu 49 modelos, completar com outras marcas
-  const remainingSlots = 49 - selectedModels.length;
-  if (remainingSlots > 0) {
-    selectedModels.push(...brandGroups.others.slice(0, remainingSlots));
-  }
+  // iPhone (5 modelos) - Modelos específicos
+  const iphoneTargets = ['iphone 7', 'iphone 8', 'iphone x', 'iphone 11', 'iphone 12'];
+  iphoneTargets.forEach(target => {
+    const iphoneModel = allData.find(item => 
+      item.modelo.toLowerCase().includes(target)
+    );
+    if (iphoneModel) {
+      selectedModels.push(iphoneModel);
+    }
+  });
+  console.log(`📱 iPhone (específicos): ${selectedModels.filter(item => 
+    item.modelo.toLowerCase().includes('iphone')).length} modelos selecionados`);
   
-  console.log('🎯 Distribuição final para não-VIP:', {
+  // LG (4 modelos) - Linha K
+  const lgModels = allData.filter(item => {
+    const modelo = item.modelo.toLowerCase();
+    return modelo.includes('lg') && modelo.includes('k');
+  });
+  selectedModels.push(...lgModels.slice(0, 4));
+  console.log(`📱 LG (Linha K): ${Math.min(lgModels.length, 4)} modelos selecionados`);
+  
+  // Log final da distribuição estratégica
+  const finalDistribution = {
     samsung: selectedModels.filter(item => {
       const modelo = item.modelo.toLowerCase();
-      return modelo.includes('samsung') || modelo.includes('galaxy') || modelo.includes('sm-') || modelo.includes('a0') || modelo.includes('a1') || modelo.includes('a2') || modelo.includes('a3') || modelo.includes('a4') || modelo.includes('a5') || modelo.includes('a6') || modelo.includes('a7') || modelo.includes('a8') || modelo.includes('a9') || modelo.includes('j0') || modelo.includes('j1') || modelo.includes('j2') || modelo.includes('j3') || modelo.includes('j4') || modelo.includes('j5') || modelo.includes('j6') || modelo.includes('j7') || modelo.includes('j8') || modelo.includes('s20') || modelo.includes('s21') || modelo.includes('s22') || modelo.includes('s23') || modelo.includes('s24') || modelo.includes('note') || modelo.includes('m10') || modelo.includes('m20') || modelo.includes('m30');
+      return modelo.includes('samsung') || modelo.includes('galaxy') || modelo.includes('sm-');
     }).length,
-    iphone: selectedModels.filter(item => item.modelo.toLowerCase().includes('iphone') || item.modelo.toLowerCase().includes('apple')).length,
-    motorola: selectedModels.filter(item => item.modelo.toLowerCase().includes('moto') || item.modelo.toLowerCase().includes('motorola')).length,
+    motorola: selectedModels.filter(item => {
+      const modelo = item.modelo.toLowerCase();
+      return modelo.includes('moto') || modelo.includes('motorola');
+    }).length,
     xiaomi: selectedModels.filter(item => {
       const modelo = item.modelo.toLowerCase();
-      return modelo.includes('xiaomi') || modelo.includes('redmi') || modelo.includes('poco') || modelo.includes('mi ');
+      return modelo.includes('xiaomi') || modelo.includes('redmi');
     }).length,
+    iphone: selectedModels.filter(item => 
+      item.modelo.toLowerCase().includes('iphone')
+    ).length,
+    lg: selectedModels.filter(item => 
+      item.modelo.toLowerCase().includes('lg')
+    ).length,
     total: selectedModels.length
-  });
+  };
+  
+  console.log('🎯 Distribuição final estratégica para não-VIP:', finalDistribution);
   
   return selectedModels;
 }
@@ -156,9 +168,9 @@ export async function GET(request: NextRequest) {
           .select('*');
         
         if (!allError && allData) {
-          // Aplicar diversificação de marcas
-          peliculasData = diversifyBrandSelection(allData);
-          console.log(`🔒 Usuário não-VIP: aplicada diversificação de marcas, ${peliculasData.length} registros selecionados`);
+          // Aplicar seleção estratégica por linhas de produtos
+          peliculasData = selectStrategicProductLines(allData);
+          console.log(`🔒 Usuário não-VIP: aplicada seleção estratégica por linhas, ${peliculasData.length} registros selecionados`);
           
           // Se há termo de busca, filtrar nos dados já diversificados
           if (searchTerm) {
@@ -168,7 +180,7 @@ export async function GET(request: NextRequest) {
             );
           }
         } else {
-          console.log('⚠️ Erro ao buscar todos os dados para diversificação, usando fallback JSON');
+          console.log('⚠️ Erro ao buscar todos os dados para seleção estratégica, usando fallback JSON');
           throw allError;
         }
       } else {
@@ -196,11 +208,11 @@ export async function GET(request: NextRequest) {
       console.log('📄 Usando dados do arquivo JSON como fallback');
       const dadosPeliculas = require('../../../data/dadosPeliculas.json');
       
-      // 🔒 SEGURANÇA: Aplicar limitação ANTES da busca com diversificação de marcas
+      // 🔒 SEGURANÇA: Aplicar limitação ANTES da busca com seleção estratégica por linhas
       let limitedData = dadosPeliculas;
       if (!isUserVIP) {
-        limitedData = diversifyBrandSelection(dadosPeliculas);
-        console.log(`🔒 Usuário não-VIP: limitando dataset para ${limitedData.length} registros com diversificação de marcas`);
+        limitedData = selectStrategicProductLines(dadosPeliculas);
+        console.log(`🔒 Usuário não-VIP: limitando dataset para ${limitedData.length} registros com seleção estratégica por linhas`);
       }
       
       // Filtrar por termo de busca APENAS nos dados já limitados
