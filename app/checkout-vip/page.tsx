@@ -124,6 +124,15 @@ export default function CheckoutVIPPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-black text-white" style={{ zoom: '0.8' }}>
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .mercado-pago-btn {
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+          }
+        }
+      `}</style>
       <Head>
         <title>Checkout VIP - Lista Compatível</title>
         <meta name="description" content="Assine o plano VIP e tenha acesso completo à nossa base de dados" />
@@ -186,7 +195,7 @@ export default function CheckoutVIPPage() {
                 CLIQUE AQUI PARA COMPRAR!
               </button>
               <button 
-                className="w-full h-10 bg-cover bg-center bg-no-repeat rounded-lg hover:opacity-80 transition"
+                className="w-full h-10 bg-cover bg-center bg-no-repeat rounded-lg hover:opacity-80 transition mercado-pago-btn"
                 style={{backgroundImage: 'url(/compra-garantida.png)'}}
               >
               </button>
@@ -216,7 +225,7 @@ export default function CheckoutVIPPage() {
                 CLIQUE AQUI PARA COMPRAR!
               </button>
               <button 
-                className="w-full h-10 bg-cover bg-center bg-no-repeat rounded-lg hover:opacity-80 transition"
+                className="w-full h-10 bg-cover bg-center bg-no-repeat rounded-lg hover:opacity-80 transition mercado-pago-btn"
                 style={{backgroundImage: 'url(/compra-garantida.png)'}}
               >
               </button>
@@ -246,7 +255,7 @@ export default function CheckoutVIPPage() {
                 CLIQUE AQUI PARA COMPRAR!
               </button>
               <button 
-                className="w-full h-10 bg-cover bg-center bg-no-repeat rounded-lg hover:opacity-80 transition"
+                className="w-full h-10 bg-cover bg-center bg-no-repeat rounded-lg hover:opacity-80 transition mercado-pago-btn"
                 style={{backgroundImage: 'url(/compra-garantida.png)'}}
               >
               </button>
